@@ -1020,7 +1020,7 @@ function filterCat(cat, el) {
 }
 
 function renderProducts() {
-  var grid = pgrid;
+  var grid = document.getElementById('pgrid');
   var active = [];
   for (var ai = 0; ai < products.length; ai++) { if (products[ai].activo) { active.push(products[ai]); } }
   if (!active.length) {
@@ -1038,24 +1038,43 @@ function renderProducts() {
     var isEspecial = p.tipo === 'Pedido especial 24hrs';
     var badge = isEspecial
       ? '<span class="pbadge b-special">&#9889; 24hrs</span>'
-      : (p.stock===0
+      : (p.stock === 0
         ? '<span class="pbadge b-out">Sin stock</span>'
-        : p.estado==='REPOSICION'
+        : (p.estado === 'REPOSICION'
           ? '<span class="pbadge b-low">Stock bajo</span>'
-          : '<span class="pbadge b-ok">Disponible</span>');
+          : '<span class="pbadge b-ok">Disponible</span>'));
     var imgHtml = p.img
-      ? '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">'<div class="emoji-fallback" style="display:none">' + p.icon + '</div>'
+      ? ('<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
+         '<div class="emoji-fallback" style="display:none">' + p.icon + '</div>')
       : '<div class="emoji-fallback" style="display:flex">' + p.icon + '</div>';
     var disabled = (!isEspecial && p.stock === 0) ? 'disabled' : '';
     var desc = (p.desc && p.desc.length > 3 && p.desc !== 'Pedido especial')
       ? p.desc.substring(0, 90)
       : ((p.tipo || '') + (p.marca ? ' ' + p.marca : '') + (p.compat ? ' compatible con ' + p.compat : '')).trim().substring(0, 90);
     var skuSafe  = p.sku.replace(/'/g, '&#39;');
-    var nameSafe = p.name.substring(0, 60).replace(/\x22/g, '&quot;');
-    html2 += '<div class="pcard" data-sku="' + skuSafe + '">''<div class="pimg">' + badge + imgHtml + '</div>''<div class="pbody">''<div class="psku">' + p.cat + ' &middot; ' + p.sku + '</div>''<div class="pname">' + p.name + '</div>'+ (desc ? '<div class="pdesc">' + desc + '</div>' : '')+'<div class="pfooter">''<div class="pprice"><small>Precio</small>' + fmt(p.price) + '</div>''<div class="pbtns">''<button class="btn-add add-btn" data-sku="' + skuSafe + '" ' + disabled + '>&#128722; Agregar</button>''<button class="btn-waq wa-btn" data-sku="' + skuSafe + '" data-name="' + nameSafe + '" title="Consultar por WhatsApp">&#128172;</button>''</div></div></div></div>';
+    var nameSafe = p.name.substring(0, 60).replace(/"/g, '&quot;');
+    html2 += '<div class="pcard" data-sku="' + skuSafe + '">' +
+      '<div class="pimg">' + badge + imgHtml + '</div>' +
+      '<div class="pbody">' +
+        '<div class="psku">' + p.cat + ' &middot; ' + p.sku + '</div>' +
+        '<div class="pname">' + p.name + '</div>' +
+        (desc ? '<div class="pdesc">' + desc + '</div>' : '') +
+        '<div class="pfooter">' +
+          '<div class="pprice"><small>Precio</small>' + fmt(p.price) + '</div>' +
+          '<div class="pbtns">' +
+            '<button class="btn-add add-btn" data-sku="' + skuSafe + '" ' + disabled + '>&#128722; Agregar</button>' +
+            '<button class="btn-waq wa-btn" data-sku="' + skuSafe + '" data-name="' + nameSafe + '" title="WhatsApp">&#128172;</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
   }
   if (totalPages > 1) {
-    html2 += '<div class="pgn-wrap">''<button class="pgn-btn" id="pgnPrev"' + (currentPage <= 1 ? ' disabled' : '') + '>&#8592; Anterior</button>''<span class="pgn-info">P&aacute;gina ' + currentPage + ' de ' + totalPages + ' &nbsp;&middot;&nbsp; ' + totalProd + ' productos</span>''<button class="pgn-btn" id="pgnNext"' + (currentPage >= totalPages ? ' disabled' : '') + '>Siguiente &#8594;</button>''</div>';
+    html2 += '<div class="pgn-wrap">' +
+      '<button class="pgn-btn" id="pgnPrev"' + (currentPage <= 1 ? ' disabled' : '') + '>&#8592; Anterior</button>' +
+      '<span class="pgn-info">Página ' + currentPage + ' de ' + totalPages + ' &nbsp;&middot;&nbsp; ' + totalProd + ' productos</span>' +
+      '<button class="pgn-btn" id="pgnNext"' + (currentPage >= totalPages ? ' disabled' : '') + '>Siguiente &#8594;</button>' +
+    '</div>';
   }
   grid.innerHTML = html2;
   var pcards = grid.querySelectorAll('.pcard');
@@ -1070,15 +1089,24 @@ function renderProducts() {
   for (var wi = 0; wi < waBtns.length; wi++) {
     waBtns[wi].addEventListener('click', function(e) {
       e.stopPropagation();
-      var s2 = this.getAttribute('data-sku'); var nm2 = this.getAttribute('data-name');
-      var msg2 = encodeURIComponent('Hola GoCar\\'s! Me interesa: ' + nm2 + ' (' + s2 + '). ¿Está disponible?');
+      var s2 = this.getAttribute('data-sku');
+      var nm2 = this.getAttribute('data-name');
+      var msg2 = encodeURIComponent('Hola GoCar\'s! Me interesa: ' + nm2 + ' (' + s2 + '). ¿Está disponible?');
       window.open('https://wa.me/56978593519?text=' + msg2, '_blank');
     });
   }
-  var prevBtn = pgnPrev;
-  if (prevBtn) { prevBtn.addEventListener('click', function() { if (currentPage > 1) { currentPage--; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); } }); }
-  var nextBtn = pgnNext;
-  if (nextBtn) { nextBtn.addEventListener('click', function() { if (currentPage < totalPages) { currentPage++; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); } }); }
+  var prevBtn = document.getElementById('pgnPrev');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      if (currentPage > 1) { currentPage--; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); }
+    });
+  }
+  var nextBtn = document.getElementById('pgnNext');
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (currentPage < totalPages) { currentPage++; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); }
+    });
+  }
 }
 
 // ── DETALLE PRODUCTO ──
