@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoCar — Punto de Venta</title>
+<title>GoCar's — Punto de Venta</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -179,7 +179,7 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 <!-- APP -->
 <div id="app">
   <div class="topbar">
-    <div class="topbar-logo">Go<em>CAR</em></div>
+    <a href="gocar_web.html"><img src="data:image/png;base64,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" alt="GoCar's" style="height:44px;width:auto;display:block;"></a>
     <div class="topbar-right">
       <span class="topbar-badge">POS</span>
       <span class="topbar-date" id="topbarDate"></span>
@@ -294,11 +294,284 @@ var SHEETS_WEBAPI   = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSckkgJQb
 
 // ── DATOS BASE (respaldo) ──
 var PRODUCTOS = [
-  { sku:'BAT-60AH-GEN',    nombre:'Bateria 60Ah Generica',        cat:'Baterias',    precio:65000, stock:8,  activo:true },
-  { sku:'FRE-KIA-RIO-PD',  nombre:'Pastillas Delanteras Kia Rio', cat:'Frenos',      precio:32000, stock:1,  activo:true },
-  { sku:'FIL-ACE-HYUN-01', nombre:'Filtro Aceite Hyundai/Kia',   cat:'Filtros',     precio:7000,  stock:17, activo:true },
-  { sku:'COR-ACC-6PK',     nombre:'Correa Accesorios 6PK',        cat:'Correas',     precio:14000, stock:8,  activo:true },
-  { sku:'LUB-5W30-4L',     nombre:'Aceite Motor 5W30 4L',         cat:'Lubricantes', precio:29000, stock:12, activo:true }
+  { sku:'16400-V2700', nombre:'Filtro combustible Nissan Sentra', cat:'Filtros', precio:200, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BA152YZZA4', nombre:'Filtro de aceite 04152-YZZA4', cat:'Filtros', precio:1400, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BA28683196', nombre:'Filtro de aceite 11428683196', cat:'Filtros', precio:1500, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU6007X', nombre:'Filtro de aceite HU6007X', cat:'Filtros', precio:1300, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU6009Z', nombre:'Filtro de aceite HU6009Z', cat:'Filtros', precio:1800, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU6006Z', nombre:'Filtro de aceite HU6006Z', cat:'Filtros', precio:1000, stock:100, activo:true, icon:'🫧' },
+  { sku:'19BA612X', nombre:'Filtro de aceite HU612X', cat:'Filtros', precio:1800, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU615X', nombre:'Filtro de aceite HU615X', cat:'Filtros', precio:1300, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU616X', nombre:'Filtro de aceite HU616X', cat:'Filtros', precio:1600, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU7008Z', nombre:'Filtro de aceite HU7008Z', cat:'Filtros', precio:1700, stock:100, activo:true, icon:'🫧' },
+  { sku:'14BAHU711X', nombre:'Filtro de aceite HU711X', cat:'Filtros', precio:1500, stock:100, activo:true, icon:'🫧' },
+  { sku:'U2Y014302', nombre:'Filtro de aceite Mazda BT50', cat:'Filtros', precio:200, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407144', nombre:'Filtro de aceite HU7017Z', cat:'Filtros', precio:3900, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407025', nombre:'Filtro de aceite W610/7', cat:'Filtros', precio:5200, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407094', nombre:'Filtro de aceite HU720/3X', cat:'Filtros', precio:9000, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407258', nombre:'Filtro de aceite HU7018Z', cat:'Filtros', precio:15300, stock:100, activo:true, icon:'🫧' },
+  { sku:'111457429144', nombre:'Filtro de aceite 99610722552', cat:'Filtros', precio:8500, stock:100, activo:true, icon:'🫧' },
+  { sku:'110986452036', nombre:'Filtro de aceite Bosch', cat:'Filtros', precio:3900, stock:100, activo:true, icon:'🫧' },
+  { sku:'110986B01565', nombre:'Filtro de aceite H12111X', cat:'Filtros', precio:5400, stock:100, activo:true, icon:'🫧' },
+  { sku:'110986B01555', nombre:'Filtro de aceite H932/4X', cat:'Filtros', precio:3600, stock:100, activo:true, icon:'🫧' },
+  { sku:'111457429278', nombre:'Filtro de aceite H951X', cat:'Filtros', precio:5500, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407091', nombre:'Filtro de aceite HU6006Z', cat:'Filtros', precio:4600, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407016', nombre:'Filtro de aceite HU6007X', cat:'Filtros', precio:5600, stock:100, activo:true, icon:'🫧' },
+  { sku:'11F026407006', nombre:'Filtro de aceite HU612/2X', cat:'Filtros', precio:5000, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO6466', nombre:'Filtro de aceite W811/80', cat:'Filtros', precio:2000, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO6135E', nombre:'Filtro de aceite HU6009Z', cat:'Filtros', precio:2500, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO5839E', nombre:'Filtro de aceite HU612 2X', cat:'Filtros', precio:2100, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO2A01E', nombre:'Filtro de aceite HU616X', cat:'Filtros', precio:2900, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO5505E', nombre:'Filtro de aceite HU711 2X', cat:'Filtros', precio:2600, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO8398', nombre:'Filtro de aceite 1731840025', cat:'Filtros', precio:2200, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO9177E', nombre:'Filtro de aceite HU617X', cat:'Filtros', precio:4100, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO2A50E', nombre:'Filtro de aceite HU7001X', cat:'Filtros', precio:2100, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO2F00E', nombre:'Filtro de aceite HU7019X', cat:'Filtros', precio:2100, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO4580E', nombre:'Filtro de aceite HU714/5X', cat:'Filtros', precio:3600, stock:100, activo:true, icon:'🫧' },
+  { sku:'19SFO1D28E', nombre:'Filtro de aceite HU931/5X', cat:'Filtros', precio:2600, stock:100, activo:true, icon:'🫧' },
+  { sku:'19BAL12009', nombre:'Alternador 12V 100A', cat:'Eléctrico', precio:72500, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12010', nombre:'Alternador 12V 105A', cat:'Eléctrico', precio:80200, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12011', nombre:'Alternador 12V 110A', cat:'Eléctrico', precio:107500, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12045', nombre:'Alternador 12V 110A', cat:'Eléctrico', precio:119700, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12013', nombre:'Alternador 12V 120A', cat:'Eléctrico', precio:130800, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12048', nombre:'Alternador 12V 120A Universal', cat:'Eléctrico', precio:67900, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12046', nombre:'Alternador 12V 125A', cat:'Eléctrico', precio:107700, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12014', nombre:'Alternador 12V 150A', cat:'Eléctrico', precio:103200, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12047', nombre:'Alternador 12V 150A', cat:'Eléctrico', precio:115800, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12044', nombre:'Alternador 12V 185A', cat:'Eléctrico', precio:149400, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12043', nombre:'Alternador 12V 200A', cat:'Eléctrico', precio:153000, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12004', nombre:'Alternador 12V 24SI 160A', cat:'Eléctrico', precio:123400, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12015', nombre:'Alternador 12V 35A', cat:'Eléctrico', precio:71600, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12017', nombre:'Alternador 12V 35A Universal', cat:'Eléctrico', precio:58600, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12018', nombre:'Alternador 12V 40A', cat:'Eléctrico', precio:71600, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12019', nombre:'Alternador 12V 40A', cat:'Eléctrico', precio:70200, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12020', nombre:'Alternador 12V 50A', cat:'Eléctrico', precio:71600, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12021', nombre:'Alternador 12V 50A Universal', cat:'Eléctrico', precio:71600, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12022', nombre:'Alternador 12V 55A', cat:'Eléctrico', precio:67400, stock:100, activo:true, icon:'⚡' },
+  { sku:'142310080W00', nombre:'Alternador 12V 60A', cat:'Eléctrico', precio:53200, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12026', nombre:'Alternador 12V 60A', cat:'Eléctrico', precio:76400, stock:100, activo:true, icon:'⚡' },
+  { sku:'11F042302005', nombre:'Alternador 12V 60A', cat:'Eléctrico', precio:82500, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12005', nombre:'Alternador 12V 60A Universal Lucas', cat:'Eléctrico', precio:60400, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12001', nombre:'Alternador 12V 90A 9PK', cat:'Eléctrico', precio:95900, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12027', nombre:'Alternador 12V 65A', cat:'Eléctrico', precio:61400, stock:100, activo:true, icon:'⚡' },
+  { sku:'19BAL12028', nombre:'Alternador 12V 65A', cat:'Eléctrico', precio:92200, stock:100, activo:true, icon:'⚡' },
+  { sku:'14109067', nombre:'Alternador 12V 65A', cat:'Eléctrico', precio:99600, stock:100, activo:true, icon:'⚡' },
+  { sku:'14270600L020', nombre:'Alternador 12V 85A', cat:'Eléctrico', precio:75100, stock:100, activo:true, icon:'⚡' },
+  { sku:'19C00006481', nombre:'Alternador 12V 140A', cat:'Eléctrico', precio:165900, stock:100, activo:true, icon:'⚡' },
+  { sku:'19TS1B1010', nombre:'Arranque 24V 12D', cat:'Eléctrico', precio:158900, stock:100, activo:true, icon:'⚡' },
+  { sku:'19TA1A1507', nombre:'Alternador 24V 100A', cat:'Eléctrico', precio:135900, stock:100, activo:true, icon:'⚡' },
+  { sku:'19TA1B1510', nombre:'Alternador 24V 150A', cat:'Eléctrico', precio:142800, stock:100, activo:true, icon:'⚡' },
+  { sku:'19TA1B1102', nombre:'Alternador 24V 150A', cat:'Eléctrico', precio:153400, stock:100, activo:true, icon:'⚡' },
+  { sku:'19TA1B0026', nombre:'Alternador 24V 110A', cat:'Eléctrico', precio:105500, stock:100, activo:true, icon:'⚡' },
+  { sku:'11F000BL0467', nombre:'Alternador 12V 90A', cat:'Eléctrico', precio:173300, stock:100, activo:true, icon:'⚡' },
+  { sku:'111987302808', nombre:'Ampolleta 9006/HB4 12V 55W', cat:'Iluminación', precio:2600, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302804', nombre:'Ampolleta ECO LINE H7 12V 55W', cat:'Iluminación', precio:1200, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302805', nombre:'Ampolleta ECO LINE H8 12V 35W', cat:'Iluminación', precio:4500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302863', nombre:'Ampolleta ECO TRUCK H7 24V 70W', cat:'Iluminación', precio:2100, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301005', nombre:'Ampolleta H1 12V 55W', cat:'Iluminación', precio:2300, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302084', nombre:'Ampolleta H11 12V 55W', cat:'Iluminación', precio:5100, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301006', nombre:'Ampolleta H3 12V 55W', cat:'Iluminación', precio:2600, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302431', nombre:'Ampolleta H3 24V 70W', cat:'Iluminación', precio:1700, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302840', nombre:'Ampolleta H4 12V 100/90W', cat:'Iluminación', precio:2000, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301001', nombre:'Ampolleta H4 12V 60/55W', cat:'Iluminación', precio:3100, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302803', nombre:'Ampolleta H4 12V 60/55W ECO', cat:'Iluminación', precio:1300, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302862', nombre:'Ampolleta H4 24V 75/70W', cat:'Iluminación', precio:1800, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302026', nombre:'Ampolleta HIR2 12V 55W', cat:'Iluminación', precio:17000, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301016', nombre:'Ampolleta P21 12V 21/5W Pata Dispareja', cat:'Iluminación', precio:1800, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302213', nombre:'Ampolleta PY21W Ambar 12V 21W', cat:'Iluminación', precio:900, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302203', nombre:'Ampolleta R10W 12V 10W', cat:'Iluminación', precio:400, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302206', nombre:'Ampolleta T10/W5W 12V 5W', cat:'Iluminación', precio:200, stock:100, activo:true, icon:'💡' },
+  { sku:'111987302817', nombre:'Ampolleta T4W 12V 4W', cat:'Iluminación', precio:200, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301013', nombre:'Ampolleta Xenon Blue H7 12V 55W', cat:'Iluminación', precio:7100, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301033', nombre:'Ampolleta Xenon Blue T10/W5W 12V 5W', cat:'Iluminación', precio:2000, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301017', nombre:'Blister 2 Ampolletas P21W 12V 21W', cat:'Iluminación', precio:1500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301019', nombre:'Blister 2 Ampolletas R10W 12V 10W', cat:'Iluminación', precio:1500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301022', nombre:'Blister 2 Ampolletas R5W 12V 5W', cat:'Iluminación', precio:1500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301026', nombre:'Blister 2 Ampolletas T10/W5W 12V 5W', cat:'Iluminación', precio:1300, stock:100, activo:true, icon:'💡' },
+  { sku:'5764180L', nombre:'Ampolleta H18 12V 65W', cat:'Iluminación', precio:6500, stock:100, activo:true, icon:'💡' },
+  { sku:'5764156', nombre:'Ampolleta H3 24V 70W', cat:'Iluminación', precio:2500, stock:100, activo:true, icon:'💡' },
+  { sku:'5764193', nombre:'Ampolleta H4 12V 60/55W', cat:'Iluminación', precio:2800, stock:100, activo:true, icon:'💡' },
+  { sku:'5764196', nombre:'Ampolleta H4 24V 75/70W', cat:'Iluminación', precio:3500, stock:100, activo:true, icon:'💡' },
+  { sku:'5764210', nombre:'Ampolleta H7 12V 55W', cat:'Iluminación', precio:2800, stock:100, activo:true, icon:'💡' },
+  { sku:'5764215', nombre:'Ampolleta H7 24V 70W', cat:'Iluminación', precio:5300, stock:100, activo:true, icon:'💡' },
+  { sku:'572825', nombre:'Ampolleta T10/W5W 12V 5W', cat:'Iluminación', precio:400, stock:100, activo:true, icon:'💡' },
+  { sku:'572845', nombre:'Ampolleta T10/W5W 24V 5W', cat:'Iluminación', precio:500, stock:100, activo:true, icon:'💡' },
+  { sku:'572721', nombre:'Ampolleta T5 12V 1.2W', cat:'Iluminación', precio:500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301012', nombre:'Blister Ampolleta H7 12V 55W', cat:'Iluminación', precio:3500, stock:100, activo:true, icon:'💡' },
+  { sku:'111987301010', nombre:'Blister Ampolleta Xenon Blue H4 12V', cat:'Iluminación', precio:5000, stock:100, activo:true, icon:'💡' },
+  { sku:'57F5H7LED', nombre:'Kit LED H7 12/24V 2800 Lumenes', cat:'Iluminación', precio:9200, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LEDH1', nombre:'Kit LED H1 36W 6000K 7600 Lm', cat:'Iluminación', precio:17700, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LEDH11', nombre:'Kit LED H11 36W 6000K 7600 Lm', cat:'Iluminación', precio:17700, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LEDH3', nombre:'Kit LED H3 36W 6000K 7600 Lm', cat:'Iluminación', precio:17700, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LEDH4', nombre:'Kit LED H4 36W 6000K 7600 Lm', cat:'Iluminación', precio:20100, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LEDH7', nombre:'Kit LED H7 36W 6000K 7600 Lm', cat:'Iluminación', precio:17700, stock:100, activo:true, icon:'💡' },
+  { sku:'10T7LED4014', nombre:'Kit LED T10 W5W 6000K', cat:'Iluminación', precio:1500, stock:100, activo:true, icon:'💡' },
+  { sku:'11TEX20041A', nombre:'Bobina encendido BYD F0 1.0', cat:'Inyección y Encendido', precio:9400, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX20064', nombre:'Bobina encendido Chery Tiggo', cat:'Inyección y Encendido', precio:11000, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40078', nombre:'Bobina encendido Chery Tiggo 2.0', cat:'Inyección y Encendido', precio:11000, stock:100, activo:true, icon:'🔥' },
+  { sku:'11F01R00A025', nombre:'Bobina Chery/Great Wall/JAC', cat:'Inyección y Encendido', precio:32900, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40025', nombre:'Bobina encendido Renault Clio II 1.0', cat:'Inyección y Encendido', precio:25400, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40053', nombre:'Bobina encendido Fiat 500/Punto/Linea', cat:'Inyección y Encendido', precio:47700, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40069', nombre:'Bobina encendido Fiat Palio/Strada/Doblo', cat:'Inyección y Encendido', precio:13400, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX20004', nombre:'Bobina encendido Fiat Palio/Uno/Punto', cat:'Inyección y Encendido', precio:11700, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40063', nombre:'Bobina encendido Ford Ecosport 1.6', cat:'Inyección y Encendido', precio:15100, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX10113', nombre:'Bobina encendido Ford Focus 2.0', cat:'Inyección y Encendido', precio:11900, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40021', nombre:'Bobina encendido GM Astra/Corsa 1.8', cat:'Inyección y Encendido', precio:13600, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX11171', nombre:'Bobina encendido Honda Civic Hibrido', cat:'Inyección y Encendido', precio:13700, stock:100, activo:true, icon:'🔥' },
+  { sku:'110221503490', nombre:'Bobina Ford Fiesta/Ka/Ecosport', cat:'Inyección y Encendido', precio:26900, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40037', nombre:'Bobina encendido GM Combovan 1.4', cat:'Inyección y Encendido', precio:38500, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX11099', nombre:'Bobina encendido Suzuki Gran Vitara 3.2', cat:'Inyección y Encendido', precio:16500, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX40022', nombre:'Bobina Great Wall H3/H5', cat:'Inyección y Encendido', precio:13100, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX10231', nombre:'Bobina Great Wall Volex', cat:'Inyección y Encendido', precio:13500, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX10228', nombre:'Bobina Haval H6/C50 1.5', cat:'Inyección y Encendido', precio:12200, stock:100, activo:true, icon:'🔥' },
+  { sku:'11TEX11035', nombre:'Bobina encendido Toyota Hilux 2.7', cat:'Inyección y Encendido', precio:13700, stock:100, activo:true, icon:'🔥' },
+  { sku:'11F01R00A012', nombre:'Bobina JAC J6 1.8', cat:'Inyección y Encendido', precio:23800, stock:100, activo:true, icon:'🔥' },
+  { sku:'110221604067', nombre:'Bobina MB AMG GLE 63/E350/CLS 63', cat:'Inyección y Encendido', precio:44900, stock:100, activo:true, icon:'🔥' },
+  { sku:'110986221072', nombre:'Bobina VAG TFSI', cat:'Inyección y Encendido', precio:51000, stock:100, activo:true, icon:'🔥' },
+  { sku:'110986221024', nombre:'Bobina Volkswagen/Audi/Skoda', cat:'Inyección y Encendido', precio:25100, stock:100, activo:true, icon:'🔥' },
+  { sku:'110221601006', nombre:'Bobina VW Passat 2.8CC', cat:'Inyección y Encendido', precio:41200, stock:100, activo:true, icon:'🔥' },
+  { sku:'110221604014', nombre:'Bobina Nissan Tiida/Sentra/X-Trail', cat:'Inyección y Encendido', precio:27100, stock:100, activo:true, icon:'🔥' },
+  { sku:'119220081077', nombre:'Bobina Roja VW Gol 1.6/1.8', cat:'Inyección y Encendido', precio:19900, stock:100, activo:true, icon:'🔥' },
+  { sku:'110580454140', nombre:'Bomba gasolina interior 3.0Bar 87L', cat:'Inyección y Encendido', precio:18900, stock:100, activo:true, icon:'🔥' },
+  { sku:'110986AG1301', nombre:'Bomba gasolina interior 4Bar 60L/H', cat:'Inyección y Encendido', precio:26600, stock:100, activo:true, icon:'🔥' },
+  { sku:'140242240506', nombre:'Bujia especial WSR6F', cat:'Inyección y Encendido', precio:1600, stock:100, activo:true, icon:'🔥' },
+  { sku:'110242145606', nombre:'Bujia EVO AAR5NIP', cat:'Inyección y Encendido', precio:11100, stock:100, activo:true, icon:'🔥' },
+  { sku:'110242219516', nombre:'Bujia HR10BC V8/L6', cat:'Inyección y Encendido', precio:1000, stock:100, activo:true, icon:'🔥' },
+  { sku:'110242236596', nombre:'Bujia Iridio FR7DII33X', cat:'Inyección y Encendido', precio:6700, stock:100, activo:true, icon:'🔥' },
+  { sku:'110986AG1302', nombre:'Bomba gasolina Chevrolet Corsa/Astra', cat:'Inyección y Encendido', precio:12800, stock:100, activo:true, icon:'🔥' },
+  { sku:'110580254049', nombre:'Bomba gasolina exterior 5.0Bar 95L', cat:'Inyección y Encendido', precio:93500, stock:100, activo:true, icon:'🔥' },
+  { sku:'110580314152', nombre:'Bomba gasolina Fiat Fiorino 1.4', cat:'Inyección y Encendido', precio:40400, stock:100, activo:true, icon:'🔥' },
+  { sku:'564160168K', nombre:'Amortiguador Celerio K10 Del. Derecho', cat:'Suspensión', precio:19500, stock:100, activo:true, icon:'🔩' },
+  { sku:'564160268K', nombre:'Amortiguador Celerio K10 Del. Izquierdo', cat:'Suspensión', precio:19500, stock:100, activo:true, icon:'🔩' },
+  { sku:'56343423', nombre:'Amortiguador Chevrolet Aveo Trasero', cat:'Suspensión', precio:8600, stock:100, activo:true, icon:'🔩' },
+  { sku:'56335844', nombre:'Amortiguador Chevrolet Captiva Del. Der.', cat:'Suspensión', precio:26600, stock:100, activo:true, icon:'🔩' },
+  { sku:'56335845', nombre:'Amortiguador Chevrolet Captiva Del. Izq.', cat:'Suspensión', precio:27400, stock:100, activo:true, icon:'🔩' },
+  { sku:'56333755', nombre:'Amortiguador Chevrolet Corsa 03 Del. Der.', cat:'Suspensión', precio:19300, stock:100, activo:true, icon:'🔩' },
+  { sku:'56333756', nombre:'Amortiguador Chevrolet Corsa 03 Del. Izq.', cat:'Suspensión', precio:19400, stock:100, activo:true, icon:'🔩' },
+  { sku:'56349221', nombre:'Amortiguador Chevrolet Dmax Trasero', cat:'Suspensión', precio:10000, stock:100, activo:true, icon:'🔩' },
+  { sku:'56345059', nombre:'Amortiguador Chevrolet Montana Trasero', cat:'Suspensión', precio:12400, stock:100, activo:true, icon:'🔩' },
+  { sku:'5624526127', nombre:'Amortiguador Chevrolet N300 Max Del. Der.', cat:'Suspensión', precio:20400, stock:100, activo:true, icon:'🔩' },
+  { sku:'56349228', nombre:'Amortiguador Chevrolet Onix Trasero', cat:'Suspensión', precio:14100, stock:100, activo:true, icon:'🔩' },
+  { sku:'5624526126', nombre:'Amortiguador Chevrolet N300 Max Del. Izq.', cat:'Suspensión', precio:22000, stock:100, activo:true, icon:'🔩' },
+  { sku:'56333419', nombre:'Amortiguador Chevrolet Optra Tras. Der.', cat:'Suspensión', precio:21100, stock:100, activo:true, icon:'🔩' },
+  { sku:'56333420', nombre:'Amortiguador Chevrolet Optra Tras. Izq.', cat:'Suspensión', precio:21000, stock:100, activo:true, icon:'🔩' },
+  { sku:'560873217', nombre:'Amortiguador Chevrolet Sail 2016 Trasero', cat:'Suspensión', precio:10800, stock:100, activo:true, icon:'🔩' },
+  { sku:'56343459', nombre:'Amortiguador Chevrolet Sonic Trasero', cat:'Suspensión', precio:12900, stock:100, activo:true, icon:'🔩' },
+  { sku:'56343478', nombre:'Amortiguador Chevrolet Spark 2006 Trasero', cat:'Suspensión', precio:7800, stock:100, activo:true, icon:'🔩' },
+  { sku:'56332504', nombre:'Amortiguador Chevrolet Spark 2006 Del. Der.', cat:'Suspensión', precio:18700, stock:100, activo:true, icon:'🔩' },
+  { sku:'54443216', nombre:'Amortiguador Mazda Serie B 2WD Delantero', cat:'Suspensión', precio:15500, stock:100, activo:true, icon:'🔩' },
+  { sku:'54444136', nombre:'Amortiguador Mazda Serie B 4WD Trasero', cat:'Suspensión', precio:19100, stock:100, activo:true, icon:'🔩' },
+  { sku:'54344304', nombre:'Amortiguador Mazda Serie B Trasero', cat:'Suspensión', precio:30900, stock:100, activo:true, icon:'🔩' },
+  { sku:'54344356', nombre:'Amortiguador Mazda Tribute 2WD/4WD Trasero', cat:'Suspensión', precio:30800, stock:100, activo:true, icon:'🔩' },
+  { sku:'54331701', nombre:'Amortiguador MB Sprinter S300 Delantero', cat:'Suspensión', precio:98000, stock:100, activo:true, icon:'🔩' },
+  { sku:'54331702', nombre:'Amortiguador MB Sprinter S400 Delantero', cat:'Suspensión', precio:99000, stock:100, activo:true, icon:'🔩' },
+  { sku:'54443290', nombre:'Amortiguador Mitsubishi L200 2.4/2.5D Tras.', cat:'Suspensión', precio:15600, stock:100, activo:true, icon:'🔩' },
+  { sku:'54344346', nombre:'Amortiguador Mitsubishi L200 96 Delantero', cat:'Suspensión', precio:29100, stock:100, activo:true, icon:'🔩' },
+  { sku:'54343292', nombre:'Amortiguador Mitsubishi L200 96 Trasero', cat:'Suspensión', precio:26500, stock:100, activo:true, icon:'🔩' },
+  { sku:'54443196', nombre:'Amortiguador Mitsubishi L200 Trasero', cat:'Suspensión', precio:12500, stock:100, activo:true, icon:'🔩' },
+  { sku:'54341368', nombre:'Amortiguador Mitsubishi Lancer 1.3/1.6 Tras.', cat:'Suspensión', precio:50100, stock:100, activo:true, icon:'🔩' },
+  { sku:'54341444', nombre:'Amortiguador Mitsubishi Lancer 1.5/1.8 Tras.', cat:'Suspensión', precio:33000, stock:100, activo:true, icon:'🔩' },
+  { sku:'54334420', nombre:'Amortiguador Mitsubishi Lancer 2003 Del.', cat:'Suspensión', precio:73900, stock:100, activo:true, icon:'🔩' },
+  { sku:'54339104', nombre:'Amortiguador Mitsubishi Lancer 2008 Del. Der.', cat:'Suspensión', precio:63000, stock:100, activo:true, icon:'🔩' },
+  { sku:'54339105', nombre:'Amortiguador Mitsubishi Lancer 2008 Del. Izq.', cat:'Suspensión', precio:63100, stock:100, activo:true, icon:'🔩' },
+  { sku:'54341251', nombre:'Amortiguador Mitsubishi Montero 00 Del.', cat:'Suspensión', precio:55000, stock:100, activo:true, icon:'🔩' },
+  { sku:'54341445', nombre:'Amortiguador Mitsubishi Montero 07 Del.', cat:'Suspensión', precio:40900, stock:100, activo:true, icon:'🔩' },
+  { sku:'34519100-610', nombre:'Aditivo limpia inyectores gasolina 250 ml', cat:'Car Care', precio:5900, stock:100, activo:true, icon:'✨' },
+  { sku:'34518100-610', nombre:'Aditivo limpieza sistema diesel 250 ml', cat:'Car Care', precio:6800, stock:100, activo:true, icon:'✨' },
+  { sku:'34287400', nombre:'Brilliant Shine Detailer restaurador brillo 750 ml', cat:'Car Care', precio:7600, stock:100, activo:true, icon:'✨' },
+  { sku:'342678410', nombre:'Ceramic Coating CC One sellador cerámico 40 ml', cat:'Car Care', precio:71400, stock:100, activo:true, icon:'✨' },
+  { sku:'342628410', nombre:'Ceramic Coating CC Pro recubrimiento 4 años', cat:'Car Care', precio:93200, stock:100, activo:true, icon:'✨' },
+  { sku:'34428100', nombre:'Esponja microfibra para lavado', cat:'Car Care', precio:6200, stock:100, activo:true, icon:'✨' },
+  { sku:'34451000', nombre:'Kit paños microfibra 3 unidades', cat:'Car Care', precio:12300, stock:100, activo:true, icon:'✨' },
+  { sku:'34460300-544', nombre:'Limpia contactos 400 ml', cat:'Car Care', precio:5000, stock:100, activo:true, icon:'✨' },
+  { sku:'34321200-610', nombre:'Limpia interiores y tapices 500 ml', cat:'Car Care', precio:5300, stock:100, activo:true, icon:'✨' },
+  { sku:'34488300', nombre:'Limpia inyectores y carburador 400 ml', cat:'Car Care', precio:5800, stock:100, activo:true, icon:'✨' },
+  { sku:'34292241-610', nombre:'Neutralizador y eliminador de olores 500 ml', cat:'Car Care', precio:7200, stock:100, activo:true, icon:'✨' },
+  { sku:'34380041-544', nombre:'Protector integral plásticos efecto brillante 400 ml', cat:'Car Care', precio:7000, stock:100, activo:true, icon:'✨' },
+  { sku:'34340200-544', nombre:'Renovador de neumáticos 300 ml', cat:'Car Care', precio:5300, stock:100, activo:true, icon:'✨' },
+  { sku:'34432300-544', nombre:'Reparador de pinchazos para neumáticos 400 ml', cat:'Car Care', precio:12800, stock:100, activo:true, icon:'✨' },
+  { sku:'34314341-610', nombre:'Shampoo concentrado automotriz multiuso 1 litro', cat:'Car Care', precio:3600, stock:100, activo:true, icon:'✨' },
+  { sku:'34343300-605', nombre:'Silicona aroma limón aerosol 400 ml', cat:'Car Care', precio:5000, stock:100, activo:true, icon:'✨' },
+  { sku:'34344300-610', nombre:'Silicona aroma manzana aerosol 400 ml', cat:'Car Care', precio:5000, stock:100, activo:true, icon:'✨' },
+  { sku:'34356300', nombre:'Silicona aroma nuevo aerosol 400 ml', cat:'Car Care', precio:5300, stock:100, activo:true, icon:'✨' },
+  { sku:'34342300-544', nombre:'Silicona aroma vainilla aerosol 400 ml', cat:'Car Care', precio:5000, stock:100, activo:true, icon:'✨' },
+  { sku:'34442141-544', nombre:'Aditivo sellador fugas radiador y block 250 ml', cat:'Car Care', precio:6000, stock:100, activo:true, icon:'✨' },
+  { sku:'34496941', nombre:'Bomba pulverizadora de ácidos', cat:'Car Care', precio:46600, stock:100, activo:true, icon:'✨' },
+  { sku:'34493800', nombre:'Bonete pulido híbrido lana/acrílico 143 mm velcro', cat:'Car Care', precio:30800, stock:100, activo:true, icon:'✨' },
+  { sku:'34287500', nombre:'Brilliant Shine Detailer restaurador brillo 5 litros', cat:'Car Care', precio:47600, stock:100, activo:true, icon:'✨' },
+  { sku:'344505050', nombre:'Clay azul masa descontaminante 100 gramos', cat:'Car Care', precio:22500, stock:100, activo:true, icon:'✨' },
+  { sku:'34331241-610', nombre:'Descongelante de cristales 500 ml', cat:'Car Care', precio:6100, stock:100, activo:true, icon:'✨' },
+  { sku:'34416000', nombre:'Esponja borradora suciedad partes plásticas', cat:'Car Care', precio:3300, stock:100, activo:true, icon:'✨' },
+  { sku:'34417400', nombre:'Flexi blade limpieza vidrios y secado rápido', cat:'Car Care', precio:12300, stock:100, activo:true, icon:'✨' },
+  { sku:'34416200', nombre:'Paño microfibra exterior 40x40 cm', cat:'Car Care', precio:2800, stock:100, activo:true, icon:'✨' },
+  { sku:'34225300', nombre:'Profiline Cut & Finish pulimento corte y brillo 1L', cat:'Car Care', precio:53800, stock:100, activo:true, icon:'✨' },
+  { sku:'34246500', nombre:'Profiline Cutmax 6/4 pulimento alto corte 5 litros', cat:'Car Care', precio:169500, stock:100, activo:true, icon:'✨' },
+  { sku:'34242300', nombre:'Profiline EX 4/6 pasta pulidora corte medio 1 litro', cat:'Car Care', precio:36500, stock:100, activo:true, icon:'✨' },
+  { sku:'342761410', nombre:'Profiline Headlightpo restauración faros', cat:'Car Care', precio:14700, stock:100, activo:true, icon:'✨' },
+  { sku:'34205500', nombre:'Profiline Plastic Care protector plásticos 5 litros', cat:'Car Care', precio:72500, stock:100, activo:true, icon:'✨' },
+  { sku:'34210300', nombre:'Profiline Plastic Exterior protector plásticos', cat:'Car Care', precio:24600, stock:100, activo:true, icon:'✨' },
+  { sku:'34223300', nombre:'Profiline Polymernetshield sellador', cat:'Car Care', precio:19000, stock:100, activo:true, icon:'✨' },
+  { sku:'113397004911', nombre:'Plumilla Bosch Eco S14 14" 350 mm', cat:'Plumillas', precio:3500, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397011296', nombre:'Plumilla Bosch Eco S15 15" 380 mm', cat:'Plumillas', precio:3500, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004912', nombre:'Plumilla Bosch Eco S16 16" 400 mm', cat:'Plumillas', precio:3500, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004913', nombre:'Plumilla Bosch Eco S17 17" 430 mm', cat:'Plumillas', precio:3600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004914', nombre:'Plumilla Bosch Eco S18 18" 450 mm', cat:'Plumillas', precio:3600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004915', nombre:'Plumilla Bosch Eco S19 19" 475 mm', cat:'Plumillas', precio:3900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004916', nombre:'Plumilla Bosch Eco S20 20" 500 mm', cat:'Plumillas', precio:3900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004917', nombre:'Plumilla Bosch Eco S21 21" 530 mm', cat:'Plumillas', precio:4200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004918', nombre:'Plumilla Bosch Eco S22 22" 550 mm', cat:'Plumillas', precio:4200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004910', nombre:'Plumilla Bosch Eco S24 24" 600 mm', cat:'Plumillas', precio:4600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397004938', nombre:'Plumilla Bosch Eco S26 26" 650 mm', cat:'Plumillas', precio:4600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397011517', nombre:'Plumilla Bosch Eco S28 28" 700 mm', cat:'Plumillas', precio:5900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006888', nombre:'Plumilla Bosch Aerofit AF14 14" 350 mm', cat:'Plumillas', precio:4600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006889', nombre:'Plumilla Bosch Aerofit AF15 15" 380 mm', cat:'Plumillas', precio:4900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006890', nombre:'Plumilla Bosch Aerofit AF16 16" 400 mm', cat:'Plumillas', precio:5200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006891', nombre:'Plumilla Bosch Aerofit AF17 17" 430 mm', cat:'Plumillas', precio:5200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006892', nombre:'Plumilla Bosch Aerofit AF18 18" 450 mm', cat:'Plumillas', precio:5300, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006893', nombre:'Plumilla Bosch Aerofit AF19 19" 475 mm', cat:'Plumillas', precio:5500, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006894', nombre:'Plumilla Bosch Aerofit AF20 20" 500 mm', cat:'Plumillas', precio:5900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006895', nombre:'Plumilla Bosch Aerofit AF21 21" 530 mm', cat:'Plumillas', precio:6000, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006896', nombre:'Plumilla Bosch Aerofit AF22 22" 550 mm', cat:'Plumillas', precio:6200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006897', nombre:'Plumilla Bosch Aerofit AF23 23" 575 mm', cat:'Plumillas', precio:6200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006898', nombre:'Plumilla Bosch Aerofit AF24 24" 600 mm', cat:'Plumillas', precio:6600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397006899', nombre:'Plumilla Bosch Aerofit AF26 26" 650 mm', cat:'Plumillas', precio:6600, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016722', nombre:'Plumilla Bosch Aerofit Multiclip AF14M 14"', cat:'Plumillas', precio:6200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016723', nombre:'Plumilla Bosch Aerofit Multiclip AF15M 15"', cat:'Plumillas', precio:6900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016724', nombre:'Plumilla Bosch Aerofit Multiclip AF16M 16"', cat:'Plumillas', precio:7300, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016725', nombre:'Plumilla Bosch Aerofit Multiclip AF18M 18"', cat:'Plumillas', precio:7700, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016726', nombre:'Plumilla Bosch Aerofit Multiclip AF19M 19"', cat:'Plumillas', precio:7800, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016727', nombre:'Plumilla Bosch Aerofit Multiclip AF20M 20"', cat:'Plumillas', precio:8400, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016728', nombre:'Plumilla Bosch Aerofit Multiclip AF21M 21"', cat:'Plumillas', precio:9100, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016729', nombre:'Plumilla Bosch Aerofit Multiclip AF22M 22"', cat:'Plumillas', precio:9400, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016730', nombre:'Plumilla Bosch Aerofit Multiclip AF24M 24"', cat:'Plumillas', precio:9400, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016731', nombre:'Plumilla Bosch Aerofit Multiclip AF26M 26"', cat:'Plumillas', precio:9400, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397016732', nombre:'Plumilla Bosch Aerofit Multiclip AF28M 28"', cat:'Plumillas', precio:10900, stock:100, activo:true, icon:'🌧️' },
+  { sku:'113397011429', nombre:'Plumilla Bosch Trasera H307 12" 300 mm', cat:'Plumillas', precio:6200, stock:100, activo:true, icon:'🌧️' },
+  { sku:'110445010272', nombre:'Bomba CP Mercedes Benz Sprinter', cat:'Diesel', precio:826000, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445110351', nombre:'Inyector CRI Fiat Doblo 1.3', cat:'Diesel', precio:266000, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445110255', nombre:'Inyector CRI Hyundai/Kia', cat:'Diesel', precio:244400, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445110310', nombre:'Inyector CRI Mahindra 2.2', cat:'Diesel', precio:152600, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445120257', nombre:'Inyector CRIN Cummins ISL', cat:'Diesel', precio:222600, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445120219', nombre:'Inyector CRIN MAN', cat:'Diesel', precio:343000, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445120273', nombre:'Inyector Cummins 5263307RX', cat:'Diesel', precio:236600, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445120289', nombre:'Inyector Cummins CRIN nuevo', cat:'Diesel', precio:231000, stock:100, activo:true, icon:'⛽' },
+  { sku:'110445110260', nombre:'Porta inyector Mahindra 2.6', cat:'Diesel', precio:224000, stock:100, activo:true, icon:'⛽' },
+  { sku:'727683955926', nombre:'Bomba dirección LO916 nueva', cat:'Transmisiones y Ejes', precio:96600, stock:100, activo:true, icon:'⚙️' },
+  { sku:'727684955913', nombre:'Bomba hidráulica MB O500', cat:'Transmisiones y Ejes', precio:121700, stock:100, activo:true, icon:'⚙️' },
+  { sku:'714533009362', nombre:'Caja angular O500 MB', cat:'Transmisiones y Ejes', precio:301000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'718090974926', nombre:'Caja de dirección VW 8150', cat:'Transmisiones y Ejes', precio:1330000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'718090974936', nombre:'Caja dirección MB 914/915', cat:'Transmisiones y Ejes', precio:1372000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'714533001623', nombre:'Caja dirección MB O500', cat:'Transmisiones y Ejes', precio:1470000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'710501008286', nombre:'Enfriador aceite Ecomat', cat:'Transmisiones y Ejes', precio:1470000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'718090633900', nombre:'Kit reparación caja 8090', cat:'Transmisiones y Ejes', precio:82600, stock:100, activo:true, icon:'⚙️' },
+  { sku:'701071298033', nombre:'Kit filtro y aceite 6HP19', cat:'Transmisiones y Ejes', precio:238000, stock:100, activo:true, icon:'⚙️' },
+  { sku:'110204032342', nombre:'Líquido de frenos DOT 3 200 ml', cat:'Líquido de Frenos', precio:2200, stock:100, activo:true, icon:'💧' },
+  { sku:'110204032343', nombre:'Líquido de frenos DOT 3 500 ml', cat:'Líquido de Frenos', precio:4500, stock:100, activo:true, icon:'💧' },
+  { sku:'111987479109', nombre:'Líquido de frenos DOT 4 20 litros', cat:'Líquido de Frenos', precio:124300, stock:100, activo:true, icon:'💧' },
+  { sku:'110204082070', nombre:'Líquido de frenos DOT 4 200 ml', cat:'Líquido de Frenos', precio:2600, stock:100, activo:true, icon:'💧' },
+  { sku:'111987479106', nombre:'Líquido de frenos DOT 4 500 ml', cat:'Líquido de Frenos', precio:5000, stock:100, activo:true, icon:'💧' },
+  { sku:'110986BB3985', nombre:'Líquido de frenos DOT 5.1 200 ml', cat:'Líquido de Frenos', precio:4500, stock:100, activo:true, icon:'💧' },
+  { sku:'110204082072', nombre:'Líquido de frenos DOT 5.1 500 ml', cat:'Líquido de Frenos', precio:8400, stock:100, activo:true, icon:'💧' }
 ];
 
 // ── ESTADO ──
@@ -340,36 +613,43 @@ function initApp() {
 }
 
 function loadProductos() {
-  var PROXY = 'https://corsproxy.io/?';
-  var xhr = new XMLHttpRequest();
-  xhr.timeout = 7000;
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState !== 4) { return; }
-    if (xhr.status === 200 && xhr.responseText) {
-      try {
-        var rows = parseWebAPI(xhr.responseText);
-        if (rows.length > 0) {
-          // Actualizar stock y precios desde Sheets
-          for (var i = 0; i < rows.length; i++) {
-            for (var j = 0; j < PRODUCTOS.length; j++) {
-              if (PRODUCTOS[j].sku === rows[i].sku) {
-                PRODUCTOS[j].stock  = rows[i].stock;
-                PRODUCTOS[j].precio = rows[i].precio;
+  var proxies = [
+    'https://api.allorigins.win/raw?url=',
+    'https://corsproxy.io/?'
+  ];
+  var tryProxy = function(idx) {
+    if (idx >= proxies.length) { renderCats(); renderProductos(); return; }
+    var xhr = new XMLHttpRequest();
+    xhr.timeout = 6000;
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== 4) { return; }
+      if (xhr.status === 200 && xhr.responseText) {
+        try {
+          var rows = parseWebAPI(xhr.responseText);
+          var validRows = rows.filter(function(r){ return r.precio > 0; });
+          if (validRows.length > 0) {
+            for (var i = 0; i < validRows.length; i++) {
+              for (var j = 0; j < PRODUCTOS.length; j++) {
+                if (PRODUCTOS[j].sku === validRows[i].sku) {
+                  PRODUCTOS[j].stock  = validRows[i].stock;
+                  PRODUCTOS[j].precio = validRows[i].precio;
+                }
               }
             }
+            renderCats(); renderProductos(); return;
           }
-        }
-      } catch(e) {}
-    }
-    renderCats();
-    renderProductos();
+        } catch(e) {}
+      }
+      tryProxy(idx + 1);
+    };
+    xhr.ontimeout = function(){ tryProxy(idx + 1); };
+    xhr.onerror   = function(){ tryProxy(idx + 1); };
+    try {
+      xhr.open('GET', proxies[idx] + encodeURIComponent(SHEETS_WEBAPI), true);
+      xhr.send();
+    } catch(e){ tryProxy(idx + 1); }
   };
-  xhr.ontimeout = function(){ renderCats(); renderProductos(); };
-  xhr.onerror   = function(){ renderCats(); renderProductos(); };
-  try {
-    xhr.open('GET', PROXY + encodeURIComponent(SHEETS_WEBAPI), true);
-    xhr.send();
-  } catch(e){ renderCats(); renderProductos(); }
+  tryProxy(0);
 }
 
 function parseWebAPI(csv) {
@@ -395,8 +675,14 @@ function parseWebAPI(csv) {
     if (!row['sku']) { continue; }
     result.push({
       sku:    row['sku'],
-      stock:  parseInt(row['stock_actual']||row['stock actual']||'0')||0,
-      precio: parseInt(row['precio_venta']||row['precio venta']||'0')||0,
+      stock:  (function(){
+        var r = row['stock_actual']||row['stock actual']||row['stock']||'0';
+        return parseInt(r.toString().replace(/[^0-9]/g,''))||0;
+      })(),
+      precio: (function(){
+        var r = row['precio_venta']||row['precio venta']||row['precio']||'0';
+        return parseInt(r.toString().replace(/[^0-9]/g,''))||0;
+      })(),
       activo: (row['activo']||'').toUpperCase()==='SI'
     });
   }
