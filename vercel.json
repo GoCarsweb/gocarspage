@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/",          "destination": "/gocar_web.html" },
+    { "source": "/pos",       "destination": "/gocar_pos.html" },
+    { "source": "/dashboard", "destination": "/gocar_dashboard.html" }
+  ],
+  "headers": [
+    {
+      "source": "/:path*.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
+  ]
+}
