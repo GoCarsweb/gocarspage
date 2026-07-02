@@ -3,7 +3,8 @@
   "rewrites": [
     { "source": "/",          "destination": "/gocar_web.html" },
     { "source": "/pos",       "destination": "/gocar_pos.html" },
-    { "source": "/dashboard", "destination": "/gocar_dashboard.html" }
+    { "source": "/dashboard", "destination": "/gocar_dashboard.html" },
+    { "source": "/catalogo",  "destination": "/catalogo.html" }
   ],
   "headers": [
     {

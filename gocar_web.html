@@ -1090,6 +1090,13 @@ function pdAddToCart() {
 // ── CARRITO ──
 var cart = [];
 
+function saveCart() {
+  try { localStorage.setItem('gocar_cart', JSON.stringify(cart)); } catch(e) {}
+}
+function loadCart() {
+  try { var s = localStorage.getItem('gocar_cart'); cart = s ? JSON.parse(s) : []; } catch(e) { cart = []; }
+}
+
 function addToCart(sku) {
   var p = null;
   for (var i=0; i<products.length; i++) { if (products[i].sku===sku) { p=products[i]; break; } }
@@ -1097,17 +1104,20 @@ function addToCart(sku) {
   var ex = null;
   for (var j=0; j<cart.length; j++) { if (cart[j].sku===sku) { ex=cart[j]; break; } }
   if (ex) {
-    if (ex.qty >= p.stock) { toast('Sin más stock', 'Solo hay ' + p.stock + ' unidades.'); return; }
+    var isEspec = p.tipo === 'Pedido especial 24hrs';
+    if (!isEspec && ex.qty >= p.stock) { toast('Sin más stock', 'Solo hay ' + p.stock + ' unidades.'); return; }
     ex.qty++;
   } else {
-    cart.push({ sku:p.sku, name:p.name, price:p.price, img:p.img, icon:p.icon, qty:1 });
+    cart.push({ sku:p.sku, name:p.name, price:p.price, img:p.img, icon:p.icon, tipo:p.tipo, qty:1 });
   }
+  saveCart();
   updateCart();
   toast('¡Agregado!', p.name);
 }
 
 function removeFromCart(sku) {
   cart = cart.filter(function(x){ return x.sku !== sku; });
+  saveCart();
   updateCart();
 }
 
@@ -1117,6 +1127,7 @@ function changeQty(sku, d) {
   for (var j=0; j<cart.length; j++) { if (cart[j].sku===sku) { item=cart[j]; break; } }
   if (!item || !p) return;
   item.qty = Math.max(1, Math.min(item.qty + d, p.stock));
+  saveCart();
   updateCart();
 }
 
@@ -1516,6 +1527,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') { closePD(); closeCheckout(); }
   });
+  loadCart();
+  updateCart();
   loadFromSheets();
 });
 </script>
