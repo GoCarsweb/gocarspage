@@ -765,7 +765,6 @@ footer ul li a:hover{color:var(--red);}
 <!-- TOAST -->
 <div class="toast" id="toast"><strong id="toastTtl"></strong><span id="toastMsg"></span></div>
 
-<script src="productos_data.js"></script>
 <script>
 // ── DATOS ──
 var SHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSckkgJQbQkgSf7HA7NOX7y_LLrSjeJ7nQZ7WcZRwCYVkXe9_gUnkHYAKl9R8KX1ww3xUJQDXXZ1fi3/pub?gid=1905089566&single=true&output=csv';
@@ -819,6 +818,42 @@ var catIcons = {
 };
 
 var products = [];
+var _allProds = {};
+var currentPage = 1;
+var totalPages  = 0;
+var PAGE_SIZE   = 20;
+var loadedFiles = {};
+var catReqId    = 0;
+
+// ── CARGA POR CATEGORÍA (LAZY) ──
+var catFilesMap = {
+  'todos':                 ['productos_data.js'],
+  'Filtros':               ['cat_filtros.js'],
+  'Eléctrico':             ['cat_electrico.js'],
+  'Iluminación':           ['cat_iluminacion.js'],
+  'Inyección y Encendido': ['cat_inyeccion.js'],
+  'Suspensión':            ['cat_suspension.js'],
+  'Car Care':              ['cat_carcare.js'],
+  'Plumillas':             ['cat_plumillas.js'],
+  'Diesel':                ['cat_diesel.js'],
+  'Transmisiones y Ejes':  ['cat_transmision.js'],
+  'Líquido de Frenos':     ['cat_liquido.js'],
+  'Baterías':              [],
+  'Correas':               [],
+  'Lubricantes':           [],
+  'Embragues':             ['cat_embragues_a.js', 'cat_embragues_b.js'],
+  'Frenos':                ['cat_frenos.js'],
+  'Otros':                 ['cat_otros.js']
+};
+
+function cargarProductosCat(archivo, callback) {
+  if (loadedFiles[archivo]) { callback(); return; }
+  var s = document.createElement('script');
+  s.src = archivo;
+  s.onload  = function() { loadedFiles[archivo] = true; callback(); };
+  s.onerror = function() { loadedFiles[archivo] = true; callback(); };
+  document.head.appendChild(s);
+}
 
 // ── CARGA GOOGLE SHEETS ──
 function loadFromSheets() {
@@ -957,73 +992,102 @@ function normStr(s){ return (s||'').toLowerCase().replace(/[áàä]/g,'a').repla
 
 function filterCat(cat, el) {
   currentCat = cat;
+  currentPage = 1;
+  catReqId++;
+  var myId = catReqId;
   var allCards = document.querySelectorAll('.cat-card');
   for (var ci = 0; ci < allCards.length; ci++) { allCards[ci].classList.remove('active'); }
-  el.classList.add('active');
-  renderProducts(cat);
+  if (el) { el.classList.add('active'); }
+  var files = catFilesMap[cat];
+  if (!files || !files.length) { products = []; renderProducts(); return; }
+  showLoading(true);
+  var pending = files.length;
+  for (var f = 0; f < files.length; f++) {
+    cargarProductosCat(files[f], function() {
+      if (catReqId !== myId) { return; }
+      pending--;
+      if (pending > 0) { return; }
+      if (cat === 'todos') {
+        products = typeof fallbackProducts !== 'undefined' ? fallbackProducts : [];
+      } else {
+        products = (window._catData && window._catData[cat]) ? window._catData[cat] : [];
+      }
+      for (var pi2 = 0; pi2 < products.length; pi2++) { _allProds[products[pi2].sku] = products[pi2]; }
+      showLoading(false);
+      renderProducts();
+    });
+  }
 }
 
-function renderProducts(cat) {
-  var normCat = normStr(cat);
-  var list = products.filter(function(p){ return p.activo && (cat==='todos' || normStr(p.cat)===normCat); });
-  var grid = $('pgrid');
-  if (!list.length) {
+function renderProducts() {
+  var grid = pgrid;
+  var active = [];
+  for (var ai = 0; ai < products.length; ai++) { if (products[ai].activo) { active.push(products[ai]); } }
+  if (!active.length) {
     grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#888;">No hay productos en esta categoría.</div>';
     return;
   }
-  var html = '';
-  list.forEach(function(p) {
+  var totalProd = active.length;
+  totalPages = Math.ceil(totalProd / PAGE_SIZE);
+  if (currentPage > totalPages) { currentPage = 1; }
+  var start = (currentPage - 1) * PAGE_SIZE;
+  var page  = active.slice(start, start + PAGE_SIZE);
+  var html2 = '';
+  for (var j = 0; j < page.length; j++) {
+    var p = page[j];
     var isEspecial = p.tipo === 'Pedido especial 24hrs';
     var badge = isEspecial
-      ? '<span class="pbadge b-special">Pedido 24hrs</span>'
+      ? '<span class="pbadge b-special">&#9889; 24hrs</span>'
       : (p.stock===0
         ? '<span class="pbadge b-out">Sin stock</span>'
         : p.estado==='REPOSICION'
           ? '<span class="pbadge b-low">Stock bajo</span>'
           : '<span class="pbadge b-ok">Disponible</span>');
     var imgHtml = p.img
-      ? '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">'
-        + '<div class="emoji-fallback" style="display:none">' + p.icon + '</div>'
+      ? '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">'<div class="emoji-fallback" style="display:none">' + p.icon + '</div>'
       : '<div class="emoji-fallback" style="display:flex">' + p.icon + '</div>';
     var disabled = (!isEspecial && p.stock === 0) ? 'disabled' : '';
-    html += '<div class="pcard" data-sku="' + p.sku + '">'
-      + '<div class="pimg">' + badge + imgHtml + '</div>'
-      + '<div class="pbody">'
-      + '<div class="psku">' + p.sku + '</div>'
-      + '<div class="pname">' + p.name + '</div>'
-      + (p.compat ? '<div class="pcompat">Compatible con: <span>' + p.compat + '</span></div>' : '')
-      + '<div class="pfooter">'
-      + '<div class="pprice"><small>Precio</small>' + fmt(p.price) + '</div>'
-      + '<button class="btn-add add-btn" data-sku="' + p.sku + '" ' + disabled + '>'
-      + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>'
-      + ' Agregar</button>'
-      + '</div></div></div>';
-  });
-  grid.innerHTML = html;
-
-  // Eventos — separados del HTML para compatibilidad iOS
+    var desc = (p.desc && p.desc.length > 3 && p.desc !== 'Pedido especial')
+      ? p.desc.substring(0, 90)
+      : ((p.tipo || '') + (p.marca ? ' ' + p.marca : '') + (p.compat ? ' compatible con ' + p.compat : '')).trim().substring(0, 90);
+    var skuSafe  = p.sku.replace(/'/g, '&#39;');
+    var nameSafe = p.name.substring(0, 60).replace(/\x22/g, '&quot;');
+    html2 += '<div class="pcard" data-sku="' + skuSafe + '">''<div class="pimg">' + badge + imgHtml + '</div>''<div class="pbody">''<div class="psku">' + p.cat + ' &middot; ' + p.sku + '</div>''<div class="pname">' + p.name + '</div>'+ (desc ? '<div class="pdesc">' + desc + '</div>' : '')+'<div class="pfooter">''<div class="pprice"><small>Precio</small>' + fmt(p.price) + '</div>''<div class="pbtns">''<button class="btn-add add-btn" data-sku="' + skuSafe + '" ' + disabled + '>&#128722; Agregar</button>''<button class="btn-waq wa-btn" data-sku="' + skuSafe + '" data-name="' + nameSafe + '" title="Consultar por WhatsApp">&#128172;</button>''</div></div></div></div>';
+  }
+  if (totalPages > 1) {
+    html2 += '<div class="pgn-wrap">''<button class="pgn-btn" id="pgnPrev"' + (currentPage <= 1 ? ' disabled' : '') + '>&#8592; Anterior</button>''<span class="pgn-info">P&aacute;gina ' + currentPage + ' de ' + totalPages + ' &nbsp;&middot;&nbsp; ' + totalProd + ' productos</span>''<button class="pgn-btn" id="pgnNext"' + (currentPage >= totalPages ? ' disabled' : '') + '>Siguiente &#8594;</button>''</div>';
+  }
+  grid.innerHTML = html2;
   var pcards = grid.querySelectorAll('.pcard');
   for (var pi = 0; pi < pcards.length; pi++) {
-    pcards[pi].addEventListener('click', function() {
-      openPD(this.getAttribute('data-sku'));
-    });
+    pcards[pi].addEventListener('click', function() { openPD(this.getAttribute('data-sku')); });
   }
   var addBtns = grid.querySelectorAll('.add-btn');
   for (var bi = 0; bi < addBtns.length; bi++) {
-    addBtns[bi].addEventListener('click', function(e) {
+    addBtns[bi].addEventListener('click', function(e) { e.stopPropagation(); addToCart(this.getAttribute('data-sku')); });
+  }
+  var waBtns = grid.querySelectorAll('.wa-btn');
+  for (var wi = 0; wi < waBtns.length; wi++) {
+    waBtns[wi].addEventListener('click', function(e) {
       e.stopPropagation();
-      addToCart(this.getAttribute('data-sku'));
+      var s2 = this.getAttribute('data-sku'); var nm2 = this.getAttribute('data-name');
+      var msg2 = encodeURIComponent('Hola GoCar\\'s! Me interesa: ' + nm2 + ' (' + s2 + '). ¿Está disponible?');
+      window.open('https://wa.me/56978593519?text=' + msg2, '_blank');
     });
   }
+  var prevBtn = pgnPrev;
+  if (prevBtn) { prevBtn.addEventListener('click', function() { if (currentPage > 1) { currentPage--; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); } }); }
+  var nextBtn = pgnNext;
+  if (nextBtn) { nextBtn.addEventListener('click', function() { if (currentPage < totalPages) { currentPage++; renderProducts(); document.getElementById('productos').scrollIntoView({behavior:'smooth'}); } }); }
 }
 
 // ── DETALLE PRODUCTO ──
 var activeSku = null;
 
 function openPD(sku) {
-  var p = null;
-  for (var i=0; i<products.length; i++) { if (products[i].sku === sku) { p = products[i]; break; } }
-  if (!p) return;
+  var p = _allProds[sku] || null;
+  if (!p) { for (var i=0; i<products.length; i++) { if (products[i].sku===sku) { p=products[i]; break; } } }
+  if (!p) { return; }
   activeSku = sku;
 
   $('pdCat').textContent   = p.cat;
@@ -1050,7 +1114,11 @@ function openPD(sku) {
   }
 
   var dot = $('pdDot'), txt = $('pdStockTxt'), btn = $('pdAddBtn');
-  if (p.stock === 0) {
+  var isEspec3 = p.tipo === 'Pedido especial 24hrs';
+  if (isEspec3) {
+    dot.className = 'pd-dot dot-y'; txt.textContent = 'Pedido especial — disponible en 24hrs'; btn.disabled = false;
+    btn.innerHTML = '&#128722; Pedir (24hrs)';
+  } else if (p.stock === 0) {
     dot.className = 'pd-dot dot-r'; txt.textContent = 'Sin stock'; btn.disabled = true; btn.textContent = 'Sin stock';
   } else if (p.estado === 'REPOSICION') {
     dot.className = 'pd-dot dot-y'; txt.textContent = 'Stock bajo — últimas unidades'; btn.disabled = false;
@@ -1098,9 +1166,9 @@ function loadCart() {
 }
 
 function addToCart(sku) {
-  var p = null;
-  for (var i=0; i<products.length; i++) { if (products[i].sku===sku) { p=products[i]; break; } }
-  if (!p) return;
+  var p = _allProds[sku] || null;
+  if (!p) { for (var i=0; i<products.length; i++) { if (products[i].sku===sku) { p=products[i]; break; } } }
+  if (!p) { return; }
   var ex = null;
   for (var j=0; j<cart.length; j++) { if (cart[j].sku===sku) { ex=cart[j]; break; } }
   if (ex) {
@@ -1122,11 +1190,14 @@ function removeFromCart(sku) {
 }
 
 function changeQty(sku, d) {
-  var p = null, item = null;
-  for (var i=0; i<products.length; i++) { if (products[i].sku===sku) { p=products[i]; break; } }
+  var p = _allProds[sku] || null;
+  var item = null;
   for (var j=0; j<cart.length; j++) { if (cart[j].sku===sku) { item=cart[j]; break; } }
-  if (!item || !p) return;
-  item.qty = Math.max(1, Math.min(item.qty + d, p.stock));
+  if (!item) { return; }
+  if (p) {
+    var isEspec2 = p.tipo === 'Pedido especial 24hrs';
+    item.qty = isEspec2 ? Math.max(1, item.qty+d) : Math.max(1, Math.min(item.qty+d, p.stock));
+  } else { item.qty = Math.max(1, item.qty+d); }
   saveCart();
   updateCart();
 }
@@ -1519,7 +1590,16 @@ window.addEventListener('scroll', function() {
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', function() {
   var style = document.createElement('style');
-  style.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+  style.textContent = '@keyframes spin{to{transform:rotate(360deg)}}' +
+    '.pdesc{font-size:.73rem;color:#666;line-height:1.35;margin:.25rem 0 .4rem;min-height:0}' +
+    '.pbtns{display:flex;gap:.35rem;margin-top:.4rem;flex-wrap:wrap}' +
+    '.btn-waq{background:#25d366;color:#fff;border:none;border-radius:6px;padding:.45rem .6rem;font-size:1rem;cursor:pointer;line-height:1;flex-shrink:0}' +
+    '.btn-waq:hover{background:#128c7e}' +
+    '.pgn-wrap{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:.75rem;padding:1rem 0;flex-wrap:wrap}' +
+    '.pgn-btn{font-weight:700;font-size:.8rem;letter-spacing:.5px;text-transform:uppercase;padding:.5rem 1rem;border:1.5px solid #e0e0e0;border-radius:6px;background:#fff;cursor:pointer;transition:all .2s}' +
+    '.pgn-btn:hover:not([disabled]){background:#f5f5f5;border-color:#bbb}' +
+    '.pgn-btn[disabled]{opacity:.35;cursor:default}' +
+    '.pgn-info{font-size:.8rem;color:#888}';
   document.head.appendChild(style);
   $('ckOverlay').addEventListener('click', function(e) {
     if (e.target === $('ckOverlay')) { closeCheckout(); }
@@ -1529,7 +1609,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   loadCart();
   updateCart();
-  loadFromSheets();
 });
 </script>
 </body>
