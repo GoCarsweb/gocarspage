@@ -1164,7 +1164,7 @@ function openPD(sku) {
     sw.style.display = 'none';
   }
 
-  var msg = encodeURIComponent('Hola GoCar\\'s! Me interesa: ' + p.name + ' (' + p.sku + '). ¿Está disponible?');
+  var msg = encodeURIComponent('Hola GoCar\'s! Me interesa: ' + p.name + ' (' + p.sku + '). ¿Está disponible?');
   $('pdWaBtn').href = 'https://wa.me/56978593519?text=' + msg;
 
   $('pdOverlay').classList.add('open');
@@ -1473,7 +1473,7 @@ function procesarPago() {
   var envioInfo = '';
   var direccion = '';
   if (deliveryMode === 'retiro') {
-    envioInfo = 'Retiro en tienda — GoCar\\'s, 6 Oriente 1140-B, Viña del Mar';
+    envioInfo = 'Retiro en tienda — GoCar\'s, 6 Oriente 1140-B, Viña del Mar';
     direccion = 'Retiro en tienda';
   } else {
     var calle  = ($('ckCalle').value||'').trim();
@@ -1532,7 +1532,7 @@ function abrirWhatsAppPedido(total, envioInfo) {
     if (cart[ci].tipo === 'Pedido especial 24hrs') { hasImisa = true; break; }
   }
   var imisaNote = hasImisa ? '%0A%0A📦 Origen: IMISA - Coordinar con proveedor' : '';
-  var msg = 'Hola GoCar\\'s! Quiero confirmar mi pedido %0A%0A*Productos:*%0A' + prods
+  var msg = 'Hola GoCar\'s! Quiero confirmar mi pedido %0A%0A*Productos:*%0A' + prods
     + '%0A%0A*Total: ' + fmt(total) + '*%0A%0A' + envioInfo
     + imisaNote
     + '%0A%0APor favor confirmen disponibilidad y medio de pago.';
@@ -1562,7 +1562,7 @@ function openMarca(nombre) {
   if (!data) return;
   document.getElementById('marcaModalName').textContent = nombre;
   document.getElementById('marcaModalSub').textContent  = data.sub;
-  var msg = encodeURIComponent('Hola GoCar\\'s! Busco repuestos para ' + nombre + '. ¿Que tienen disponible?');
+  var msg = encodeURIComponent('Hola GoCar\'s! Busco repuestos para ' + nombre + '. ¿Que tienen disponible?');
   document.getElementById('marcaModalWa').href = 'https://wa.me/56978593519?text=' + msg;
   document.getElementById('marcaModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1584,7 +1584,7 @@ function closeMarcaBtn() {
 function cotizar() {
   var clienteWa = $('waNum').value.trim();
   var textoNum  = clienteWa ? ' Mi WhatsApp: ' + clienteWa + '.' : '';
-  var msg = encodeURIComponent('Hola GoCar\\'s! Quiero cotizar un repuesto. Por favor contáctenme.' + textoNum);
+  var msg = encodeURIComponent('Hola GoCar\'s! Quiero cotizar un repuesto. Por favor contáctenme.' + textoNum);
   window.open('https://wa.me/56978593519?text=' + msg, '_blank');
 }
 
