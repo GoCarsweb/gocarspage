@@ -23,6 +23,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:var(--black);bord
 .nav-links a:hover,.nav-links a.active{color:var(--red);}
 .nav-cta{display:flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;padding:.5rem 1.1rem;border-radius:4px;transition:background .2s;flex-shrink:0;white-space:nowrap;}
 .nav-cta:hover{background:#1da851;}
+.nav-search{display:flex;align-items:center;gap:.4rem;background:#1a1a1a;border:1.5px solid #333;border-radius:4px;padding:.35rem .75rem;flex-shrink:0;transition:border-color .2s;}
+.nav-search:focus-within{border-color:var(--red);}
+.nav-search input{background:none;border:none;outline:none;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;width:180px;letter-spacing:.3px;}
+.nav-search input::placeholder{color:#888;}
+.nav-search svg{flex-shrink:0;opacity:.6;}
+.search-results-overlay{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:490;background:rgba(0,0,0,.6);}
+.search-results-box{display:none;position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:491;background:#1a1a1a;border:1.5px solid #333;border-top:2px solid var(--red);border-radius:0 0 8px 8px;width:min(640px,96vw);max-height:70vh;overflow-y:auto;}
+.search-results-box.open{display:block;}
+.search-results-overlay.open{display:block;}
+.sr-header{padding:.6rem 1rem;font-size:.8rem;color:#888;border-bottom:1px solid #222;font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px;text-transform:uppercase;}
+.sr-item{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;cursor:pointer;border-bottom:1px solid #1f1f1f;transition:background .15s;}
+.sr-item:hover{background:#242424;}
+.sr-item img{width:52px;height:52px;object-fit:contain;border-radius:4px;background:#111;flex-shrink:0;}
+.sr-item .sr-info{flex:1;min-width:0;}
+.sr-item .sr-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sr-item .sr-compat{font-size:.78rem;color:#e03939;margin-top:1px;}
+.sr-item .sr-price{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:#e03939;white-space:nowrap;flex-shrink:0;}
+.sr-empty{padding:1.5rem;text-align:center;color:#666;font-family:'Barlow Condensed',sans-serif;}
+@media(max-width:600px){.nav-search input{width:110px;}}
 
 /* HERO */
 #inicio{margin-top:64px;min-height:calc(100vh - 64px);background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;}
@@ -81,6 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:var(--black);bord
 .pcard{background:#fff;border:1px solid #e8e8e8;border-radius:8px;overflow:hidden;cursor:pointer;transition:all .2s;}
 .pcard:hover{border-color:var(--red);box-shadow:0 6px 24px rgba(0,0,0,.1);transform:translateY(-3px);}
 .pimg{height:180px;background:var(--off-white);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.pimg::after{content:'';position:absolute;bottom:0;right:0;width:82px;height:36px;background:url('logo_gocar.png') center/78% auto no-repeat #111;border-radius:4px 0 0 0;pointer-events:none;}
 .pimg img{width:100%;height:100%;object-fit:contain;padding:.75rem;transition:transform .3s;}
 .pcard:hover .pimg img{transform:scale(1.06);}
 .pimg .emoji-fallback{font-size:3.5rem;display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
@@ -304,8 +324,9 @@ footer ul li a:hover{color:var(--red);}
   width:100%;height:260px;
   background:var(--off-white);
   display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
+  overflow:hidden;position:relative;
 }
+.pd-img::after{content:'';position:absolute;bottom:0;right:0;width:100px;height:44px;background:url('logo_gocar.png') center/78% auto no-repeat #111;border-radius:5px 0 0 0;pointer-events:none;}
 .pd-img img{max-height:100%;max-width:100%;object-fit:contain;padding:1rem;}
 .pd-img .pd-emoji{font-size:6rem;}
 .pd-body{padding:1.5rem;}
@@ -387,11 +408,17 @@ footer ul li a:hover{color:var(--red);}
     <li><a href="#ubicacion">Ubicación</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
+  <div class="nav-search" id="navSearchWrap">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="navSearchInput" placeholder="Buscar repuesto..." autocomplete="off">
+  </div>
   <a href="https://www.instagram.com/repuestos_vina_gocar" target="_blank" class="nav-cta" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);margin-right:.4rem;padding:.5rem .85rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> <span style="font-size:.8rem">Instagram</span></a><a href="https://wa.me/56978593519" target="_blank" class="nav-cta">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
 </nav>
+<div class="search-results-overlay" id="srOverlay"></div>
+<div class="search-results-box" id="srBox"></div>
 
 <!-- HERO -->
 <section id="inicio">
@@ -1667,6 +1694,90 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCart();
   // Cargar stock físico en segundo plano (no bloquea la página)
   cargarStockFisico(null);
+
+  // ── Buscador de repuestos ──────────────────────────────────────────
+  var srInput   = document.getElementById('navSearchInput');
+  var srBox     = document.getElementById('srBox');
+  var srOverlay = document.getElementById('srOverlay');
+
+  function getAllProducts() {
+    var all = [];
+    var data = window._catData || {};
+    var keys = Object.keys(data);
+    for (var ci = 0; ci < keys.length; ci++) {
+      var arr = data[keys[ci]];
+      if (arr) { for (var pi = 0; pi < arr.length; pi++) { all.push(arr[pi]); } }
+    }
+    return all;
+  }
+
+  function fmt(n) { return '$' + (n||0).toLocaleString('es-CL'); }
+
+  function renderSR(query) {
+    query = query.trim().toLowerCase();
+    if (!query) { closeSR(); return; }
+    var words = query.split(/\s+/);
+    var all = getAllProducts();
+    var results = [];
+    for (var i = 0; i < all.length; i++) {
+      var p = all[i];
+      var hay = ((p.name||'') + ' ' + (p.desc||'') + ' ' + (p.compat||'') + ' ' + (p.sku||'') + ' ' + (p.marca||'')).toLowerCase();
+      var match = true;
+      for (var wi = 0; wi < words.length; wi++) { if (hay.indexOf(words[wi]) === -1) { match = false; break; } }
+      if (match) { results.push(p); }
+      if (results.length >= 30) { break; }
+    }
+    if (results.length === 0) {
+      srBox.innerHTML = '<div class="sr-empty">Sin resultados para "' + query + '"</div>';
+    } else {
+      var html = '<div class="sr-header">'+results.length+(results.length===30?'+':'')+' resultado'+(results.length===1?'':'s')+'</div>';
+      for (var ri = 0; ri < results.length; ri++) {
+        var r = results[ri];
+        var imgTag = r.img ? '<img src="'+r.img+'" onerror="this.style.display=\'none\'">' : '<img src="" style="display:none">';
+        var compatTxt = r.compat ? '<div class="sr-compat">'+r.compat+'</div>' : '';
+        html += '<div class="sr-item" data-sku="'+r.sku+'" data-cat="'+r.cat+'">';
+        html += imgTag;
+        html += '<div class="sr-info"><div class="sr-name">'+r.name+'</div>'+compatTxt+'</div>';
+        html += '<div class="sr-price">'+fmt(r.price)+'</div>';
+        html += '</div>';
+      }
+      srBox.innerHTML = html;
+      var items = srBox.querySelectorAll('.sr-item');
+      for (var ii = 0; ii < items.length; ii++) {
+        items[ii].addEventListener('click', function() {
+          var sku = this.getAttribute('data-sku');
+          closeSR();
+          srInput.value = '';
+          var prod = null;
+          var allP = getAllProducts();
+          for (var k = 0; k < allP.length; k++) { if (allP[k].sku === sku) { prod = allP[k]; break; } }
+          if (prod) { openModal(prod); }
+        });
+      }
+    }
+    srBox.classList.add('open');
+    srOverlay.classList.add('open');
+  }
+
+  function closeSR() {
+    srBox.classList.remove('open');
+    srOverlay.classList.remove('open');
+    srBox.innerHTML = '';
+  }
+
+  var srTimer = null;
+  srInput.addEventListener('input', function() {
+    clearTimeout(srTimer);
+    var q = this.value;
+    if (!q.trim()) { closeSR(); return; }
+    srTimer = setTimeout(function() { renderSR(q); }, 220);
+  });
+
+  srInput.addEventListener('keydown', function(e) {
+    if (e.keyCode === 27) { closeSR(); srInput.value = ''; }
+  });
+
+  srOverlay.addEventListener('click', function() { closeSR(); srInput.value = ''; });
 });
 </script>
 </body>
