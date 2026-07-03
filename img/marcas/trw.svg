@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="320" height="160">
+  <rect width="320" height="160" fill="#fff"/>
+  <rect x="40" y="25" width="240" height="110" rx="8" fill="#D0021B"/>
+  <text x="160" y="112" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="80" fill="#fff" letter-spacing="4">TRW</text>
+</svg>

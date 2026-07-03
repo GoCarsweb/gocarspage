@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="320" height="160">
+  <rect width="320" height="160" fill="#fff"/>
+  <text x="160" y="105" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="62" fill="#1a1a1a" letter-spacing="2">SACHS</text>
+  <rect x="60" y="118" width="200" height="6" rx="3" fill="#CC0000"/>
+</svg>
