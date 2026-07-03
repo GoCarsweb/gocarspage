@@ -1,0 +1,14 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <!-- shock absorber body -->
+  <rect x="182" y="40" width="36" height="220" rx="8" fill="#bbb" stroke="#999" stroke-width="2"/>
+  <rect x="192" y="260" width="16" height="80" rx="4" fill="#999" stroke="#777" stroke-width="1.5"/>
+  <!-- spring coils -->
+  <path d="M152 60 Q248 75 152 95 Q248 110 152 130 Q248 145 152 165 Q248 180 152 200 Q248 215 152 235 Q248 250 152 270" fill="none" stroke="#888" stroke-width="10" stroke-linecap="round"/>
+  <!-- top mount -->
+  <ellipse cx="200" cy="40" rx="35" ry="12" fill="#aaa" stroke="#888" stroke-width="2"/>
+  <!-- bottom mount -->
+  <rect x="180" y="335" width="40" height="16" rx="4" fill="#aaa" stroke="#888" stroke-width="2"/>
+  <circle cx="200" cy="343" r="6" fill="#f8f8f8"/>
+  <text x="200" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">SUSPENSION</text>
+</svg>

@@ -1,0 +1,24 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <circle cx="200" cy="200" r="155" fill="none" stroke="#ccc" stroke-width="3"/>
+  <circle cx="200" cy="200" r="148" fill="#e8e8e8" stroke="#bbb" stroke-width="2"/>
+  <circle cx="200" cy="200" r="100" fill="#d0d0d0" stroke="#aaa" stroke-width="2"/>
+  <circle cx="200" cy="200" r="60" fill="#bbb" stroke="#999" stroke-width="2"/>
+  <circle cx="200" cy="200" r="28" fill="#888" stroke="#666" stroke-width="2"/>
+  <circle cx="200" cy="200" r="14" fill="#555"/>
+  <!-- rivets -->
+  <circle cx="200" cy="110" r="8" fill="#999"/>
+  <circle cx="200" cy="290" r="8" fill="#999"/>
+  <circle cx="110" cy="200" r="8" fill="#999"/>
+  <circle cx="290" cy="200" r="8" fill="#999"/>
+  <circle cx="145" cy="145" r="8" fill="#999"/>
+  <circle cx="255" cy="255" r="8" fill="#999"/>
+  <circle cx="255" cy="145" r="8" fill="#999"/>
+  <circle cx="145" cy="255" r="8" fill="#999"/>
+  <!-- splines on inner hub -->
+  <rect x="188" y="115" width="24" height="14" rx="3" fill="#666"/>
+  <rect x="188" y="271" width="24" height="14" rx="3" fill="#666"/>
+  <rect x="115" y="188" width="14" height="24" rx="3" fill="#666"/>
+  <rect x="271" y="188" width="14" height="24" rx="3" fill="#666"/>
+  <text x="200" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">EMBRAGUE</text>
+</svg>

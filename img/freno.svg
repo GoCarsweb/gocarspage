@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <circle cx="200" cy="195" r="150" fill="none" stroke="#ccc" stroke-width="3"/>
+  <circle cx="200" cy="195" r="143" fill="#ddd" stroke="#bbb" stroke-width="2"/>
+  <!-- ventilation slots -->
+  <circle cx="200" cy="195" r="100" fill="#c8c8c8" stroke="#aaa" stroke-width="2"/>
+  <circle cx="200" cy="195" r="55" fill="#e0e0e0" stroke="#bbb" stroke-width="2"/>
+  <circle cx="200" cy="195" r="32" fill="#999" stroke="#777" stroke-width="2"/>
+  <circle cx="200" cy="195" r="16" fill="#666"/>
+  <!-- vent holes -->
+  <circle cx="200" cy="120" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="200" cy="270" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="125" cy="195" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="275" cy="195" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="147" cy="142" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="253" cy="248" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="253" cy="142" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="147" cy="248" r="10" fill="#f8f8f8" stroke="#bbb" stroke-width="1.5"/>
+  <text x="200" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">FRENOS</text>
+</svg>

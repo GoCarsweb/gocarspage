@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <!-- wrench -->
+  <path d="M270 60 C310 60 340 90 340 130 C340 155 328 177 308 190 L200 298 L185 340 L160 358 L142 340 L160 315 L202 300 L310 192 C330 179 340 155 340 130" fill="none" stroke="#bbb" stroke-width="2"/>
+  <path d="M130 308 L260 178" stroke="#aaa" stroke-width="38" stroke-linecap="round"/>
+  <path d="M270 60 C310 60 340 90 340 130 C340 158 326 182 304 194 L292 180 C306 170 316 151 316 130 C316 104 295 84 270 84 C245 84 224 104 224 130 C224 133 224 136 225 139 L211 153 C208 145 206 138 206 130 C206 90 236 60 270 60Z" fill="#c0c0c0" stroke="#aaa" stroke-width="1.5"/>
+  <path d="M130 308 C115 323 115 347 130 362 C145 377 169 377 184 362 L200 346 L146 292 Z" fill="#c0c0c0" stroke="#aaa" stroke-width="1.5"/>
+  <circle cx="148" cy="334" r="14" fill="#aaa" stroke="#888" stroke-width="2"/>
+  <text x="200" y="392" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">REPUESTOS</text>
+</svg>

@@ -442,9 +442,8 @@ function render() {
           ? '<span class="pbadge b-low">Ultimas</span>'
           : '<span class="pbadge b-ok">Disponible</span>');
 
-    var isImisa = p2.img && p2.img.indexOf('comercialimisa') !== -1;
     var imgHtml = (p2.img && p2.img.length > 0)
-      ? '<img src="' + p2.img + '" alt="" loading="lazy">' + (isImisa ? '<div class="gocar-badge"></div>' : '')
+      ? '<img src="' + p2.img + '" alt="" loading="lazy">'
       : '<span style="font-size:2.2rem">' + (p2.icon || '&#128296;') + '</span>';
 
     var skuSafe = p2.sku.replace(/'/g, '&#39;');

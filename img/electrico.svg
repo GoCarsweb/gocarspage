@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <!-- alternator body -->
+  <circle cx="200" cy="185" r="130" fill="#d8d8d8" stroke="#bbb" stroke-width="3"/>
+  <circle cx="200" cy="185" r="100" fill="#c8c8c8" stroke="#aaa" stroke-width="2"/>
+  <!-- cooling fins -->
+  <circle cx="200" cy="185" r="85" fill="none" stroke="#bbb" stroke-width="8" stroke-dasharray="20,12"/>
+  <circle cx="200" cy="185" r="55" fill="#e0e0e0" stroke="#bbb" stroke-width="2"/>
+  <circle cx="200" cy="185" r="28" fill="#aaa" stroke="#888" stroke-width="2"/>
+  <!-- pulley groove -->
+  <circle cx="200" cy="185" r="20" fill="none" stroke="#777" stroke-width="5"/>
+  <!-- bolt holes -->
+  <circle cx="200" cy="85" r="9" fill="#f8f8f8" stroke="#aaa" stroke-width="2"/>
+  <circle cx="200" cy="285" r="9" fill="#f8f8f8" stroke="#aaa" stroke-width="2"/>
+  <circle cx="100" cy="185" r="9" fill="#f8f8f8" stroke="#aaa" stroke-width="2"/>
+  <circle cx="300" cy="185" r="9" fill="#f8f8f8" stroke="#aaa" stroke-width="2"/>
+  <!-- lightning bolt -->
+  <polygon points="210,145 193,190 205,190 190,235 218,178 205,178 220,145" fill="#e8b800" opacity="0.85"/>
+  <text x="200" y="358" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">ELECTRICO</text>
+</svg>

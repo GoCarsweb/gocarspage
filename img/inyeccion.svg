@@ -1,0 +1,21 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <!-- injector body -->
+  <rect x="175" y="30" width="50" height="90" rx="6" fill="#aaa" stroke="#888" stroke-width="2"/>
+  <!-- connector -->
+  <rect x="183" y="15" width="34" height="20" rx="4" fill="#999" stroke="#777" stroke-width="1.5"/>
+  <!-- middle section -->
+  <rect x="183" y="120" width="34" height="120" rx="4" fill="#c0c0c0" stroke="#aaa" stroke-width="1.5"/>
+  <!-- lower taper -->
+  <polygon points="183,240 217,240 210,300 190,300" fill="#b0b0b0" stroke="#999" stroke-width="1.5"/>
+  <!-- nozzle -->
+  <rect x="193" y="300" width="14" height="40" rx="4" fill="#888" stroke="#666" stroke-width="1.5"/>
+  <!-- spray lines -->
+  <line x1="193" y1="342" x2="175" y2="370" stroke="#e31e24" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="200" y1="342" x2="200" y2="372" stroke="#e31e24" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="207" y1="342" x2="225" y2="370" stroke="#e31e24" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  <!-- o-rings -->
+  <rect x="180" y="150" width="40" height="7" rx="2" fill="#555"/>
+  <rect x="180" y="195" width="40" height="7" rx="2" fill="#555"/>
+  <text x="200" y="392" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#555">INYECCION</text>
+</svg>
