@@ -448,21 +448,13 @@ footer ul li a:hover{color:var(--red);}
     <h2 class="sec-ttl">Nuestros Productos</h2>
     <div class="cats" id="catGrid">
       <div class="cat-card active" onclick="filterCat('todos',this)" data-cat="todos"><div class="cat-icon">🔩</div><span class="cat-name">Todos</span></div>
-      <div class="cat-card" onclick="filterCat('Filtros',this)" data-cat="Filtros"><div class="cat-icon">🫧</div><span class="cat-name">Filtros</span></div>
-      <div class="cat-card" onclick="filterCat('Eléctrico',this)" data-cat="Eléctrico"><div class="cat-icon">⚡</div><span class="cat-name">Eléctrico</span></div>
-      <div class="cat-card" onclick="filterCat('Iluminación',this)" data-cat="Iluminación"><div class="cat-icon">💡</div><span class="cat-name">Iluminación</span></div>
-      <div class="cat-card" onclick="filterCat('Inyección y Encendido',this)" data-cat="Inyección y Encendido"><div class="cat-icon">🔥</div><span class="cat-name">Inyección</span></div>
-      <div class="cat-card" onclick="filterCat('Suspensión',this)" data-cat="Suspensión"><div class="cat-icon">🚗</div><span class="cat-name">Suspensión</span></div>
-      <div class="cat-card" onclick="filterCat('Car Care',this)" data-cat="Car Care"><div class="cat-icon">✨</div><span class="cat-name">Car Care</span></div>
-      <div class="cat-card" onclick="filterCat('Plumillas',this)" data-cat="Plumillas"><div class="cat-icon">🌧️</div><span class="cat-name">Plumillas</span></div>
-      <div class="cat-card" onclick="filterCat('Diesel',this)" data-cat="Diesel"><div class="cat-icon">⛽</div><span class="cat-name">Diesel</span></div>
-      <div class="cat-card" onclick="filterCat('Transmisiones y Ejes',this)" data-cat="Transmisiones y Ejes"><div class="cat-icon">⚙️</div><span class="cat-name">Transmisiones</span></div>
-      <div class="cat-card" onclick="filterCat('Líquido de Frenos',this)" data-cat="Líquido de Frenos"><div class="cat-icon">💧</div><span class="cat-name">Líq. Frenos</span></div>
-      <div class="cat-card" onclick="filterCat('Baterías',this)" data-cat="Baterías"><div class="cat-icon">🔋</div><span class="cat-name">Baterías</span></div>
-      <div class="cat-card" onclick="filterCat('Frenos',this)" data-cat="Frenos"><div class="cat-icon">🛑</div><span class="cat-name">Frenos</span></div>
-      <div class="cat-card" onclick="filterCat('Correas',this)" data-cat="Correas"><div class="cat-icon">🔗</div><span class="cat-name">Correas</span></div>
-      <div class="cat-card" onclick="filterCat('Lubricantes',this)" data-cat="Lubricantes"><div class="cat-icon">🛢️</div><span class="cat-name">Lubricantes</span></div>
       <div class="cat-card" onclick="filterCat('Embragues',this)" data-cat="Embragues"><div class="cat-icon">🔧</div><span class="cat-name">Embragues</span></div>
+      <div class="cat-card" onclick="filterCat('Suspensión',this)" data-cat="Suspensión"><div class="cat-icon">🚗</div><span class="cat-name">Suspensión</span></div>
+      <div class="cat-card" onclick="filterCat('Frenos',this)" data-cat="Frenos"><div class="cat-icon">🛑</div><span class="cat-name">Frenos</span></div>
+      <div class="cat-card" onclick="filterCat('Transmisiones y Ejes',this)" data-cat="Transmisiones y Ejes"><div class="cat-icon">⚙️</div><span class="cat-name">Transmisiones</span></div>
+      <div class="cat-card" onclick="filterCat('Inyección y Encendido',this)" data-cat="Inyección y Encendido"><div class="cat-icon">🔥</div><span class="cat-name">Inyección</span></div>
+      <div class="cat-card" onclick="filterCat('Eléctrico',this)" data-cat="Eléctrico"><div class="cat-icon">⚡</div><span class="cat-name">Eléctrico</span></div>
+      <div class="cat-card" onclick="filterCat('Otros',this)" data-cat="Otros"><div class="cat-icon">🔩</div><span class="cat-name">Otros</span></div>
     </div>
     <div class="pgrid" id="pgrid"></div>
   </div>
@@ -557,16 +549,13 @@ footer ul li a:hover{color:var(--red);}
     </div>
     <div><h4>Enlaces</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#productos">Productos</a></li><li><a href="#marcas">Marcas</a></li><li><a href="#cotizar">Cotizar</a></li><li><a href="#ubicacion">Ubicación</a></li></ul></div>
     <div><h4>Categorías</h4><ul>
-        <li><a onclick="filterCat('Filtros',document.querySelector('[data-cat=Filtros]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Filtros</a></li>
-        <li><a onclick="filterCat('Eléctrico',document.querySelector('[data-cat=El&eacute;ctrico]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Eléctrico</a></li>
-        <li><a onclick="filterCat('Iluminación',document.querySelector('[data-cat=Iluminaci&oacute;n]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Iluminación</a></li>
-        <li><a onclick="filterCat('Inyección y Encendido',document.querySelector('[data-cat='Inyección y Encendido']'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Inyección</a></li>
+        <li><a onclick="filterCat('Embragues',document.querySelector('[data-cat=Embragues]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Embragues</a></li>
         <li><a onclick="filterCat('Suspensión',document.querySelector('[data-cat=Suspensi&oacute;n]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Suspensión</a></li>
-        <li><a onclick="filterCat('Car Care',document.querySelector('[data-cat='Car Care']'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Car Care</a></li>
-        <li><a onclick="filterCat('Plumillas',document.querySelector('[data-cat=Plumillas]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Plumillas</a></li>
-        <li><a onclick="filterCat('Diesel',document.querySelector('[data-cat=Diesel]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Diesel</a></li>
-        <li><a onclick="filterCat('Líquido de Frenos',document.querySelector('[data-cat='Líquido de Frenos']'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Líq. Frenos</a></li>
-        <li><a onclick="filterCat('Transmisiones y Ejes',document.querySelector('[data-cat='Transmisiones y Ejes']'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Transmisiones</a></li>
+        <li><a onclick="filterCat('Frenos',document.querySelector('[data-cat=Frenos]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Frenos</a></li>
+        <li><a onclick="filterCat('Transmisiones y Ejes',document.querySelector('[data-cat=Transmisiones]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Transmisiones</a></li>
+        <li><a onclick="filterCat('Inyección y Encendido',document.querySelector('[data-cat=Inyecci&oacute;n]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Inyección</a></li>
+        <li><a onclick="filterCat('Eléctrico',document.querySelector('[data-cat=El&eacute;ctrico]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Eléctrico</a></li>
+        <li><a onclick="filterCat('Otros',document.querySelector('[data-cat=Otros]'));document.getElementById('productos').scrollIntoView();return false" href="javascript:void(0)">Otros</a></li>
       </ul></div>
     <div><h4>Contacto</h4>
       <div class="fci"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 7859 3519</div>
