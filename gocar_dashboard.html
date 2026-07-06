@@ -963,10 +963,10 @@ function parseVentas(csv) {
     var fecha    = row['fecha'] || row['date'] || '';
     var sku      = row['sku'] || row['codigo'] || row['cod'] || '';
     var nombre   = row['producto'] || row['descripcion'] || row['nombre'] || sku;
-    var cantidad = parseInt(row['cantidad'] || row['qty'] || row['unidades'] || '0') || 0;
-    var precio   = parseInt((row['precio_venta'] || row['precio'] || row['valor'] || '0').replace(/[^0-9]/g,'')) || 0;
-    var total    = parseInt((row['total'] || row['monto'] || '0').replace(/[^0-9]/g,'')) || 0;
-    var canal    = row['canal'] || row['tipo'] || row['medio'] || 'Tienda';
+    var cantidad = parseInt(row['cantidad_vendida'] || row['cantidad'] || row['qty'] || row['unidades'] || '0') || 0;
+    var precio   = parseInt((row['precio_unitario'] || row['precio_venta'] || row['precio'] || row['valor'] || '0').replace(/[^0-9]/g,'')) || 0;
+    var total    = parseInt((row['total_venta'] || row['total'] || row['monto'] || '0').replace(/[^0-9]/g,'')) || 0;
+    var canal    = row['medio_venta'] || row['canal'] || row['tipo'] || row['medio'] || 'Tienda';
     var vendedor = row['vendedor'] || row['usuario'] || '';
 
     // Si no hay total, calcularlo
