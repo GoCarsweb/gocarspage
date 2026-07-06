@@ -630,16 +630,7 @@ function daysAgo(n) {
     String(d.getDate()).padStart(2,'0');
 }
 
-var VENTAS_DATA = [
-  { fecha:daysAgo(0), sku:'BAT-60AH-GEN',    nombre:'Bateria 60Ah generica',        cantidad:2, precio:65000, total:130000, canal:'WhatsApp' },
-  { fecha:daysAgo(0), sku:'LUB-5W30-4L',     nombre:'Aceite 5W30 4L',               cantidad:1, precio:29000, total:29000,  canal:'Tienda'   },
-  { fecha:daysAgo(1), sku:'FRE-KIA-RIO-PD',  nombre:'Pastillas delanteras Kia Rio', cantidad:5, precio:32000, total:160000, canal:'Tienda'   },
-  { fecha:daysAgo(3), sku:'COR-ACC-6PK',     nombre:'Correa accesorios 6PK',        cantidad:2, precio:14000, total:28000,  canal:'WhatsApp' },
-  { fecha:daysAgo(5), sku:'FIL-ACE-HYUN-01', nombre:'Filtro aceite Hyundai/Kia',   cantidad:3, precio:7000,  total:21000,  canal:'Web'      },
-  { fecha:daysAgo(8), sku:'BAT-60AH-GEN',    nombre:'Bateria 60Ah generica',        cantidad:1, precio:65000, total:65000,  canal:'Web'      },
-  { fecha:daysAgo(15),sku:'LUB-5W30-4L',     nombre:'Aceite 5W30 4L',               cantidad:3, precio:29000, total:87000,  canal:'Tienda'   },
-  { fecha:daysAgo(20),sku:'FIL-ACE-HYUN-01', nombre:'Filtro aceite Hyundai/Kia',   cantidad:5, precio:7000,  total:35000,  canal:'WhatsApp' }
-];
+var VENTAS_DATA = [];
 
 // ── ESTADO GLOBAL ──
 var activeFrom       = null;
