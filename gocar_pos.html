@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GoCar's — Punto de Venta</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 :root {
   --red:#E31E24; --red-dark:#B81519; --red-dim:rgba(227,30,36,.1);
@@ -2319,13 +2320,223 @@ function _cotDatos() {
   var now       = new Date();
   var vendedor  = el('vendedorSelect').value;
   var nombre    = el('cotNombre').value.trim()  || 'Sin nombre';
-  var contacto  = [el('cotWa').value.trim(), el('cotEmail').value.trim()].filter(Boolean).join(' | ') || '—';
+  var waVal     = el('cotWa').value.trim();
+  var mailVal   = el('cotEmail').value.trim();
+  var contacto  = [waVal, mailVal].filter(Boolean).join(' | ') || '—';
   var obs       = el('cotObs').value.trim();
   var fechaStr  = now.toLocaleDateString('es-CL', {day:'2-digit',month:'2-digit',year:'numeric'});
   var validoHasta = new Date(now.getTime() + 7*24*60*60*1000);
   var validoStr = validoHasta.toLocaleDateString('es-CL', {day:'2-digit',month:'2-digit',year:'numeric'});
   var total     = cart.reduce(function(s,i){ return s + i.precio * i.qty; }, 0);
-  return { now:now, vendedor:vendedor, nombre:nombre, contacto:contacto, obs:obs, fechaStr:fechaStr, validoStr:validoStr, total:total };
+  return { now:now, vendedor:vendedor, nombre:nombre, waVal:waVal, mailVal:mailVal, contacto:contacto, obs:obs, fechaStr:fechaStr, validoStr:validoStr, total:total };
+}
+
+function generarPDF(d) {
+  var jsPDF = window.jspdf.jsPDF;
+  var doc = new jsPDF('p','mm','a4');
+  var M = 12, PW = 210, PH = 297, CW = PW - M*2;
+  var RED = [227,30,36], DARK = [17,17,17], GRAY = [245,245,245], LGRAY = [200,200,200];
+  var y = M;
+
+  /* ── LOGO ── */
+  var logoImg = document.querySelector('#app .topbar a img');
+  if (logoImg && logoImg.src) {
+    try { doc.addImage(logoImg.src, 'PNG', M, y, 46, 20); } catch(e) {}
+  }
+
+  /* ── BADGE COTIZACIÓN ── */
+  doc.setFillColor(RED[0],RED[1],RED[2]);
+  doc.roundedRect(PW-M-50, y, 50, 7, 1, 1, 'F');
+  doc.setTextColor(255,255,255);
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(6.5);
+  doc.text('COTIZACION', PW-M-25, y+4.7, {align:'center'});
+
+  /* ── NÚMERO COT ── */
+  doc.setTextColor(DARK[0],DARK[1],DARK[2]);
+  doc.setFontSize(14);
+  doc.setFont('helvetica','bold');
+  doc.text(cotNumActual, PW-M, y+14, {align:'right'});
+
+  /* ── FECHA / VALIDEZ / VENDEDOR ── */
+  doc.setFontSize(8);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(100,100,100);
+  doc.text('Fecha: ' + d.fechaStr + '   Valida hasta: ' + d.validoStr, PW-M, y+19, {align:'right'});
+  doc.text('Vendedor: ' + d.vendedor, PW-M, y+23.5, {align:'right'});
+
+  /* ── CONTACTO EMPRESA (bajo logo) ── */
+  doc.setFontSize(7.5);
+  doc.setTextColor(120,120,120);
+  doc.text('gocarsvina@gmail.com  |  +56 9 7859 3519  |  Vina del Mar', M, y+25);
+
+  y += 30;
+
+  /* ── LÍNEA ROJA SEPARADORA ── */
+  doc.setDrawColor(RED[0],RED[1],RED[2]);
+  doc.setLineWidth(0.7);
+  doc.line(M, y, PW-M, y);
+  y += 5;
+
+  /* ── SECCIÓN CLIENTE ── */
+  doc.setFillColor(GRAY[0],GRAY[1],GRAY[2]);
+  doc.roundedRect(M, y, CW, d.obs ? 22 : 17, 2, 2, 'F');
+  doc.setFillColor(RED[0],RED[1],RED[2]);
+  doc.rect(M, y, 2.5, d.obs ? 22 : 17, 'F');
+
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(RED[0],RED[1],RED[2]);
+  doc.text('CLIENTE', M+5, y+5);
+
+  doc.setFontSize(10);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(DARK[0],DARK[1],DARK[2]);
+  doc.text(d.nombre, M+5, y+11);
+
+  doc.setFontSize(8.5);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(80,80,80);
+  doc.text(d.contacto, M + CW/2 + 5, y+11);
+
+  if (d.obs) {
+    doc.setFontSize(8);
+    doc.setTextColor(110,110,110);
+    doc.text('Ref: ' + d.obs, M+5, y+17);
+  }
+
+  y += (d.obs ? 22 : 17) + 6;
+
+  /* ── CABECERA TABLA ── */
+  var colX  = [M,    M+28, M+120, M+134, M+160];
+  var colW  = [28,   92,   14,    26,    26];
+  var heads = ['SKU','Descripcion','Cant.','P. Unit.','Total'];
+  var aligns= ['left','left','center','right','right'];
+
+  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
+  doc.rect(M, y, CW, 8, 'F');
+  doc.setFontSize(7);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(255,255,255);
+  for (var h = 0; h < heads.length; h++) {
+    var hx = aligns[h]==='right' ? colX[h]+colW[h]-1 : aligns[h]==='center' ? colX[h]+colW[h]/2 : colX[h]+2;
+    doc.text(heads[h], hx, y+5.3, {align: aligns[h]==='center'?'center':aligns[h]==='right'?'right':'left'});
+  }
+  y += 8;
+
+  /* ── FILAS TABLA ── */
+  var total = 0;
+  for (var i = 0; i < cart.length; i++) {
+    var it   = cart[i];
+    var iTotal = it.precio * it.qty;
+    total += iTotal;
+
+    var descLines = doc.splitTextToSize(it.nombre, colW[1]-4);
+    var rowH = Math.max(8, descLines.length * 4.5 + 3);
+
+    /* check nueva página */
+    if (y + rowH > PH - 28) {
+      doc.addPage();
+      y = M;
+      /* redrawn mini-header */
+      doc.setFillColor(DARK[0],DARK[1],DARK[2]);
+      doc.rect(M, y, CW, 7, 'F');
+      doc.setFontSize(7); doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255);
+      for (var hh=0; hh<heads.length; hh++) {
+        var hhx = aligns[hh]==='right'?colX[hh]+colW[hh]-1:aligns[hh]==='center'?colX[hh]+colW[hh]/2:colX[hh]+2;
+        doc.text(heads[hh],hhx,y+4.8,{align:aligns[hh]==='center'?'center':aligns[hh]==='right'?'right':'left'});
+      }
+      y += 7;
+    }
+
+    /* fondo alternado */
+    if (i % 2 === 1) {
+      doc.setFillColor(250,250,250);
+      doc.rect(M, y, CW, rowH, 'F');
+    }
+
+    doc.setDrawColor(LGRAY[0],LGRAY[1],LGRAY[2]);
+    doc.setLineWidth(0.2);
+    doc.line(M, y+rowH, PW-M, y+rowH);
+
+    var midY = y + rowH/2 + 1.5;
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(140,140,140);
+    doc.setFontSize(7);
+    doc.text(it.sku, colX[0]+2, midY);
+
+    doc.setTextColor(DARK[0],DARK[1],DARK[2]);
+    doc.setFontSize(8);
+    doc.text(descLines, colX[1]+2, y + 4.5);
+
+    doc.setFontSize(8);
+    doc.text(String(it.qty), colX[2]+colW[2]/2, midY, {align:'center'});
+
+    doc.text(fmt(it.precio), colX[3]+colW[3]-1, midY, {align:'right'});
+
+    doc.setFont('helvetica','bold');
+    doc.text(fmt(iTotal), colX[4]+colW[4]-1, midY, {align:'right'});
+
+    y += rowH;
+  }
+
+  /* check espacio para total + pie */
+  if (y + 40 > PH - 20) { doc.addPage(); y = M; }
+
+  y += 5;
+
+  /* ── TOTAL ── */
+  var boxW = 60, boxX = PW-M-boxW;
+  doc.setFillColor(250,250,250);
+  doc.setDrawColor(LGRAY[0],LGRAY[1],LGRAY[2]);
+  doc.setLineWidth(0.3);
+  doc.roundedRect(boxX, y, boxW, 8, 1, 1, 'FD');
+  doc.setFontSize(8);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(100,100,100);
+  doc.text('Subtotal:', boxX+3, y+5.3);
+  doc.text(fmt(total), boxX+boxW-2, y+5.3, {align:'right'});
+  y += 8;
+
+  doc.setFillColor(RED[0],RED[1],RED[2]);
+  doc.roundedRect(boxX, y, boxW, 10, 1, 1, 'F');
+  doc.setFontSize(11);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(255,255,255);
+  doc.text('TOTAL', boxX+3, y+7);
+  doc.text(fmt(total), boxX+boxW-2, y+7, {align:'right'});
+  y += 10;
+
+  doc.setFillColor(250,250,250);
+  doc.setDrawColor(LGRAY[0],LGRAY[1],LGRAY[2]);
+  doc.roundedRect(boxX, y, boxW, 6, 1, 1, 'FD');
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(150,150,150);
+  doc.text('Precios incluyen IVA', boxX+3, y+4);
+  y += 10;
+
+  /* ── PIE DE PÁGINA ── */
+  var footY = PH - 18;
+  doc.setDrawColor(LGRAY[0],LGRAY[1],LGRAY[2]);
+  doc.setLineWidth(0.4);
+  doc.line(M, footY, PW-M, footY);
+  footY += 4;
+
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(130,130,130);
+  doc.text('Cotizacion valida por 7 dias desde su emision.', M, footY);
+  doc.text('Stock sujeto a disponibilidad.', M, footY+4);
+
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(RED[0],RED[1],RED[2]);
+  doc.text("GoCar's Repuestos", PW-M, footY, {align:'right'});
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(130,130,130);
+  doc.text('+56 9 7859 3519  |  gocarsvina@gmail.com  |  Vina del Mar', PW-M, footY+4, {align:'right'});
+
+  return doc;
 }
 
 function _buildPrintHTML(d) {
@@ -2408,57 +2619,77 @@ function imprimirCotizacion() {
 
 function enviarWhatsApp() {
   var d = _cotDatos();
-  var phone = el('cotWa').value.trim().replace(/[^0-9+]/g,'');
-  if (phone.startsWith('9') && phone.length === 9) { phone = '569' + phone; }
-  else if (phone.startsWith('56') && phone.length >= 10) { /* OK */ }
-  else { phone = ''; }
 
+  /* generar y descargar PDF */
+  try {
+    var doc = generarPDF(d);
+    doc.save(cotNumActual + '.pdf');
+  } catch(e) { console.warn('jsPDF error:', e); }
+
+  /* armar número destino */
+  var phone = d.waVal.replace(/[^0-9+]/g,'');
+  if (/^9\d{8}$/.test(phone))          { phone = '569' + phone; }
+  else if (/^569\d{8}$/.test(phone))   { /* OK */ }
+  else                                  { phone = '56978593519'; }
+
+  /* armar texto */
   var lineas = '';
   for (var i = 0; i < cart.length; i++) {
     var it = cart[i];
-    lineas += '\n• ' + it.nombre + '\n  ' + it.qty + ' × ' + fmt(it.precio) + ' = *' + fmt(it.precio * it.qty) + '*';
+    lineas += '\n• ' + it.nombre + '\n  ' + it.qty + ' x ' + fmt(it.precio) + ' = *' + fmt(it.precio * it.qty) + '*';
   }
 
-  var msg = '🔧 *COTIZACIÓN GoCar\'s Repuestos Viña*'
-    + '\nN° ' + cotNumActual
-    + '\n📅 ' + d.fechaStr + ' | Válida 7 días'
-    + '\n👤 ' + d.nombre
-    + (d.obs ? '\n📌 ' + d.obs : '')
+  var msg = '*COTIZACION GoCar\'s Repuestos Vina*'
+    + '\nN ' + cotNumActual
+    + '\nFecha: ' + d.fechaStr + ' | Valida 7 dias'
+    + '\nCliente: ' + d.nombre
+    + (d.obs ? '\nRef: ' + d.obs : '')
     + '\n'
-    + '\n*REPUESTOS COTIZADOS:*'
+    + '\n*REPUESTOS:*'
     + lineas
     + '\n'
-    + '\n💰 *TOTAL: ' + fmt(d.total) + '*'
+    + '\n*TOTAL: ' + fmt(d.total) + '*'
     + '\n'
     + '\n_Precios incluyen IVA. Stock sujeto a disponibilidad._'
-    + '\n📍 Viña del Mar | GoCar\'s Repuestos';
+    + '\n_Adjunto PDF con detalle de cotizacion._'
+    + '\nGoCar\'s | +56 9 7859 3519 | gocarsvina@gmail.com';
 
-  var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
   cerrarCotizacion();
-  window.open(url, '_blank');
+  setTimeout(function() {
+    window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank');
+  }, 800);
 }
 
 function enviarEmail() {
   var d      = _cotDatos();
-  var correo = el('cotEmail').value.trim();
-  var asunto = 'Cotización GoCar\'s ' + cotNumActual;
+  var correo = d.mailVal;
+  if (!correo) return;
 
+  /* generar y descargar PDF */
+  try {
+    var doc = generarPDF(d);
+    doc.save(cotNumActual + '.pdf');
+  } catch(e) { console.warn('jsPDF error:', e); }
+
+  var asunto = 'Cotizacion GoCar\'s ' + cotNumActual;
   var cuerpo = 'Estimado/a ' + d.nombre + ','
-    + '\n\nAdjuntamos cotización de repuestos solicitada:'
-    + '\nN° ' + cotNumActual + '  |  Fecha: ' + d.fechaStr + '  |  Válida hasta: ' + d.validoStr
+    + '\n\nAdjunte el PDF descargado a este correo. A continuacion el detalle de la cotizacion:'
+    + '\nN ' + cotNumActual + '  |  Fecha: ' + d.fechaStr + '  |  Valida hasta: ' + d.validoStr
     + '\n\nDETALLE:'
-    + '\n' + Array.from(cart).map(function(it){
-        return it.nombre + ' (SKU: ' + it.sku + ')\n  ' + it.qty + ' unid × ' + fmt(it.precio) + ' = ' + fmt(it.precio * it.qty);
+    + '\n' + cart.map(function(it){
+        return it.nombre + ' (SKU: ' + it.sku + ')\n  ' + it.qty + ' unid x ' + fmt(it.precio) + ' = ' + fmt(it.precio * it.qty);
       }).join('\n')
     + '\n\nTOTAL: ' + fmt(d.total)
-    + '\n\nPrecios incluyen IVA. Cotización válida por 7 días.'
+    + '\n\nPrecios incluyen IVA. Cotizacion valida por 7 dias.'
     + (d.obs ? '\nReferencia: ' + d.obs : '')
-    + '\n\nSaludos,\nGoCar\'s Repuestos Viña';
+    + '\n\nSaludos,\nGoCar\'s Repuestos Vina\n+56 9 7859 3519 | gocarsvina@gmail.com';
 
   cerrarCotizacion();
-  window.location.href = 'mailto:' + correo
-    + '?subject=' + encodeURIComponent(asunto)
-    + '&body='    + encodeURIComponent(cuerpo);
+  setTimeout(function() {
+    window.location.href = 'mailto:' + correo
+      + '?subject=' + encodeURIComponent(asunto)
+      + '&body='    + encodeURIComponent(cuerpo);
+  }, 800);
 }
 
 // ── TOAST ──
