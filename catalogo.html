@@ -861,14 +861,14 @@ function agregarLogoAImagen(imgSrc, callback) {
     canvas.width  = prodImg.naturalWidth;
     canvas.height = prodImg.naturalHeight;
     ctx.drawImage(prodImg, 0, 0);
-    var lw = Math.round(canvas.width  * 0.28);
-    var lh = Math.round(canvas.height * 0.16);
-    var lx = canvas.width  - lw;
-    var ly = canvas.height - lh;
-    ctx.fillStyle = 'rgba(0,0,0,0.85)';
+    var lw = Math.round(canvas.width  * 0.18);
+    var lh = Math.round(canvas.height * 0.09);
+    var lx = canvas.width  - lw - Math.round(canvas.width * 0.01);
+    var ly = canvas.height - lh - Math.round(canvas.height * 0.01);
+    ctx.fillStyle = 'rgba(20,20,20,0.72)';
     ctx.fillRect(lx, ly, lw, lh);
     if (logoImg.complete && logoImg.naturalWidth) {
-      var pad = Math.round(lh * 0.12);
+      var pad = Math.round(lh * 0.15);
       ctx.drawImage(logoImg, lx + pad, ly + pad, lw - pad * 2, lh - pad * 2);
     }
     var result = canvas.toDataURL('image/jpeg', 0.88);
