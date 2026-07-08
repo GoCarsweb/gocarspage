@@ -442,7 +442,7 @@ function render() {
           : '<span class="pbadge b-ok">Disponible</span>');
 
     var imgHtml = (p2.img && p2.img.length > 0)
-      ? '<img src="' + p2.img + '" alt="" loading="lazy">'
+      ? '<img class="prod-img" data-src="' + p2.img + '" src="" alt="" loading="lazy">'
       : '<span style="font-size:2.2rem">' + (p2.icon || '&#128296;') + '</span>';
 
     var skuSafe = p2.sku.replace(/'/g, '&#39;');
@@ -861,10 +861,10 @@ function agregarLogoAImagen(imgSrc, callback) {
     canvas.width  = prodImg.naturalWidth;
     canvas.height = prodImg.naturalHeight;
     ctx.drawImage(prodImg, 0, 0);
-    var lw = Math.round(canvas.width  * 0.18);
-    var lh = Math.round(canvas.height * 0.09);
-    var lx = canvas.width  - lw - Math.round(canvas.width * 0.01);
-    var ly = canvas.height - lh - Math.round(canvas.height * 0.01);
+    var lw = Math.round(canvas.width  * 0.13);
+    var lh = Math.round(canvas.height * 0.055);
+    var lx = canvas.width  - lw - Math.round(canvas.width * 0.005);
+    var ly = canvas.height - lh - Math.round(canvas.height * 0.005);
     ctx.fillStyle = 'rgba(20,20,20,0.72)';
     ctx.fillRect(lx, ly, lw, lh);
     if (logoImg.complete && logoImg.naturalWidth) {
@@ -884,8 +884,9 @@ function procesarImagenesImisa() {
   for (var i = 0; i < imgs.length; i++) {
     (function(img) {
       var src = img.getAttribute('data-src');
-      if (!src || src.indexOf('comercialimisa') === -1) {
-        img.src = src || '';
+      if (!src) { return; }
+      if (src.indexOf('comercialimisa') === -1) {
+        img.src = src;
         return;
       }
       agregarLogoAImagen(src, function(processed) {
