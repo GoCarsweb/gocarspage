@@ -86,10 +86,21 @@ def parse_price(text):
             return val
     return 0.0
 
-def parse_products_from_page(html):
+_first_row_printed = False
+
+def fix_img(src):
+    if not src:
+        return ""
+    if src.startswith("//"):
+        return "https:" + src
+    if src.startswith("http"):
+        return src
+    return BASE_URL + ("" if src.startswith("/") else "/") + src
+
+def parse_products_from_page(html, debug=False):
+    global _first_row_printed
     products = []
 
-    # Estrategia 1: tabla con <tr><td>
     rows = re.findall(r"<tr[^>]*>([\s\S]*?)</tr>", html, re.IGNORECASE)
     for row in rows:
         cells_raw = re.findall(r"<td[^>]*>([\s\S]*?)</td>", row, re.IGNORECASE)
@@ -100,36 +111,33 @@ def parse_products_from_page(html):
         price = parse_price(text)
         if price < 500:
             continue
-        name = next((c for c in cells if len(c) > 4 and not c.startswith("$") and not re.match(r"^[\d\$]", c)), "")
-        if not name:
-            continue
-        code_m = re.search(r"\b([A-Z0-9]{2,}[\-\/\.][A-Z0-9\-\/\.]{2,})\b", text)
+
+        # Debug: print first valid row to understand column order
+        if debug and not _first_row_printed:
+            print(f"[row_debug] cells={cells}")
+            _first_row_printed = True
+
+        # Código: primera celda que parece un código de producto
+        code_m = re.search(r"\b([A-Z]{2,}[\-\/\.][A-Z0-9\-\/\.]{2,})\b", text)
         code = code_m.group(1) if code_m else cells[0]
+
+        # Nombre: celda más larga que no sea código ni precio ni número
+        code_pat = re.compile(r'^[A-Z]{2,}[\-\/\.]', re.IGNORECASE)
+        name = ""
+        best_len = 0
+        for c in cells:
+            if re.match(r"^[\d\$\$]", c): continue
+            if code_pat.match(c) and len(c) < 20: continue  # parece código corto
+            if len(c) > best_len:
+                best_len = len(c)
+                name = c
+        if not name:
+            name = code  # fallback
+
         img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', "".join(cells_raw), re.IGNORECASE)
-        img = img_m.group(1) if img_m else ""
-        if img and not img.startswith("http"):
-            img = BASE_URL + ("" if img.startswith("/") else "/") + img
+        img = fix_img(img_m.group(1) if img_m else "")
+
         products.append({"name": name, "code": code, "img": img, "precioBase": price})
-
-    if products:
-        return products
-
-    # Estrategia 2: DataTable — buscar JSON embebido
-    json_m = re.search(r'"data"\s*:\s*(\[\[[\s\S]*?\]\])', html)
-    if json_m:
-        try:
-            rows_data = json.loads(json_m.group(1))
-            for row in rows_data:
-                if len(row) < 2: continue
-                cells = [strip_tags(str(c)) for c in row]
-                text = " ".join(cells)
-                price = parse_price(text)
-                if price < 500: continue
-                name = next((c for c in cells if len(c) > 4 and not re.match(r"^[\d\$]", c)), "")
-                if not name: continue
-                products.append({"name": name, "code": cells[0], "img": "", "precioBase": price})
-        except Exception as e:
-            print(f"[parse] JSON err: {e}")
 
     return products
 
@@ -155,23 +163,30 @@ def main():
     seen_keys = set()
 
     for cat in categories:
-        url = f"{BASE_URL}/?mod=search&ty=pro&kw={urllib.parse.quote(cat)}"
-        html = fetch(opener, url)
-        prods = parse_products_from_page(html)
-
-        # Si no encontró nada, imprimir fragmento para debug
-        if not prods and cat == categories[0]:
-            print(f"[debug] Primera categoría sin productos. HTML snippet:\n{html[2000:5000]}")
-
+        is_first = (cat == categories[0])
         new = 0
-        for p in prods:
-            key = (p["code"] or p["name"]).strip()
-            if key and key not in seen_keys:
-                seen_keys.add(key)
-                p["categoria"] = cat
-                all_products.append(p)
-                new += 1
-        print(f"[cat='{cat}'] +{new} nuevos → total {len(all_products)}")
+        pg = 1
+        while True:
+            url = f"{BASE_URL}/?mod=search&ty=pro&kw={urllib.parse.quote(cat)}&pg={pg}"
+            html = fetch(opener, url)
+            prods = parse_products_from_page(html, debug=is_first and pg == 1)
+            if not prods:
+                break
+            added = 0
+            for p in prods:
+                key = (p["code"] or p["name"]).strip()
+                if key and key not in seen_keys:
+                    seen_keys.add(key)
+                    p["categoria"] = cat
+                    all_products.append(p)
+                    new += 1
+                    added += 1
+            if added == 0:
+                break  # página sin productos nuevos = fin
+            pg += 1
+            if pg > 50:  # tope de seguridad
+                break
+        print(f"[cat='{cat}'] +{new} ({pg-1} págs) → total {len(all_products)}")
 
     # Aplicar markup 28%
     for p in all_products:
