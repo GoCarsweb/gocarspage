@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoCar's — Catálogo Proveedor</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#E31E24;--dark:#111;--dark2:#171717;--dark3:#1F1F1F;
+  --border:#2A2A2A;--gray:#666;--white:#fff;
+}
+html,body{height:100%;overflow:hidden;font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);}
+
+/* HEADER */
+.topbar{
+  display:flex;align-items:center;gap:.75rem;
+  background:var(--dark2);border-bottom:2px solid var(--red);
+  padding:.5rem 1rem;height:54px;flex-shrink:0;position:relative;z-index:10;
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:-1px;color:var(--red);white-space:nowrap;}
+.logo em{color:var(--white);font-style:normal;}
+.sep{width:1px;height:24px;background:var(--border);flex-shrink:0;}
+.supplier-badge{
+  background:#1a2a1a;border:1px solid #2a5a2a;border-radius:4px;
+  padding:.2rem .6rem;font-size:.7rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:#4ade80;white-space:nowrap;
+}
+.search-bar{
+  display:flex;align-items:center;gap:.5rem;flex:1;max-width:700px;
+  background:var(--dark3);border:1.5px solid var(--border);border-radius:6px;
+  padding:.3rem .75rem;transition:border-color .2s;
+}
+.search-bar:focus-within{border-color:var(--red);}
+.search-bar svg{opacity:.5;flex-shrink:0;}
+.search-bar input{
+  background:none;border:none;outline:none;color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:.9rem;width:100%;
+}
+.search-bar input::placeholder{color:var(--gray);}
+.btn-open{
+  display:flex;align-items:center;gap:.4rem;
+  background:var(--red);color:#fff;border:none;border-radius:6px;
+  padding:.4rem .9rem;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;
+}
+.btn-open:hover{background:#b81519;}
+.btn-reload{
+  background:var(--dark3);border:1.5px solid var(--border);color:var(--white);
+  border-radius:6px;padding:.4rem .7rem;cursor:pointer;font-size:.85rem;
+  flex-shrink:0;transition:border-color .2s;
+}
+.btn-reload:hover{border-color:#555;}
+
+/* QUICK CHIPS */
+.quickbar{
+  display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;
+  background:var(--dark3);border-bottom:1px solid var(--border);
+  padding:.4rem 1rem;flex-shrink:0;
+}
+.qchip-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);white-space:nowrap;margin-right:.25rem;}
+.qchip{
+  background:var(--dark2);border:1px solid var(--border);border-radius:20px;
+  padding:.18rem .65rem;font-size:.75rem;cursor:pointer;white-space:nowrap;
+  transition:all .15s;color:#ccc;
+}
+.qchip:hover{border-color:var(--red);color:#fff;background:#2a1010;}
+.qchip.active{border-color:var(--red);background:var(--red);color:#fff;}
+
+/* MAIN AREA */
+.layout{display:flex;height:calc(100vh - 54px - 38px);position:relative;}
+
+/* IFRAME */
+.iframe-wrap{flex:1;position:relative;}
+.iframe-wrap iframe{width:100%;height:100%;border:none;display:block;}
+
+/* SIDEBAR */
+.sidebar{
+  width:280px;flex-shrink:0;background:var(--dark2);
+  border-left:1px solid var(--border);display:flex;flex-direction:column;
+  overflow:hidden;transition:width .25s;
+}
+.sidebar.collapsed{width:0;}
+.sidebar-inner{padding:1rem;overflow-y:auto;flex:1;min-width:280px;}
+.s-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray);
+  margin-bottom:.75rem;display:flex;align-items:center;justify-content:space-between;
+}
+.s-title button{background:none;border:none;color:var(--gray);cursor:pointer;font-size:.9rem;padding:.1rem .3rem;}
+.s-title button:hover{color:var(--white);}
+
+.field-group{margin-bottom:1rem;}
+.field-label{font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem;display:block;}
+.field-input{
+  width:100%;background:var(--dark3);border:1.5px solid var(--border);
+  color:var(--white);font-size:.88rem;padding:.55rem .75rem;border-radius:6px;
+  outline:none;font-family:'Barlow',sans-serif;transition:border-color .2s;
+}
+.field-input:focus{border-color:var(--red);}
+.field-input::placeholder{color:#444;}
+select.field-input{cursor:pointer;}
+
+.btn-search-prov{
+  width:100%;background:var(--red);color:#fff;border:none;border-radius:6px;
+  padding:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;
+  transition:background .2s;margin-top:.25rem;
+}
+.btn-search-prov:hover{background:#b81519;}
+
+.divider{border:none;border-top:1px solid var(--border);margin:1rem 0;}
+
+.historial{margin-top:.5rem;}
+.hist-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.4rem .5rem;border-radius:5px;cursor:pointer;font-size:.82rem;
+  color:#aaa;transition:background .15s;
+}
+.hist-item:hover{background:var(--dark3);color:var(--white);}
+.hist-item svg{opacity:.4;flex-shrink:0;}
+.hist-empty{font-size:.8rem;color:#444;text-align:center;padding:1rem 0;}
+
+/* TOGGLE SIDEBAR BTN */
+.toggle-sidebar{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  background:var(--dark3);border:1px solid var(--border);
+  border-right:none;border-radius:6px 0 0 6px;padding:.5rem .3rem;
+  cursor:pointer;color:var(--gray);z-index:5;transition:color .2s;
+  writing-mode:horizontal-tb;
+}
+.toggle-sidebar:hover{color:var(--white);}
+
+/* BLOCKED OVERLAY */
+.blocked-overlay{
+  position:absolute;inset:0;background:var(--dark);
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  gap:1.5rem;text-align:center;padding:2rem;z-index:20;
+}
+.blocked-overlay.visible{display:flex;}
+.blocked-icon{font-size:3.5rem;}
+.blocked-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:1px;}
+.blocked-desc{color:var(--gray);font-size:.9rem;max-width:380px;line-height:1.6;}
+.btn-newtab{
+  background:var(--red);color:#fff;border:none;border-radius:8px;
+  padding:.75rem 1.75rem;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:1.1rem;letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;
+}
+.btn-newtab:hover{background:#b81519;}
+
+@media(max-width:768px){
+  .sidebar{display:none;}
+  .quickbar{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">GO<em>CAR'S</em></div>
+  <div class="sep"></div>
+  <div class="supplier-badge">Proveedor</div>
+
+  <div class="search-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="mainSearch" placeholder="Buscar por marca, modelo, código OEM o código de fábrica…" autocomplete="off">
+  </div>
+
+  <button class="btn-reload" id="btnReload" title="Recargar">↺</button>
+  <button class="btn-open" id="btnNewTab">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Abrir en pestaña
+  </button>
+</div>
+
+<!-- QUICK CHIPS -->
+<div class="quickbar">
+  <span class="qchip-label">Rápido:</span>
+  <span class="qchip" data-q="Toyota Hilux">Toyota Hilux</span>
+  <span class="qchip" data-q="Nissan Navara">Nissan Navara</span>
+  <span class="qchip" data-q="Mitsubishi L200">L200</span>
+  <span class="qchip" data-q="Ford Ranger">Ranger</span>
+  <span class="qchip" data-q="Chevrolet D-max">D-Max</span>
+  <span class="qchip" data-q="Mazda BT50">BT-50</span>
+  <span class="qchip" data-q="Volkswagen">VW</span>
+  <span class="qchip" data-q="alternador">Alternadores</span>
+  <span class="qchip" data-q="motor de partida">Partidas</span>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- IFRAME -->
+  <div class="iframe-wrap">
+    <div class="blocked-overlay" id="blockedOverlay">
+      <div class="blocked-icon">🔒</div>
+      <div class="blocked-title">Sitio bloqueado en iframe</div>
+      <div class="blocked-desc">Quiroz Chile no permite cargarse dentro de otra página. Haz clic en el botón para abrirlo en una pestaña nueva y usa esta ventana como referencia de búsqueda.</div>
+      <button class="btn-newtab" onclick="openNewTab()">Abrir Quiroz Chile</button>
+    </div>
+    <iframe id="provFrame" src="https://carro.quirozchile.cl/" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation" allow="autoplay; fullscreen" title="Quiroz Chile Catálogo"></iframe>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- BÚSQUEDA AVANZADA -->
+      <div class="s-title">
+        Búsqueda Avanzada
+        <button onclick="clearForm()" title="Limpiar">✕</button>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Marca</label>
+        <select class="field-input" id="fMarca" onchange="actualizarModelos()">
+          <option value="">— Seleccionar —</option>
+          <option>Toyota</option>
+          <option>Nissan</option>
+          <option>Mitsubishi</option>
+          <option>Ford</option>
+          <option>Chevrolet</option>
+          <option>Mazda</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Fiat</option>
+          <option>Volkswagen</option>
+          <option>Renault</option>
+          <option>Peugeot</option>
+          <option>Citroën</option>
+          <option>Mercedes-Benz</option>
+          <option>BMW</option>
+          <option>Audi</option>
+          <option>Subaru</option>
+          <option>Isuzu</option>
+          <option>Honda</option>
+          <option>Suzuki</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Modelo</label>
+        <input type="text" class="field-input" id="fModelo" placeholder="ej. Hilux, Navara, Ranger…">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Año</label>
+        <div style="display:flex;gap:.5rem;">
+          <input type="number" class="field-input" id="fAnioDesde" placeholder="Desde" min="1990" max="2030" style="flex:1;">
+          <input type="number" class="field-input" id="fAnioHasta" placeholder="Hasta" min="1990" max="2030" style="flex:1;">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Código OEM</label>
+        <input type="text" class="field-input" id="fOEM" placeholder="ej. 04465-0K330">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Código de Fábrica</label>
+        <input type="text" class="field-input" id="fFabrica" placeholder="ej. HU6007X, W610/7…">
+      </div>
+
+      <button class="btn-search-prov" onclick="buscarEnProveedor()">🔍 Construir búsqueda</button>
+  <button class="btn-search-prov" id="btnCopiar" onclick="copiarBusqueda()" style="background:#1a3a1a;border:1.5px solid #2a5a2a;margin-top:.4rem;">📋 Copiar al portapapeles</button>
+  <div id="copyFeedback" style="text-align:center;font-size:.75rem;color:#4ade80;min-height:1.1rem;margin-top:.3rem;"></div>
+
+      <hr class="divider">
+
+      <!-- HISTORIAL -->
+      <div class="s-title">Historial</div>
+      <div class="historial" id="histList">
+        <div class="hist-empty" id="histEmpty">Sin búsquedas recientes</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOGGLE SIDEBAR -->
+  <button class="toggle-sidebar" id="toggleSidebar" onclick="toggleSidebar()" title="Panel búsqueda">◀</button>
+
+</div>
+
+<script>
+var PROVIDER_URL = 'https://carro.quirozchile.cl/';
+var historial = JSON.parse(localStorage.getItem('quiroz_hist') || '[]');
+var sidebarOpen = true;
+
+// Render historial
+function renderHistorial() {
+  var list = document.getElementById('histList');
+  var empty = document.getElementById('histEmpty');
+  if (historial.length === 0) { empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  var html = '';
+  for (var i = historial.length - 1; i >= 0 && i >= historial.length - 8; i--) {
+    var h = historial[i];
+    html += '<div class="hist-item" onclick="repeatSearch(\'' + encodeURIComponent(h) + '\')">'
+      + '<span>' + h + '</span>'
+      + '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>'
+      + '</div>';
+  }
+  list.innerHTML = html + (empty.outerHTML || '');
+}
+
+function addHistorial(q) {
+  if (!q) return;
+  historial = historial.filter(function(x){ return x !== q; });
+  historial.push(q);
+  if (historial.length > 20) historial.shift();
+  localStorage.setItem('quiroz_hist', JSON.stringify(historial));
+  renderHistorial();
+}
+
+function repeatSearch(encoded) {
+  var q = decodeURIComponent(encoded);
+  document.getElementById('mainSearch').value = q;
+  buscarQuery(q);
+}
+
+// Build search query from form fields
+function buildQuery() {
+  var parts = [];
+  var marca = document.getElementById('fMarca').value;
+  var modelo = document.getElementById('fModelo').value.trim();
+  var anioD = document.getElementById('fAnioDesde').value.trim();
+  var anioH = document.getElementById('fAnioHasta').value.trim();
+  var oem   = document.getElementById('fOEM').value.trim();
+  var fab   = document.getElementById('fFabrica').value.trim();
+
+  if (oem)   { return oem; }
+  if (fab)   { return fab; }
+  if (marca) parts.push(marca);
+  if (modelo) parts.push(modelo);
+  if (anioD && anioH && anioD !== anioH) parts.push(anioD + '/' + anioH);
+  else if (anioD) parts.push(anioD);
+  else if (anioH) parts.push(anioH);
+  return parts.join(' ').trim();
+}
+
+function buscarEnProveedor() {
+  var q = buildQuery() || document.getElementById('mainSearch').value.trim();
+  if (!q) return;
+  document.getElementById('mainSearch').value = q;
+  buscarQuery(q);
+}
+
+function buscarQuery(q) {
+  if (!q) return;
+  addHistorial(q);
+  // Copy to clipboard automatically so seller can paste in iframe
+  copiarTexto(q);
+  // Navigate iframe to provider (in case it's not loaded)
+  var frame = document.getElementById('provFrame');
+  if (frame.src === 'about:blank' || !frame.src) {
+    frame.src = PROVIDER_URL;
+  }
+}
+
+function copiarBusqueda() {
+  var q = buildQuery() || document.getElementById('mainSearch').value.trim();
+  if (!q) { showCopyFeedback('⚠ Ingresa algo para buscar'); return; }
+  document.getElementById('mainSearch').value = q;
+  addHistorial(q);
+  copiarTexto(q);
+}
+
+function copiarTexto(q) {
+  if (!q) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(q).then(function() {
+      showCopyFeedback('✔ Copiado: "' + q + '"');
+    }).catch(function() { fallbackCopy(q); });
+  } else { fallbackCopy(q); }
+}
+
+function fallbackCopy(q) {
+  var ta = document.createElement('textarea');
+  ta.value = q; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); showCopyFeedback('✔ Copiado: "' + q + '"'); }
+  catch(e) { showCopyFeedback('Copia manualmente: ' + q); }
+  document.body.removeChild(ta);
+}
+
+function showCopyFeedback(msg) {
+  var el = document.getElementById('copyFeedback');
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 3000);
+}
+
+function openNewTab() {
+  var q = document.getElementById('mainSearch').value.trim();
+  var url = q ? (PROVIDER_URL + '?s=' + encodeURIComponent(q)) : PROVIDER_URL;
+  window.open(url, '_blank');
+}
+
+function clearForm() {
+  document.getElementById('fMarca').value = '';
+  document.getElementById('fModelo').value = '';
+  document.getElementById('fAnioDesde').value = '';
+  document.getElementById('fAnioHasta').value = '';
+  document.getElementById('fOEM').value = '';
+  document.getElementById('fFabrica').value = '';
+  document.getElementById('mainSearch').value = '';
+}
+
+function actualizarModelos() {
+  var marca = document.getElementById('fMarca').value;
+  var modelos = {
+    'Toyota':      ['Hilux','Land Cruiser','RAV4','Yaris','Corolla','Fortuner','SW4'],
+    'Nissan':      ['Navara','Frontier','X-Trail','Qashqai','Note','March','Pathfinder'],
+    'Mitsubishi':  ['L200','Outlander','ASX','Eclipse Cross','Montero','Galant'],
+    'Ford':        ['Ranger','Explorer','F-150','Focus','Fiesta','EcoSport','Mustang'],
+    'Chevrolet':   ['D-Max','TrailBlazer','Captiva','Spark','Aveo','Cruze','S10'],
+    'Mazda':       ['BT-50','CX-5','CX-3','Mazda3','Mazda6','CX-9'],
+    'Hyundai':     ['Tucson','Santa Fe','Creta','i10','i20','Accent','H1','H100'],
+    'Kia':         ['Sportage','Sorento','Picanto','Rio','Stonic','Carnival'],
+    'Volkswagen':  ['Amarok','Golf','Tiguan','Polo','Passat','T-Cross'],
+    'Mercedes-Benz':['Citan','Sprinter','Vito','GLC','C-Class','A-Class'],
+  };
+  var fModelo = document.getElementById('fModelo');
+  // If we have models for this brand, suggest them
+  if (marca && modelos[marca]) {
+    fModelo.setAttribute('list', 'modelos-dl');
+    var dl = document.getElementById('modelos-dl') || document.createElement('datalist');
+    dl.id = 'modelos-dl';
+    dl.innerHTML = modelos[marca].map(function(m){ return '<option value="' + m + '">'; }).join('');
+    if (!document.getElementById('modelos-dl')) document.body.appendChild(dl);
+    fModelo.setAttribute('list', 'modelos-dl');
+  } else {
+    fModelo.removeAttribute('list');
+  }
+}
+
+function toggleSidebar() {
+  sidebarOpen = !sidebarOpen;
+  var sb = document.getElementById('sidebar');
+  var btn = document.getElementById('toggleSidebar');
+  sb.classList.toggle('collapsed', !sidebarOpen);
+  btn.textContent = sidebarOpen ? '▶' : '◀';
+}
+
+// Main search input
+document.getElementById('mainSearch').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { buscarQuery(this.value.trim()); }
+});
+
+// Quick chips
+document.querySelectorAll('.qchip').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    document.querySelectorAll('.qchip').forEach(function(c){ c.classList.remove('active'); });
+    this.classList.add('active');
+    var q = this.getAttribute('data-q');
+    document.getElementById('mainSearch').value = q;
+    buscarQuery(q);
+  });
+});
+
+// Reload button
+document.getElementById('btnReload').addEventListener('click', function() {
+  var frame = document.getElementById('provFrame');
+  frame.src = frame.src;
+});
+
+// Open in new tab
+document.getElementById('btnNewTab').addEventListener('click', openNewTab);
+
+// Detect if iframe is blocked (X-Frame-Options)
+var frame = document.getElementById('provFrame');
+var frameLoaded = false;
+frame.addEventListener('load', function() {
+  frameLoaded = true;
+  // Try to detect if blocked
+  try {
+    var doc = frame.contentDocument || frame.contentWindow.document;
+    if (!doc || !doc.body || doc.body.innerHTML === '') {
+      document.getElementById('blockedOverlay').classList.add('visible');
+    }
+  } catch(e) {
+    // CORS error = blocked
+    document.getElementById('blockedOverlay').classList.add('visible');
+  }
+});
+
+// If iframe doesn't load at all in 8s, show blocked overlay
+setTimeout(function() {
+  if (!frameLoaded) {
+    document.getElementById('blockedOverlay').classList.add('visible');
+  }
+}, 8000);
+
+renderHistorial();
+</script>
+
+</body>
+</html>
