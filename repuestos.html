@@ -246,9 +246,8 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 
 <script>
 // ── CONFIG ─────────────────────────────────────────────────────────
-// Reemplazar con la URL de tu Google Apps Script desplegado
-var GAS_URL = 'https://script.google.com/macros/s/TU_DEPLOYMENT_ID/exec';
-var WHATSAPP = '56912345678'; // número WhatsApp de GoCar's
+var DATA_URL  = 'quiroz_data.json';   // generado diariamente por GitHub Actions
+var WHATSAPP  = '56940310991';        // WhatsApp GoCar's
 
 // Modelos por marca
 var MODELOS = {
@@ -297,20 +296,34 @@ function buscar() {
   cargarProductos(q);
 }
 
-function cargarProductos(q) {
-  mostrarSkeletons();
-  var url = GAS_URL + '?action=catalog&q=' + encodeURIComponent(q);
-  fetch(url)
+var _allData = null;
+
+function cargarTodos(callback) {
+  if (_allData) { callback(_allData); return; }
+  fetch(DATA_URL + '?_=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(data){
-      if (!data.ok || !data.products) {
-        mostrarError(data.error || 'Error al cargar productos');
-        return;
-      }
-      currentProducts = data.products;
-      renderProductos(data.products, data.total);
+      _allData = data.products || [];
+      callback(_allData);
     })
-    .catch(function(e){ mostrarError('Sin conexión o error de servidor'); });
+    .catch(function(){ _allData = []; callback([]); });
+}
+
+function cargarProductos(q) {
+  mostrarSkeletons();
+  cargarTodos(function(all) {
+    if (!all.length) {
+      mostrarError('Catálogo no disponible aún — vuelve en unos minutos');
+      return;
+    }
+    var words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var results = all.filter(function(p) {
+      var hay = ((p.name||'') + ' ' + (p.code||'')).toLowerCase();
+      return words.every(function(w){ return hay.indexOf(w) !== -1; });
+    });
+    currentProducts = results;
+    renderProductos(results, results.length);
+  });
 }
 
 // ── RENDER ──────────────────────────────────────────────────────────
