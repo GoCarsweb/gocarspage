@@ -1690,6 +1690,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cargar stock físico en segundo plano (no bloquea la página)
   cargarStockFisico(null);
 
+  // Precargar todos los cat files en background para que el buscador funcione
+  (function() {
+    var allFiles = [];
+    var seen = {};
+    var keys = Object.keys(catFilesMap);
+    for (var ki = 0; ki < keys.length; ki++) {
+      var files = catFilesMap[keys[ki]];
+      for (var fi = 0; fi < files.length; fi++) {
+        if (!seen[files[fi]] && files[fi] !== 'productos_data.js') {
+          seen[files[fi]] = true;
+          allFiles.push(files[fi]);
+        }
+      }
+    }
+    function loadNext(i) {
+      if (i >= allFiles.length) { return; }
+      cargarProductosCat(allFiles[i], function() { loadNext(i + 1); });
+    }
+    loadNext(0);
+  })();
+
   // ── Buscador de repuestos ──────────────────────────────────────────
   var srInput   = document.getElementById('navSearchInput');
   var srBox     = document.getElementById('srBox');
