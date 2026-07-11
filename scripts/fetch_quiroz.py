@@ -170,9 +170,15 @@ def main():
             url = f"{BASE_URL}/?mod=search&ty=pro&kw={urllib.parse.quote(cat)}&pg={pg}"
             html = fetch(opener, url)
             prods = parse_products_from_page(html, debug=is_first and pg == 1)
-            if not prods:
-                break
-            added = 0
+            # Debug paginación: imprimir links de paginación en primera categoría, segunda página
+        if is_first and pg == 2:
+            pag_links = re.findall(r'href="([^"]*(?:pg|pag|page|pagina)[^"]*)"', html, re.IGNORECASE)
+            print(f"[debug-pag] pg=2 html_len={len(html)} pag_links={pag_links[:10]}")
+            print(f"[debug-pag-html] {html[2000:5000]}")
+
+        if not prods:
+            break
+        added = 0
             for p in prods:
                 key = (p["code"] or p["name"]).strip()
                 if key and key not in seen_keys:
