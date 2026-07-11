@@ -68,6 +68,12 @@ def login(opener):
 
     print(f"[login] rut_field={rut_name} pass_field={pass_name} hidden={list(hidden.keys())}")
 
+    # Print full login page to detect AJAX endpoints
+    scripts = re.findall(r'<script[^>]*>([\s\S]*?)</script>', html0, re.IGNORECASE)
+    for s in scripts:
+        if any(kw in s.lower() for kw in ["ajax", "fetch(", "xmlhttprequest", "rutid", "login", "submit"]):
+            print(f"[login] JS snippet:\n{s[:800]}\n---")
+
     # Step 2: POST with correct payload
     payload = {**hidden, rut_name: RUT, pass_name: PASS}
     data = urllib.parse.urlencode(payload).encode()
@@ -224,11 +230,11 @@ def main():
 
     if len(all_products) == 0:
         print("[WARN] 0 productos — el parser necesita ajustarse al HTML del sitio")
-        # Guardar HTML para diagnóstico
         with open("quiroz_diag.html", "w", encoding="utf-8") as f:
             f.write(html_login)
-        print("[diag] HTML guardado en quiroz_diag.html")
-        sys.exit(1)   # Falla el workflow → visible en GitHub Actions logs
+        print("[diag] HTML completo guardado en quiroz_diag.html")
+        print(f"[diag] HTML completo (primeros 8000 chars):\n{html_login[:8000]}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
