@@ -28,16 +28,59 @@ def make_session():
     return opener, jar
 
 def login(opener):
-    data = urllib.parse.urlencode({"rut": RUT, "password": PASS}).encode()
-    req  = urllib.request.Request(LOGIN_URL, data=data, method="POST")
+    # Step 1: GET login page to extract form action, hidden fields (CSRF), and real field names
+    try:
+        resp0 = opener.open(LOGIN_URL, timeout=20)
+        html0 = resp0.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"[login] GET ERROR: {e}")
+        return "", LOGIN_URL
+
+    # Extract form action URL
+    action_m = re.search(r'<form[^>]+action=["\']([^"\']*)["\']', html0, re.IGNORECASE)
+    form_action = action_m.group(1) if action_m else LOGIN_URL
+    if form_action and not form_action.startswith("http"):
+        form_action = "https://carro.quirozchile.cl" + form_action
+    print(f"[login] form_action={form_action}")
+
+    # Extract all hidden fields (CSRF tokens, etc.)
+    hidden = {}
+    for m in re.finditer(r'<input[^>]+type=["\']hidden["\'][^>]*>', html0, re.IGNORECASE):
+        tag = m.group(0)
+        name_m = re.search(r'name=["\']([^"\']+)["\']', tag)
+        val_m  = re.search(r'value=["\']([^"\']*)["\']', tag)
+        if name_m:
+            hidden[name_m.group(1)] = val_m.group(1) if val_m else ""
+
+    # Find actual field names for RUT/password inputs
+    rut_name = "rut"
+    pass_name = "password"
+    for m in re.finditer(r'<input[^>]+>', html0, re.IGNORECASE):
+        tag = m.group(0)
+        t = re.search(r'type=["\']([^"\']+)["\']', tag)
+        n = re.search(r'name=["\']([^"\']+)["\']', tag)
+        if not t or not n:
+            continue
+        if t.group(1).lower() in ("text", "email") and re.search(r'rut|user|login', n.group(1), re.IGNORECASE):
+            rut_name = n.group(1)
+        if t.group(1).lower() == "password":
+            pass_name = n.group(1)
+
+    print(f"[login] rut_field={rut_name} pass_field={pass_name} hidden={list(hidden.keys())}")
+
+    # Step 2: POST with correct payload
+    payload = {**hidden, rut_name: RUT, pass_name: PASS}
+    data = urllib.parse.urlencode(payload).encode()
+    req = urllib.request.Request(form_action, data=data, method="POST")
     req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    req.add_header("Referer", LOGIN_URL)
     try:
         resp = opener.open(req, timeout=20)
         html = resp.read().decode("utf-8", errors="replace")
-        print(f"[login] status={resp.status} url={resp.url} html_len={len(html)}")
+        print(f"[login] POST status={resp.status} url={resp.url} html_len={len(html)}")
         return html, resp.url
     except Exception as e:
-        print(f"[login] ERROR: {e}")
+        print(f"[login] POST ERROR: {e}")
         return "", LOGIN_URL
 
 def fetch_page(opener, url):
