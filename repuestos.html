@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoCar's — Repuestos</title>
+<link rel="icon" href="img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E31E24;--dark:#0d0d0d;--dark2:#141414;--dark3:#1a1a1a;
+  --border:#252525;--gray:#666;--gray2:#999;--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);min-height:100vh;}
+
+/* NAV */
+.nav{display:flex;align-items:center;gap:1rem;background:var(--dark2);border-bottom:2px solid var(--red);padding:.6rem 1.5rem;position:sticky;top:0;z-index:100;}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:-1px;color:var(--red);text-decoration:none;}
+.logo em{color:var(--white);font-style:normal;}
+.nav-search{
+  display:flex;align-items:center;gap:.5rem;flex:1;max-width:600px;
+  background:var(--dark3);border:1.5px solid var(--border);border-radius:6px;
+  padding:.4rem .85rem;margin:0 auto;transition:border-color .2s;
+}
+.nav-search:focus-within{border-color:var(--red);}
+.nav-search svg{opacity:.5;flex-shrink:0;}
+.nav-search input{background:none;border:none;outline:none;color:var(--white);font-family:'Barlow',sans-serif;font-size:.95rem;width:100%;}
+.nav-search input::placeholder{color:var(--gray);}
+.nav-links{display:flex;gap:.5rem;margin-left:auto;}
+.nav-link{color:var(--gray2);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;padding:.3rem .5rem;border-radius:4px;transition:color .2s;}
+.nav-link:hover{color:var(--white);}
+
+/* FILTROS */
+.filters{
+  background:var(--dark2);border-bottom:1px solid var(--border);
+  padding:.6rem 1.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.filter-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-right:.25rem;}
+.chip{
+  background:var(--dark3);border:1px solid var(--border);border-radius:20px;
+  padding:.2rem .7rem;font-size:.78rem;cursor:pointer;color:#bbb;transition:all .15s;
+}
+.chip:hover,.chip.active{border-color:var(--red);color:#fff;background:#1a0808;}
+
+/* LAYOUT */
+.main{max-width:1400px;margin:0 auto;padding:1.5rem;}
+
+/* ADVANCED FILTERS */
+.adv-filters{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;
+  margin-bottom:1.5rem;
+}
+.af-select{
+  background:var(--dark3);border:1.5px solid var(--border);color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:.88rem;padding:.5rem .75rem;
+  border-radius:6px;outline:none;cursor:pointer;transition:border-color .2s;
+}
+.af-select:focus{border-color:var(--red);}
+.af-input{
+  background:var(--dark3);border:1.5px solid var(--border);color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:.88rem;padding:.5rem .75rem;
+  border-radius:6px;outline:none;transition:border-color .2s;
+}
+.af-input:focus{border-color:var(--red);}
+.af-input::placeholder{color:#444;}
+.btn-buscar{
+  background:var(--red);color:#fff;border:none;border-radius:6px;
+  padding:.5rem 1.25rem;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;white-space:nowrap;
+}
+.btn-buscar:hover{background:#b81519;}
+.btn-clear{
+  background:none;border:1.5px solid var(--border);color:var(--gray);
+  border-radius:6px;padding:.5rem .85rem;font-size:.85rem;cursor:pointer;transition:all .2s;
+}
+.btn-clear:hover{border-color:#555;color:var(--white);}
+
+/* ESTADO */
+.estado{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;
+}
+.estado-txt{font-size:.85rem;color:var(--gray2);}
+.estado-txt strong{color:var(--white);}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;}
+
+/* CARD */
+.pcard{
+  background:var(--dark2);border:1.5px solid var(--border);border-radius:10px;
+  overflow:hidden;transition:border-color .2s,transform .2s;cursor:pointer;
+}
+.pcard:hover{border-color:var(--red);transform:translateY(-2px);}
+.pcard-img{
+  aspect-ratio:1/1;background:var(--dark3);display:flex;align-items:center;
+  justify-content:center;overflow:hidden;position:relative;
+}
+.pcard-img img{width:100%;height:100%;object-fit:contain;padding:.5rem;}
+.pcard-img .placeholder{font-size:2.5rem;opacity:.3;}
+.pcard-body{padding:.85rem;}
+.pcard-code{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:.25rem;}
+.pcard-name{font-size:.88rem;font-weight:600;line-height:1.35;margin-bottom:.6rem;color:var(--white);}
+.pcard-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--white);}
+.pcard-btns{display:flex;gap:.4rem;margin-top:.6rem;}
+.btn-wsp{
+  flex:1;background:#25d366;color:#fff;border:none;border-radius:6px;
+  padding:.45rem;font-size:.8rem;font-weight:600;cursor:pointer;transition:background .2s;
+}
+.btn-wsp:hover{background:#128c7e;}
+.btn-info{
+  background:var(--dark3);border:1.5px solid var(--border);color:var(--gray2);
+  border-radius:6px;padding:.45rem .65rem;font-size:.8rem;cursor:pointer;transition:all .2s;
+}
+.btn-info:hover{border-color:#555;color:var(--white);}
+
+/* SKELETON */
+.skeleton{animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
+.skel-img{aspect-ratio:1;background:var(--dark3);border-radius:8px 8px 0 0;}
+.skel-line{height:.7rem;background:var(--dark3);border-radius:4px;margin:.5rem .85rem;}
+.skel-line.w60{width:60%;}
+.skel-line.w40{width:40%;}
+
+/* EMPTY */
+.empty-state{
+  grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--gray);
+}
+.empty-state .ico{font-size:3rem;display:block;margin-bottom:1rem;}
+.empty-state h3{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;margin-bottom:.5rem;color:var(--gray2);}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;
+  display:none;align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:var(--dark2);border:1.5px solid var(--border);border-radius:12px;
+  max-width:520px;width:100%;max-height:90vh;overflow-y:auto;
+}
+.modal-img{background:var(--dark3);display:flex;align-items:center;justify-content:center;height:200px;}
+.modal-img img{max-height:180px;max-width:100%;object-fit:contain;padding:.5rem;}
+.modal-body{padding:1.5rem;}
+.modal-close{float:right;background:none;border:none;color:var(--gray);font-size:1.3rem;cursor:pointer;margin-bottom:.5rem;}
+.modal-close:hover{color:var(--white);}
+.modal-code{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.35rem;}
+.modal-name{font-size:1.2rem;font-weight:700;line-height:1.35;margin-bottom:1rem;}
+.modal-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;margin-bottom:1.25rem;}
+.modal-wsp{
+  width:100%;background:#25d366;color:#fff;border:none;border-radius:8px;
+  padding:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;
+}
+.modal-wsp:hover{background:#128c7e;}
+
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .adv-filters{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="logo" href="gocar_web.html">GO<em>CAR'S</em></a>
+  <div class="nav-search">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Buscar repuesto, código OEM, marca, modelo…" autocomplete="off">
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="gocar_web.html">Inicio</a>
+    <a class="nav-link" href="catalogo.html">Catálogo</a>
+  </div>
+</nav>
+
+<!-- CHIPS -->
+<div class="filters">
+  <span class="filter-label">Marcas:</span>
+  <span class="chip active" data-marca="">Todas</span>
+  <span class="chip" data-marca="Toyota">Toyota</span>
+  <span class="chip" data-marca="Nissan">Nissan</span>
+  <span class="chip" data-marca="Mitsubishi">Mitsubishi</span>
+  <span class="chip" data-marca="Ford">Ford</span>
+  <span class="chip" data-marca="Chevrolet">Chevrolet</span>
+  <span class="chip" data-marca="Mazda">Mazda</span>
+  <span class="chip" data-marca="Hyundai">Hyundai</span>
+  <span class="chip" data-marca="Volkswagen">VW</span>
+</div>
+
+<div class="main">
+
+  <!-- FILTROS AVANZADOS -->
+  <div class="adv-filters">
+    <select class="af-select" id="afMarca" onchange="actualizarModelos()">
+      <option value="">Marca…</option>
+      <option>Toyota</option><option>Nissan</option><option>Mitsubishi</option>
+      <option>Ford</option><option>Chevrolet</option><option>Mazda</option>
+      <option>Hyundai</option><option>Kia</option><option>Volkswagen</option>
+      <option>Fiat</option><option>Renault</option><option>Peugeot</option>
+      <option>Mercedes-Benz</option><option>BMW</option><option>Subaru</option>
+    </select>
+    <input type="text" class="af-input" id="afModelo" placeholder="Modelo…" list="dl-modelos">
+    <datalist id="dl-modelos"></datalist>
+    <input type="number" class="af-input" id="afAnioD" placeholder="Año desde…" min="1990" max="2030">
+    <input type="number" class="af-input" id="afAnioH" placeholder="Año hasta…" min="1990" max="2030">
+    <input type="text" class="af-input" id="afOEM" placeholder="Código OEM…">
+    <input type="text" class="af-input" id="afFab" placeholder="Código de fábrica…">
+    <button class="btn-buscar" onclick="buscar()">🔍 Buscar</button>
+    <button class="btn-clear" onclick="limpiar()">Limpiar</button>
+  </div>
+
+  <!-- ESTADO -->
+  <div class="estado">
+    <div class="estado-txt" id="estadoTxt">Escribe algo para buscar repuestos</div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid" id="grid">
+    <div class="empty-state">
+      <span class="ico">🔩</span>
+      <h3>Busca el repuesto que necesitas</h3>
+      <p>Por marca, modelo, código OEM o código de fábrica</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-img"><img id="mImg" src="" alt=""></div>
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-code" id="mCode"></div>
+      <div class="modal-name" id="mName"></div>
+      <div class="modal-price" id="mPrice"></div>
+      <button class="modal-wsp" id="mWsp">💬 Consultar por WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────────
+// Reemplazar con la URL de tu Google Apps Script desplegado
+var GAS_URL = 'https://script.google.com/macros/s/TU_DEPLOYMENT_ID/exec';
+var WHATSAPP = '56912345678'; // número WhatsApp de GoCar's
+
+// Modelos por marca
+var MODELOS = {
+  'Toyota':     ['Hilux','Land Cruiser','RAV4','Yaris','Corolla','Fortuner'],
+  'Nissan':     ['Navara','Frontier','X-Trail','Qashqai','Note','March'],
+  'Mitsubishi': ['L200','Outlander','ASX','Eclipse Cross','Montero'],
+  'Ford':       ['Ranger','Explorer','F-150','EcoSport','Fiesta','Focus'],
+  'Chevrolet':  ['D-Max','TrailBlazer','Captiva','Spark','Cruze','Aveo'],
+  'Mazda':      ['BT-50','CX-5','CX-3','Mazda3','Mazda6'],
+  'Hyundai':    ['Tucson','Santa Fe','Creta','i10','Accent','H1','H100'],
+  'Kia':        ['Sportage','Sorento','Picanto','Rio','Stonic'],
+  'Volkswagen': ['Amarok','Golf','Tiguan','Polo','T-Cross'],
+};
+
+var currentProducts = [];
+var currentQuery    = '';
+
+function fmt(n){ return '$' + Math.round(n).toLocaleString('es-CL'); }
+
+// ── BÚSQUEDA ────────────────────────────────────────────────────────
+function buildQuery() {
+  var oem   = document.getElementById('afOEM').value.trim();
+  var fab   = document.getElementById('afFab').value.trim();
+  var marca = document.getElementById('afMarca').value;
+  var model = document.getElementById('afModelo').value.trim();
+  var anioD = document.getElementById('afAnioD').value.trim();
+  var anioH = document.getElementById('afAnioH').value.trim();
+  var si    = document.getElementById('searchInput').value.trim();
+
+  if (oem)  return oem;
+  if (fab)  return fab;
+  var parts = [];
+  if (marca) parts.push(marca);
+  if (model) parts.push(model);
+  if (anioD && anioH && anioD !== anioH) parts.push(anioD+'/'+anioH);
+  else if (anioD) parts.push(anioD);
+  else if (anioH) parts.push(anioH);
+  return parts.length ? parts.join(' ') : si;
+}
+
+function buscar() {
+  var q = buildQuery();
+  if (!q) { alert('Ingresa al menos un criterio de búsqueda'); return; }
+  currentQuery = q;
+  document.getElementById('searchInput').value = q;
+  cargarProductos(q);
+}
+
+function cargarProductos(q) {
+  mostrarSkeletons();
+  var url = GAS_URL + '?action=catalog&q=' + encodeURIComponent(q);
+  fetch(url)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (!data.ok || !data.products) {
+        mostrarError(data.error || 'Error al cargar productos');
+        return;
+      }
+      currentProducts = data.products;
+      renderProductos(data.products, data.total);
+    })
+    .catch(function(e){ mostrarError('Sin conexión o error de servidor'); });
+}
+
+// ── RENDER ──────────────────────────────────────────────────────────
+function renderProductos(prods, total) {
+  var grid = document.getElementById('grid');
+  var est  = document.getElementById('estadoTxt');
+
+  if (!prods || prods.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><span class="ico">🔍</span><h3>Sin resultados</h3><p>Intenta con otro código o descripción</p></div>';
+    est.innerHTML = 'Sin resultados para <strong>"'+currentQuery+'"</strong>';
+    return;
+  }
+
+  est.innerHTML = '<strong>' + prods.length + '</strong> resultado' + (prods.length!==1?'s':'') + ' para <strong>"'+currentQuery+'"</strong>';
+
+  var html = '';
+  prods.forEach(function(p, i) {
+    var imgHtml = p.img
+      ? '<img src="'+p.img+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">'
+        + '<span class="placeholder" style="display:none">🔩</span>'
+      : '<span class="placeholder">🔩</span>';
+
+    html += '<div class="pcard" onclick="openModal('+i+')">'
+      + '<div class="pcard-img">'+imgHtml+'</div>'
+      + '<div class="pcard-body">'
+      + '<div class="pcard-code">'+(p.code||'—')+'</div>'
+      + '<div class="pcard-name">'+p.name+'</div>'
+      + '<div class="pcard-price">'+fmt(p.precio)+'</div>'
+      + '<div class="pcard-btns">'
+      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+i+')">💬 WhatsApp</button>'
+      + '<button class="btn-info" onclick="event.stopPropagation();openModal('+i+')">Ver más</button>'
+      + '</div>'
+      + '</div></div>';
+  });
+  grid.innerHTML = html;
+}
+
+function mostrarSkeletons() {
+  var html = '';
+  for (var i=0;i<12;i++) {
+    html += '<div class="pcard skeleton">'
+      +'<div class="skel-img"></div>'
+      +'<div class="skel-line" style="margin-top:.85rem;width:45%"></div>'
+      +'<div class="skel-line w60"></div>'
+      +'<div class="skel-line w40"></div>'
+      +'</div>';
+  }
+  document.getElementById('grid').innerHTML = html;
+  document.getElementById('estadoTxt').innerHTML = 'Buscando <strong>"'+currentQuery+'"</strong>…';
+}
+
+function mostrarError(msg) {
+  document.getElementById('grid').innerHTML = '<div class="empty-state"><span class="ico">⚠️</span><h3>'+msg+'</h3><p>Intenta nuevamente</p></div>';
+  document.getElementById('estadoTxt').textContent = 'Error';
+}
+
+// ── MODAL ───────────────────────────────────────────────────────────
+function openModal(idx) {
+  var p = currentProducts[idx];
+  if (!p) return;
+  document.getElementById('mImg').src    = p.img || '';
+  document.getElementById('mImg').style.display = p.img ? 'block' : 'none';
+  document.getElementById('mCode').textContent  = p.code || '';
+  document.getElementById('mName').textContent  = p.name;
+  document.getElementById('mPrice').textContent = fmt(p.precio);
+  document.getElementById('mWsp').onclick = function(){ wspConsultar(idx); };
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+function wspConsultar(idx) {
+  var p = currentProducts[idx];
+  if (!p) return;
+  var msg = '👋 Hola GoCar\'s, quiero consultar por el repuesto:\n\n'
+    + '📦 *'+p.name+'*\n'
+    + (p.code ? '🔢 Código: '+p.code+'\n' : '')
+    + '💰 Precio referencia: '+fmt(p.precio)+'\n\n'
+    + '¿Está disponible?';
+  window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg), '_blank');
+}
+
+// ── CHIPS MARCAS ─────────────────────────────────────────────────────
+document.querySelectorAll('.chip[data-marca]').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    document.querySelectorAll('.chip[data-marca]').forEach(function(c){ c.classList.remove('active'); });
+    this.classList.add('active');
+    var marca = this.getAttribute('data-marca');
+    document.getElementById('afMarca').value = marca;
+    actualizarModelos();
+    if (marca) {
+      currentQuery = marca;
+      cargarProductos(marca);
+    }
+  });
+});
+
+// ── MODELOS DINÁMICOS ────────────────────────────────────────────────
+function actualizarModelos() {
+  var marca = document.getElementById('afMarca').value;
+  var dl    = document.getElementById('dl-modelos');
+  dl.innerHTML = (MODELOS[marca]||[]).map(function(m){ return '<option value="'+m+'">'; }).join('');
+}
+
+// ── TECLA ENTER ─────────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    currentQuery = this.value.trim();
+    if (currentQuery) cargarProductos(currentQuery);
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeModal();
+});
+
+function limpiar() {
+  document.getElementById('afMarca').value  = '';
+  document.getElementById('afModelo').value = '';
+  document.getElementById('afAnioD').value  = '';
+  document.getElementById('afAnioH').value  = '';
+  document.getElementById('afOEM').value    = '';
+  document.getElementById('afFab').value    = '';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.chip[data-marca]').forEach(function(c,i){ c.classList.toggle('active', i===0); });
+}
+</script>
+
+</body>
+</html>
