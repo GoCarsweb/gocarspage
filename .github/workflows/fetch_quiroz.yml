@@ -1,0 +1,27 @@
+name: Actualizar catálogo Quiroz Chile
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Correr scraper
+        env:
+          QUIROZ_RUT:  ${{ secrets.QUIROZ_RUT }}
+          QUIROZ_PASS: ${{ secrets.QUIROZ_PASS }}
+        run: python scripts/fetch_quiroz.py
+      - name: Guardar datos
+        run: |
+          git config user.name "GoCars Bot"
+          git config user.email "bot@gocars.cl"
+          git add quiroz_data.json
+          git diff --cached --quiet || git commit -m "chore: actualizar catálogo $(date -u '+%Y-%m-%d')"
+          git push
