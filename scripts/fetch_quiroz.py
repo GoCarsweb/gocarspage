@@ -10,11 +10,12 @@ import urllib.request
 import urllib.parse
 import http.cookiejar
 
-MARKUP   = 1.28
-LOGIN_URL = "https://carro.quirozchile.cl/"
-RUT      = os.environ["QUIROZ_RUT"]
-PASS     = os.environ["QUIROZ_PASS"]
-OUT_FILE = "quiroz_data.json"
+MARKUP    = 1.28
+BASE_URL  = "https://carro.quirozchile.cl"
+LOGIN_URL = BASE_URL + "/"
+RUT       = os.environ["QUIROZ_RUT"]
+PASS      = os.environ["QUIROZ_PASS"]
+OUT_FILE  = "quiroz_data.json"
 
 # ── SESIÓN ────────────────────────────────────────────────────────────
 def make_session():
@@ -25,98 +26,70 @@ def make_session():
         ("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"),
         ("Accept-Language", "es-CL,es;q=0.9"),
     ]
-    return opener, jar
+    return opener
 
 def login(opener):
-    # Step 1: GET login page to extract form action, hidden fields (CSRF), and real field names
-    try:
-        resp0 = opener.open(LOGIN_URL, timeout=20)
-        html0 = resp0.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"[login] GET ERROR: {e}")
-        return "", LOGIN_URL
+    resp0 = opener.open(LOGIN_URL, timeout=20)
+    html0 = resp0.read().decode("utf-8", errors="replace")
 
-    # Extract form action URL
-    action_m = re.search(r'<form[^>]+action=["\']([^"\']*)["\']', html0, re.IGNORECASE)
-    form_action = action_m.group(1) if action_m else LOGIN_URL
-    if form_action and not form_action.startswith("http"):
-        form_action = "https://carro.quirozchile.cl" + form_action
-    print(f"[login] form_action={form_action}")
-
-    # Extract all hidden fields (CSRF tokens, etc.)
-    hidden = {}
-    for m in re.finditer(r'<input[^>]+type=["\']hidden["\'][^>]*>', html0, re.IGNORECASE):
-        tag = m.group(0)
-        name_m = re.search(r'name=["\']([^"\']+)["\']', tag)
-        val_m  = re.search(r'value=["\']([^"\']*)["\']', tag)
-        if name_m:
-            hidden[name_m.group(1)] = val_m.group(1) if val_m else ""
-
-    # Find actual field names for RUT/password inputs
-    rut_name = "rut"
-    pass_name = "password"
+    # Extraer nombre real de campos
+    rut_name, pass_name = "rutid", "pwid"
     for m in re.finditer(r'<input[^>]+>', html0, re.IGNORECASE):
         tag = m.group(0)
         t = re.search(r'type=["\']([^"\']+)["\']', tag)
         n = re.search(r'name=["\']([^"\']+)["\']', tag)
-        if not t or not n:
-            continue
-        if t.group(1).lower() in ("text", "email") and re.search(r'rut|user|login', n.group(1), re.IGNORECASE):
+        if not t or not n: continue
+        if t.group(1).lower() in ("text","email") and re.search(r'rut|user', n.group(1), re.I):
             rut_name = n.group(1)
         if t.group(1).lower() == "password":
             pass_name = n.group(1)
 
-    print(f"[login] rut_field={rut_name} pass_field={pass_name} hidden={list(hidden.keys())}")
-
-    # Print full login page to detect AJAX endpoints
-    scripts = re.findall(r'<script[^>]*>([\s\S]*?)</script>', html0, re.IGNORECASE)
-    for s in scripts:
-        if any(kw in s.lower() for kw in ["ajax", "fetch(", "xmlhttprequest", "rutid", "login", "submit"]):
-            print(f"[login] JS snippet:\n{s[:800]}\n---")
-
-    # Step 2: POST with correct payload
-    payload = {**hidden, rut_name: RUT, pass_name: PASS, "submitb": "Entrar"}
-    data = urllib.parse.urlencode(payload).encode()
-    req = urllib.request.Request(form_action, data=data, method="POST")
+    payload = urllib.parse.urlencode({rut_name: RUT, pass_name: PASS, "submitb": "Entrar"}).encode()
+    req = urllib.request.Request(LOGIN_URL, data=payload, method="POST")
     req.add_header("Content-Type", "application/x-www-form-urlencoded")
     req.add_header("Referer", LOGIN_URL)
-    try:
-        resp = opener.open(req, timeout=20)
-        html = resp.read().decode("utf-8", errors="replace")
-        print(f"[login] POST status={resp.status} url={resp.url} html_len={len(html)}")
-        return html, resp.url
-    except Exception as e:
-        print(f"[login] POST ERROR: {e}")
-        return "", LOGIN_URL
+    resp = opener.open(req, timeout=20)
+    html = resp.read().decode("utf-8", errors="replace")
+    print(f"[login] html_len={len(html)} url={resp.url}")
+    return html
 
-def fetch_page(opener, url):
+def fetch(opener, url):
     try:
-        resp = opener.open(url, timeout=20)
+        resp = opener.open(url, timeout=30)
         return resp.read().decode("utf-8", errors="replace")
     except Exception as e:
         print(f"[fetch] ERROR {url}: {e}")
         return ""
 
+# ── EXTRAER CATEGORÍAS DEL HOME ────────────────────────────────────────
+def extract_categories(html):
+    """Extrae keywords de categoría de los links del sidebar."""
+    cats = []
+    for m in re.finditer(r'href="[^"]*mod=search[^"]*kw=([^"&]+)"', html):
+        kw = urllib.parse.unquote_plus(m.group(1))
+        if kw not in cats:
+            cats.append(kw)
+    print(f"[cats] {len(cats)} categorías: {cats[:10]}...")
+    return cats
+
 # ── PARSER ─────────────────────────────────────────────────────────────
 def strip_tags(s):
     s = re.sub(r"<[^>]+>", " ", s or "")
-    s = re.sub(r"&[a-z]+;", " ", s)
+    s = re.sub(r"&[a-zA-Z]+;", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
 def parse_price(text):
-    """Extraer precio en CLP de un string de texto."""
-    # Formato chileno: $123.456 o 123.456 o 123456
     matches = re.findall(r"\$?\s*([\d]{1,3}(?:[\.,][\d]{3})*)", text)
     for m in reversed(matches):
-        val = float(m.replace(".", "").replace(",", "."))
-        if val >= 500:   # mínimo razonable en CLP
+        val = float(m.replace(".", "").replace(",", ""))
+        if val >= 500:
             return val
     return 0.0
 
-def parse_products(html, base_url="https://carro.quirozchile.cl"):
+def parse_products_from_page(html):
     products = []
 
-    # Estrategia 1 — filas de tabla (típico en sistemas de repuestos chilenos)
+    # Estrategia 1: tabla con <tr><td>
     rows = re.findall(r"<tr[^>]*>([\s\S]*?)</tr>", html, re.IGNORECASE)
     for row in rows:
         cells_raw = re.findall(r"<td[^>]*>([\s\S]*?)</td>", row, re.IGNORECASE)
@@ -127,89 +100,78 @@ def parse_products(html, base_url="https://carro.quirozchile.cl"):
         price = parse_price(text)
         if price < 500:
             continue
-        name = next((c for c in cells if len(c) > 5 and not c.startswith("$") and not re.match(r"^\d", c)), "")
+        name = next((c for c in cells if len(c) > 4 and not c.startswith("$") and not re.match(r"^[\d\$]", c)), "")
         if not name:
             continue
-        code_m = re.search(r"\b([A-Z]{2,}[\d\-\/\.]{2,}[A-Z\d]*)\b", text)
-        code   = code_m.group(1) if code_m else cells[0]
-        img_m  = re.search(r'<img[^>]+src="([^"]+)"', "".join(cells_raw), re.IGNORECASE)
-        img    = img_m.group(1) if img_m else ""
+        code_m = re.search(r"\b([A-Z0-9]{2,}[\-\/\.][A-Z0-9\-\/\.]{2,})\b", text)
+        code = code_m.group(1) if code_m else cells[0]
+        img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', "".join(cells_raw), re.IGNORECASE)
+        img = img_m.group(1) if img_m else ""
         if img and not img.startswith("http"):
-            img = base_url + img
+            img = BASE_URL + ("" if img.startswith("/") else "/") + img
         products.append({"name": name, "code": code, "img": img, "precioBase": price})
 
-    # Estrategia 2 — divs de producto
-    if not products:
-        blocks = re.findall(
-            r'<(?:div|article|li)[^>]+class="[^"]*(?:product|item|repuesto)[^"]*"[^>]*>([\s\S]*?)</(?:div|article|li)>',
-            html, re.IGNORECASE
-        )
-        for block in blocks:
-            text  = strip_tags(block)
-            price = parse_price(text)
-            if price < 500:
-                continue
-            name_m = re.search(r'<(?:h[1-6]|strong|a)[^>]*>([^<]{5,})</(?:h[1-6]|strong|a)>', block, re.IGNORECASE)
-            name   = name_m.group(1).strip() if name_m else text[:60].strip()
-            code_m = re.search(r"\b([A-Z]{2,}[\d\-\/\.]{2,}[A-Z\d]*)\b", text)
-            code   = code_m.group(1) if code_m else ""
-            img_m  = re.search(r'<img[^>]+src="([^"]+)"', block, re.IGNORECASE)
-            img    = img_m.group(1) if img_m else ""
-            if img and not img.startswith("http"):
-                img = base_url + img
-            products.append({"name": name, "code": code, "img": img, "precioBase": price})
+    if products:
+        return products
+
+    # Estrategia 2: DataTable — buscar JSON embebido
+    json_m = re.search(r'"data"\s*:\s*(\[\[[\s\S]*?\]\])', html)
+    if json_m:
+        try:
+            rows_data = json.loads(json_m.group(1))
+            for row in rows_data:
+                if len(row) < 2: continue
+                cells = [strip_tags(str(c)) for c in row]
+                text = " ".join(cells)
+                price = parse_price(text)
+                if price < 500: continue
+                name = next((c for c in cells if len(c) > 4 and not re.match(r"^[\d\$]", c)), "")
+                if not name: continue
+                products.append({"name": name, "code": cells[0], "img": "", "precioBase": price})
+        except Exception as e:
+            print(f"[parse] JSON err: {e}")
 
     return products
-
-# ── BÚSQUEDA / PAGINACIÓN ───────────────────────────────────────────────
-SEARCH_PATTERNS = [
-    "{base}?buscar={q}",
-    "{base}buscar?q={q}",
-    "{base}search?q={q}",
-    "{base}productos?buscar={q}",
-    "{base}catalogo?buscar={q}",
-]
-
-def search_products(opener, query="", base_url=LOGIN_URL):
-    """Intenta distintos patrones de URL hasta encontrar productos."""
-    for pattern in SEARCH_PATTERNS:
-        url = pattern.format(base=base_url, q=urllib.parse.quote(query))
-        html = fetch_page(opener, url)
-        products = parse_products(html, base_url)
-        if products:
-            print(f"[search] Encontrado con patrón: {url} → {len(products)} productos")
-            return products, url
-    # Último recurso: parsear página principal post-login
-    html = fetch_page(opener, base_url)
-    products = parse_products(html, base_url)
-    return products, base_url
 
 # ── MAIN ────────────────────────────────────────────────────────────────
 def main():
     print(f"[{datetime.now().isoformat()}] Iniciando scraper Quiroz Chile…")
 
-    opener, jar = make_session()
-    html_login, final_url = login(opener)
-    base_url = urllib.parse.urljoin(final_url, "/")
-    print(f"[main] base_url={base_url}")
+    opener = make_session()
+    home_html = login(opener)
 
-    # Guardar diagnóstico HTML para depurar si hay problemas
-    diag_preview = html_login[:3000] if html_login else "(vacío)"
-    print(f"[diag] HTML post-login preview:\n{diag_preview}\n{'—'*60}")
+    if len(home_html) < 8000:
+        print(f"[WARN] Login posiblemente fallido — html corto:\n{home_html[:2000]}")
+        sys.exit(1)
 
-    # Intentar obtener catálogo completo (sin búsqueda) + por categorías comunes
+    # Extraer categorías del sidebar
+    categories = extract_categories(home_html)
+    if not categories:
+        # Fallback: categorías conocidas del sitio
+        categories = ["alternador", "bendix", "filtro", "carbon", "inducido",
+                      "electroventilador", "bomba", "bujia", "fusible", "horquilla"]
+
     all_products = []
-    seen_codes   = set()
+    seen_keys = set()
 
-    categories = ["", "embrague", "alternador", "partida", "rodamiento", "motor"]
     for cat in categories:
-        prods, url = search_products(opener, cat, base_url)
+        url = f"{BASE_URL}/?mod=search&ty=pro&kw={urllib.parse.quote(cat)}"
+        html = fetch(opener, url)
+        prods = parse_products_from_page(html)
+
+        # Si no encontró nada, imprimir fragmento para debug
+        if not prods and cat == categories[0]:
+            print(f"[debug] Primera categoría sin productos. HTML snippet:\n{html[2000:5000]}")
+
+        new = 0
         for p in prods:
-            key = p["code"] or p["name"]
-            if key not in seen_codes:
-                seen_codes.add(key)
+            key = (p["code"] or p["name"]).strip()
+            if key and key not in seen_keys:
+                seen_keys.add(key)
+                p["categoria"] = cat
                 all_products.append(p)
-        print(f"[cat='{cat}'] +{len(prods)} → total {len(all_products)}")
+                new += 1
+        print(f"[cat='{cat}'] +{new} nuevos → total {len(all_products)}")
 
     # Aplicar markup 28%
     for p in all_products:
@@ -229,11 +191,8 @@ def main():
     print(f"[done] {len(all_products)} productos guardados en {OUT_FILE}")
 
     if len(all_products) == 0:
-        print("[WARN] 0 productos — el parser necesita ajustarse al HTML del sitio")
         with open("quiroz_diag.html", "w", encoding="utf-8") as f:
-            f.write(html_login)
-        print("[diag] HTML completo guardado en quiroz_diag.html")
-        print(f"[diag] HTML completo (primeros 8000 chars):\n{html_login[:8000]}")
+            f.write(home_html)
         sys.exit(1)
 
 if __name__ == "__main__":
