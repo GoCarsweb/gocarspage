@@ -816,16 +816,9 @@ var extraInfo = {
 
 // Íconos por categoría (para productos nuevos sin info extra)
 var catIcons = {
-  'Filtros':'🫧',
-  'Eléctrico':'⚡',
-  'Iluminación':'💡',
   'Distribución':'⚙️',
   'Suspensión':'🔩',
-  'Car Care':'✨',
-  'Plumillas':'🌧️',
-  'Diesel':'⛽',
-  'Transmisiones y Ejes':'⚙️',
-  'Líquido de Frenos':'💧'
+  'Transmisiones y Ejes':'⚙️'
 };
 
 var products = [];
@@ -874,21 +867,10 @@ function cargarStockFisico(callback) {
 // ── CARGA POR CATEGORÍA (LAZY) ──
 var catFilesMap = {
   'todos':                 ['productos_data.js'],
-  'Filtros':               ['cat_filtros.js'],
-  'Eléctrico':             ['cat_electrico.js'],
-  'Iluminación':           ['cat_iluminacion.js'],
-  'Inyección y Encendido': [],
-  'Suspensión':            ['cat_suspension.js'],
-  'Car Care':              ['cat_carcare.js'],
-  'Plumillas':             ['cat_plumillas.js'],
-  'Diesel':                ['cat_diesel.js'],
-  'Transmisiones y Ejes':  ['cat_transmision.js'],
-  'Líquido de Frenos':     ['cat_liquido.js'],
-  'Baterías':              [],
-  'Correas':               [],
-  'Lubricantes':           [],
   'Embragues':             ['cat_embragues_a.js', 'cat_embragues_b.js', 'cat_embrague_c.js'],
+  'Suspensión':            ['cat_suspension.js'],
   'Frenos':                ['cat_frenos.js'],
+  'Transmisiones y Ejes':  ['cat_transmision.js'],
   'Distribución':          ['cat_distribucion.js']
 };
 
