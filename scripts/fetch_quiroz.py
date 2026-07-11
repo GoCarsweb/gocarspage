@@ -75,7 +75,7 @@ def login(opener):
             print(f"[login] JS snippet:\n{s[:800]}\n---")
 
     # Step 2: POST with correct payload
-    payload = {**hidden, rut_name: RUT, pass_name: PASS}
+    payload = {**hidden, rut_name: RUT, pass_name: PASS, "submitb": "Entrar"}
     data = urllib.parse.urlencode(payload).encode()
     req = urllib.request.Request(form_action, data=data, method="POST")
     req.add_header("Content-Type", "application/x-www-form-urlencoded")
