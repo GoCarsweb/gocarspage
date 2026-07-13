@@ -86,42 +86,26 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 .estado-txt{font-size:.85rem;color:var(--gray2);}
 .estado-txt strong{color:var(--white);}
 
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;}
-
-/* CARD */
+/* LISTA */
+.grid{display:flex;flex-direction:column;gap:.35rem;}
 .pcard{
-  background:var(--dark2);border:1.5px solid var(--border);border-radius:10px;
-  overflow:hidden;transition:border-color .2s,transform .2s;cursor:pointer;
+  background:var(--dark2);border:1px solid var(--border);border-radius:7px;
+  display:flex;align-items:center;gap:1rem;padding:.6rem 1rem;
+  cursor:pointer;transition:border-color .15s,background .15s;
 }
-.pcard:hover{border-color:var(--red);transform:translateY(-2px);}
-.pcard-img{
-  aspect-ratio:1/1;background:var(--dark3);display:flex;align-items:center;
-  justify-content:center;overflow:hidden;position:relative;
-}
-.pcard-img img{width:100%;height:100%;object-fit:contain;padding:.5rem;}
-.pcard-img .placeholder{font-size:2.5rem;opacity:.3;}
-.pcard-body{padding:.85rem;}
-.pcard-code{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:.25rem;}
-.pcard-name{font-size:.88rem;font-weight:600;line-height:1.35;margin-bottom:.6rem;color:var(--white);}
-.pcard-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--white);}
-.pcard-btns{display:flex;gap:.4rem;margin-top:.6rem;}
-.btn-wsp{
-  flex:1;background:#25d366;color:#fff;border:none;border-radius:6px;
-  padding:.45rem;font-size:.8rem;font-weight:600;cursor:pointer;transition:background .2s;
-}
+.pcard:hover{border-color:var(--red);background:#130505;}
+.pcard-code{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);width:120px;flex-shrink:0;}
+.pcard-name{font-size:.88rem;color:var(--white);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pcard-cat{font-size:.72rem;color:var(--gray);width:110px;flex-shrink:0;text-align:right;}
+.pcard-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);width:90px;text-align:right;flex-shrink:0;}
+.pcard-btns{display:flex;gap:.4rem;flex-shrink:0;}
+.btn-wsp{background:#25d366;color:#fff;border:none;border-radius:5px;padding:.3rem .6rem;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap;}
 .btn-wsp:hover{background:#128c7e;}
-.btn-info{
-  background:var(--dark3);border:1.5px solid var(--border);color:var(--gray2);
-  border-radius:6px;padding:.45rem .65rem;font-size:.8rem;cursor:pointer;transition:all .2s;
-}
-.btn-info:hover{border-color:#555;color:var(--white);}
 
 /* SKELETON */
 .skeleton{animation:pulse 1.5s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
-.skel-img{aspect-ratio:1;background:var(--dark3);border-radius:8px 8px 0 0;}
-.skel-line{height:.7rem;background:var(--dark3);border-radius:4px;margin:.5rem .85rem;}
+.skel-line{height:.7rem;background:var(--dark3);border-radius:4px;}
 .skel-line.w60{width:60%;}
 .skel-line.w40{width:40%;}
 
@@ -340,26 +324,21 @@ function renderProductos() {
   var html = '';
   page.forEach(function(p, i) {
     var idx = start + i;
-    var imgHtml = p.img
-      ? '<img src="'+p.img+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">'
-        + '<span class="placeholder" style="display:none">🔩</span>'
-      : '<span class="placeholder">🔩</span>';
+    var nombre = cap(p.categoria||'') + (p.name && p.name !== p.code ? ' — ' + p.name : '');
     html += '<div class="pcard" onclick="openModal('+idx+')">'
-      + '<div class="pcard-img">'+imgHtml+'</div>'
-      + '<div class="pcard-body">'
-      + '<div class="pcard-code">'+(p.code||p.categoria||'—')+'</div>'
-      + '<div class="pcard-name">'+cap(p.categoria||'')+(p.name && p.name!==p.code ? ' — '+p.name : '')+'</div>'
+      + '<div class="pcard-code">'+(p.code||'—')+'</div>'
+      + '<div class="pcard-name">'+nombre+'</div>'
+      + '<div class="pcard-cat">'+(p.vehiculos&&p.vehiculos.length ? p.vehiculos[0] : cap(p.categoria||''))+'</div>'
       + '<div class="pcard-price">'+fmt(p.precio)+'</div>'
       + '<div class="pcard-btns">'
-      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+idx+')">💬 WhatsApp</button>'
-      + '<button class="btn-info" onclick="event.stopPropagation();openModal('+idx+')">Ver más</button>'
-      + '</div></div></div>';
+      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+idx+')">💬 WS</button>'
+      + '</div></div>';
   });
 
   // Paginación
   var totalPags = Math.ceil(total / PAGE_SIZE);
   if (totalPags > 1) {
-    html += '<div style="grid-column:1/-1;display:flex;gap:.5rem;justify-content:center;padding:1rem 0;flex-wrap:wrap;">';
+    html += '<div style="display:flex;gap:.5rem;justify-content:center;padding:1rem 0;flex-wrap:wrap;">';
     if (currentPage > 1) html += '<button class="btn-clear" onclick="irPag('+(currentPage-1)+')">← Anterior</button>';
     for (var pg = Math.max(1,currentPage-2); pg <= Math.min(totalPags, currentPage+2); pg++) {
       html += '<button class="'+(pg===currentPage?'btn-buscar':'btn-clear')+'" onclick="irPag('+pg+')">'+pg+'</button>';
@@ -376,10 +355,12 @@ function irPag(n) { currentPage = n; renderProductos(); }
 
 function mostrarSkeletons() {
   var html = '';
-  for (var i=0;i<12;i++) {
-    html += '<div class="pcard skeleton"><div class="skel-img"></div>'
-      +'<div class="skel-line" style="margin-top:.85rem;width:45%"></div>'
-      +'<div class="skel-line w60"></div><div class="skel-line w40"></div></div>';
+  for (var i=0;i<20;i++) {
+    html += '<div class="pcard skeleton" style="gap:.75rem;">'
+      +'<div class="skel-line" style="width:90px;height:.6rem;flex-shrink:0"></div>'
+      +'<div class="skel-line" style="flex:1;height:.6rem"></div>'
+      +'<div class="skel-line" style="width:70px;height:.6rem;flex-shrink:0"></div>'
+      +'</div>';
   }
   document.getElementById('grid').innerHTML = html;
   document.getElementById('estadoTxt').textContent = 'Cargando…';
