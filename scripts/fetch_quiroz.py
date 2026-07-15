@@ -193,6 +193,53 @@ def scrape_keyword(opener, kw, label=""):
         print(f"  [{label}] -> {len(results)} productos ({pg-1} pags)")
     return results
 
+# Listado amplio de piezas de automóvil para cubrir todo el catálogo
+KEYWORDS_EXTRA = [
+    # Arranque y carga eléctrica
+    "alternador","bendix","inducido","carbon","escobilla","regulador voltaje",
+    "motor arranque","armadura","porta escobillas","polea alternador",
+    # Filtros
+    "filtro aceite","filtro aire","filtro petroleo","filtro gasolina",
+    "filtro combustible","filtro habitaculo","filtro polen",
+    # Correas y distribución
+    "correa distribucion","correa poly v","tensor distribucion","kit distribucion",
+    "bomba agua","termostato","polea tensora","correa accesorios",
+    # Frenos
+    "pastilla freno","balata freno","disco freno","cilindro freno","bomba freno",
+    "liquido frenos","caliper","mordaza freno","zapata","servo freno",
+    # Suspensión y dirección
+    "amortiguador","resorte suspension","horquilla","rotula","buje suspension",
+    "barra estabilizadora","terminal direccion","cremallera direccion",
+    "bomba direccion","caja direccion","brazo pitman","columna direccion",
+    "kit reparacion suspension","barra torsion","muelle",
+    # Embrague
+    "disco embrague","prensa embrague","rodamiento embrague","kit embrague",
+    "piloto embrague","volante bimasa","cilindro embrague","actuador embrague",
+    # Motor
+    "bujia","cable bujia","bobina encendido","distribuidor encendido",
+    "junta culata","kit junta motor","sello valvula","anillo piston",
+    "cojinete biela","cojinete bancada","leva","empuje axial","tapa distribucion",
+    # Inyección y combustible
+    "inyector","bomba combustible","regulador presion","caudalimetro",
+    "cuerpo aceleracion","sensor oxigeno","sonda lambda","egr","turbocompresor",
+    # Electroventilador
+    "electroventilador","ventilador radiador","moto ventilador","electrico radiador",
+    # Refrigeración
+    "radiador","tapa radiador","manguera radiador","deposito expansion","bomba agua",
+    # Transmisión
+    "caja cambios","sincronizador","horquilla cambio","palier","junta homoinetica",
+    "junta tripoide","guardapolvo palier","corona diferencial","semieje",
+    # Carrocería y luces
+    "faro delantero","faro trasero","piloto trasero","plumilla parabrisas",
+    "motor limpia parabrisas","tapa combustible","espejo lateral","manilla puerta",
+    # Sensores y electrónico
+    "sensor temperatura","sensor presion aceite","sensor abs","sensor rpm",
+    "sensor ciguenal","sensor arbol levas","modulo encendido","ecu",
+    # Varios
+    "aceite motor","aceite transmision","correa ventilador","kit reparacion",
+    "reten aceite","retén ciguenal","sello transmision","fusible","rele relay",
+]
+
 def main():
     print(f"[{datetime.now().isoformat()}] Iniciando scraper Quiroz Chile...")
 
@@ -203,16 +250,23 @@ def main():
         print(f"[WARN] Login fallido -- html corto:\n{home_html[:2000]}")
         sys.exit(1)
 
-    print("\n=== FASE 1: Categorias ===")
+    print("\n=== FASE 1: Categorias del sitio ===")
     categories = extract_categories(home_html)
     if not categories:
         categories = ["alternador","bendix","filtro","carbon","inducido",
                       "electroventilador","bomba","bujia","fusible","horquilla"]
 
+    # Combinar con keywords extra, sin duplicados
+    all_keywords = list(categories)
+    for kw in KEYWORDS_EXTRA:
+        if kw not in all_keywords:
+            all_keywords.append(kw)
+    print(f"[fase1] {len(all_keywords)} keywords a buscar")
+
     all_products = {}  # code -> producto
 
-    for cat in categories:
-        prods = scrape_keyword(opener, cat, label=f"cat:{cat}")
+    for cat in all_keywords:
+        prods = scrape_keyword(opener, cat, label=f"kw:{cat}")
         for p in prods:
             key = p["code"]
             if key not in all_products:
@@ -220,7 +274,7 @@ def main():
                 p["vehiculos"] = []
                 all_products[key] = p
 
-    print(f"\n[fase1] {len(all_products)} productos unicos por categoria")
+    print(f"\n[fase1] {len(all_products)} productos unicos por keyword")
 
     print("\n=== FASE 2: Vehiculos ===")
     for marca, modelo in VEHICULOS:

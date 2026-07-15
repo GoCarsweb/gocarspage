@@ -101,6 +101,7 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 .pcard-btns{display:flex;gap:.4rem;flex-shrink:0;}
 .btn-wsp{background:#25d366;color:#fff;border:none;border-radius:5px;padding:.3rem .6rem;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap;}
 .btn-wsp:hover{background:#128c7e;}
+.entrega-badge{display:inline-block;background:rgba(245,158,11,.15);color:#f59e0b;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:.15rem .5rem;border-radius:4px;margin-top:.4rem;}
 
 /* SKELETON */
 .skeleton{animation:pulse 1.5s ease-in-out infinite;}
@@ -194,7 +195,9 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
       <div class="modal-code" id="mCode"></div>
       <div class="modal-name" id="mName"></div>
       <div class="modal-price" id="mPrice"></div>
-      <button class="modal-wsp" id="mWsp">💬 Consultar por WhatsApp</button>
+      <div class="entrega-badge">⏱ Entrega 24-48 horas hábiles</div>
+      <br>
+      <button class="modal-wsp" id="mWsp">🛒 Pedir — Entrega 24-48hrs</button>
     </div>
   </div>
 </div>
@@ -331,7 +334,7 @@ function renderProductos() {
       + '<div class="pcard-cat">'+(p.vehiculos&&p.vehiculos.length ? p.vehiculos[0] : cap(p.categoria||''))+'</div>'
       + '<div class="pcard-price">'+fmt(p.precio)+'</div>'
       + '<div class="pcard-btns">'
-      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+idx+')">💬 WS</button>'
+      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+idx+')">🛒 Pedir</button>'
       + '</div></div>';
   });
 
@@ -393,11 +396,12 @@ function closeModal(e) {
 function wspConsultar(idx) {
   var p = currentProducts[idx];
   if (!p) return;
-  var msg = '👋 Hola GoCar\'s, quiero consultar por el repuesto:\n\n'
+  var msg = '👋 Hola GoCar\'s, quiero *PEDIR* el siguiente repuesto:\n\n'
     + '📦 *'+p.name+'*\n'
     + (p.code ? '🔢 Código: '+p.code+'\n' : '')
-    + '💰 Precio referencia: '+fmt(p.precio)+'\n\n'
-    + '¿Está disponible?';
+    + '💰 Precio: *'+fmt(p.precio)+'*\n'
+    + '⏱ Entrega: 24-48 horas hábiles\n\n'
+    + '¿Pueden confirmar disponibilidad y coordinar el pago?';
   window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg), '_blank');
 }
 
