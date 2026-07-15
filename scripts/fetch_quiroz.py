@@ -4,7 +4,7 @@ GoCar's -- Scraper catalogo Quiroz Chile
 Corre via GitHub Actions, guarda quiroz_data.json con markup 28%
 """
 
-import os, json, math, re, sys, time
+import os, json, math, re, sys, time, html as htmllib
 from datetime import datetime
 import urllib.request
 import urllib.parse
@@ -120,16 +120,36 @@ def extract_categories(html):
 
 def strip_tags(s):
     s = re.sub(r"<[^>]+>", " ", s or "")
-    s = re.sub(r"&[a-zA-Z]+;", " ", s)
+    s = htmllib.unescape(s)           # decodifica &ntilde; &amp; etc.
     return re.sub(r"\s+", " ", s).strip()
 
 def parse_price(text):
-    matches = re.findall(r"\$?\s*([\d]{1,3}(?:[\.,][\d]{3})*)", text)
-    for m in reversed(matches):
-        val = float(m.replace(".", "").replace(",", ""))
-        if val >= 500:
-            return val
-    return 0.0
+    # Extrae todos los candidatos a precio (formato CLP: 1-3 dígitos + grupos de 3)
+    matches = re.findall(r"\$\s*([\d]{1,3}(?:[.,][\d]{3})+)", text)
+    if not matches:
+        # Fallback: números sin símbolo $
+        matches = re.findall(r"\b([\d]{1,3}(?:[.,][\d]{3})+)\b", text)
+    vals = []
+    for m in matches:
+        v = float(m.replace(".", "").replace(",", ""))
+        if v >= 5000:   # Precio mínimo realista para repuesto automotriz
+            vals.append(v)
+    # Usamos el valor más alto encontrado (evita capturar specs técnicas como "1.100A")
+    return max(vals) if vals else 0.0
+
+def extraer_vehiculos(name):
+    """Detecta marcas/modelos en el nombre del producto (ej: 'TOYOTA HILUX C MOT...')"""
+    name_up = name.upper()
+    tags = []
+    for marca, modelo in VEHICULOS:
+        # Algunos modelos tienen espacios o guiones → buscar como regex
+        pat = re.compile(r'\b' + re.escape(marca.upper()) + r'\b')
+        pat2 = re.compile(r'\b' + re.escape(modelo.upper().replace(' ', r'[\s\-]?')) + r'\b')
+        if pat.search(name_up) and pat2.search(name_up):
+            tag = f"{marca} {modelo}"
+            if tag not in tags:
+                tags.append(tag)
+    return tags
 
 def fix_img(src):
     if not src: return ""
@@ -146,7 +166,7 @@ def parse_products_from_page(html):
         if len(cells) < 2: continue
         text = " ".join(cells)
         price = parse_price(text)
-        if price < 500: continue
+        if price < 5000: continue
         code_m = re.search(r"\b([A-Z]{2,}[\-\/\.][A-Z0-9\-\/\.]{2,})\b", text)
         code = code_m.group(1) if code_m else cells[0]
         code_pat = re.compile(r'^[A-Z]{2,}[\-\/\.]', re.IGNORECASE)
@@ -274,26 +294,13 @@ def main():
                 p["vehiculos"] = []
                 all_products[key] = p
 
-    print(f"\n[fase1] {len(all_products)} productos unicos por keyword")
+    print(f"\n[fase1] {len(all_products)} productos únicos por keyword")
 
-    print("\n=== FASE 2: Vehiculos ===")
-    for marca, modelo in VEHICULOS:
-        kw = f"{marca} {modelo}"
-        tag = f"{marca} {modelo}"
-        prods = scrape_keyword(opener, kw, label=tag)
-        nuevos = 0
-        for p in prods:
-            key = p["code"]
-            if key in all_products:
-                if tag not in all_products[key]["vehiculos"]:
-                    all_products[key]["vehiculos"].append(tag)
-            else:
-                p["categoria"] = "compatibilidad"
-                p["vehiculos"] = [tag]
-                all_products[key] = p
-                nuevos += 1
-        if nuevos:
-            print(f"  +{nuevos} productos nuevos de '{tag}'")
+    print("\n=== FASE 2: Extraer vehículos desde nombre del producto ===")
+    for key, p in all_products.items():
+        tags = extraer_vehiculos(p.get("name", ""))
+        if tags:
+            p["vehiculos"] = tags
 
     final = list(all_products.values())
     for p in final:
@@ -301,7 +308,7 @@ def main():
         del p["precioBase"]
 
     con_vehiculo = sum(1 for p in final if p.get("vehiculos"))
-    print(f"\n[resumen] {len(final)} productos -- {con_vehiculo} con compatibilidad de vehiculo")
+    print(f"[fase2] {con_vehiculo} de {len(final)} productos con vehículo detectado en nombre")
 
     output = {
         "ok":         True,
