@@ -24,4 +24,5 @@ jobs:
           git config user.email "bot@gocars.cl"
           git add quiroz_data.json
           git diff --cached --quiet || git commit -m "chore: actualizar catálogo $(date -u '+%Y-%m-%d')"
+          git pull --rebase origin main
           git push
