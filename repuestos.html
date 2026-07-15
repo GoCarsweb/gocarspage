@@ -3,148 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoCar's — Repuestos</title>
+<title>GoCar's — Repuestos Quiroz</title>
 <link rel="icon" href="img/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --red:#E31E24;--dark:#0d0d0d;--dark2:#141414;--dark3:#1a1a1a;
-  --border:#252525;--gray:#666;--gray2:#999;--white:#fff;
+  --red:#E31E24;--dark:#0d0d0d;--dark2:#141414;--dark3:#1a1a1a;--dark4:#202020;
+  --border:#252525;--border2:#2e2e2e;--gray:#666;--gray2:#999;--white:#fff;
+  --green:#16a34a;--amber:#f59e0b;--blue:#3b82f6;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);min-height:100vh;}
 
-/* NAV */
+/* ── NAV ── */
 .nav{display:flex;align-items:center;gap:1rem;background:var(--dark2);border-bottom:2px solid var(--red);padding:.6rem 1.5rem;position:sticky;top:0;z-index:100;}
 .logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:-1px;color:var(--red);text-decoration:none;}
 .logo em{color:var(--white);font-style:normal;}
-.nav-search{
-  display:flex;align-items:center;gap:.5rem;flex:1;max-width:600px;
-  background:var(--dark3);border:1.5px solid var(--border);border-radius:6px;
-  padding:.4rem .85rem;margin:0 auto;transition:border-color .2s;
-}
-.nav-search:focus-within{border-color:var(--red);}
-.nav-search svg{opacity:.5;flex-shrink:0;}
-.nav-search input{background:none;border:none;outline:none;color:var(--white);font-family:'Barlow',sans-serif;font-size:.95rem;width:100%;}
-.nav-search input::placeholder{color:var(--gray);}
+.nav-badge{background:rgba(227,30,36,.12);border:1px solid rgba(227,30,36,.3);color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.2rem .6rem;border-radius:20px;}
 .nav-links{display:flex;gap:.5rem;margin-left:auto;}
 .nav-link{color:var(--gray2);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;padding:.3rem .5rem;border-radius:4px;transition:color .2s;}
 .nav-link:hover{color:var(--white);}
 
-/* FILTROS */
-.filters{
-  background:var(--dark2);border-bottom:1px solid var(--border);
-  padding:.6rem 1.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
-}
-.filter-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-right:.25rem;}
-.chip{
-  background:var(--dark3);border:1px solid var(--border);border-radius:20px;
-  padding:.2rem .7rem;font-size:.78rem;cursor:pointer;color:#bbb;transition:all .15s;
-}
-.chip:hover,.chip.active{border-color:var(--red);color:#fff;background:#1a0808;}
+/* ── HERO SEARCH ── */
+.hero{background:var(--dark2);border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray2);margin-bottom:.85rem;}
+.hero-title span{color:var(--red);}
 
-/* LAYOUT */
-.main{max-width:1400px;margin:0 auto;padding:1.5rem;}
+/* fila de selects */
+.search-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-bottom:.6rem;}
+.sel-wrap{position:relative;}
+.sel-label{font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:.25rem;}
+.sel{width:100%;background:var(--dark3);border:1.5px solid var(--border2);color:var(--white);font-family:'Barlow',sans-serif;font-size:.88rem;padding:.5rem .8rem;border-radius:6px;outline:none;cursor:pointer;transition:border-color .2s;appearance:none;-webkit-appearance:none;}
+.sel:focus{border-color:var(--red);}
+.sel option{background:var(--dark3);color:var(--white);}
+.sel-arrow{position:absolute;right:.7rem;bottom:.55rem;pointer-events:none;color:var(--gray);font-size:.7rem;}
 
-/* ADVANCED FILTERS */
-.adv-filters{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;
-  margin-bottom:1.5rem;
-}
-.af-select{
-  background:var(--dark3);border:1.5px solid var(--border);color:var(--white);
-  font-family:'Barlow',sans-serif;font-size:.88rem;padding:.5rem .75rem;
-  border-radius:6px;outline:none;cursor:pointer;transition:border-color .2s;
-}
-.af-select:focus{border-color:var(--red);}
-.af-input{
-  background:var(--dark3);border:1.5px solid var(--border);color:var(--white);
-  font-family:'Barlow',sans-serif;font-size:.88rem;padding:.5rem .75rem;
-  border-radius:6px;outline:none;transition:border-color .2s;
-}
-.af-input:focus{border-color:var(--red);}
-.af-input::placeholder{color:#444;}
-.btn-buscar{
-  background:var(--red);color:#fff;border:none;border-radius:6px;
-  padding:.5rem 1.25rem;font-family:'Barlow Condensed',sans-serif;
-  font-weight:700;font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;
-  cursor:pointer;transition:background .2s;white-space:nowrap;
-}
-.btn-buscar:hover{background:#b81519;}
-.btn-clear{
-  background:none;border:1.5px solid var(--border);color:var(--gray);
-  border-radius:6px;padding:.5rem .85rem;font-size:.85rem;cursor:pointer;transition:all .2s;
-}
+/* fila de texto */
+.search-text-row{display:flex;gap:.6rem;align-items:stretch;}
+.search-box{flex:1;position:relative;}
+.search-icon-svg{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);opacity:.45;pointer-events:none;}
+.search-input{width:100%;background:var(--dark3);border:1.5px solid var(--border2);color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;padding:.6rem .9rem .6rem 2.4rem;border-radius:6px;outline:none;transition:border-color .2s;}
+.search-input:focus{border-color:var(--red);}
+.search-input::placeholder{color:var(--gray);}
+.btn-buscar{background:var(--red);color:#fff;border:none;border-radius:6px;padding:.6rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.btn-buscar:hover{background:#c41a1f;}
+.btn-clear{background:none;border:1.5px solid var(--border2);color:var(--gray);border-radius:6px;padding:.6rem .9rem;font-size:.85rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .btn-clear:hover{border-color:#555;color:var(--white);}
 
-/* ESTADO */
-.estado{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;
-}
-.estado-txt{font-size:.85rem;color:var(--gray2);}
-.estado-txt strong{color:var(--white);}
+/* tags activos */
+.active-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem;min-height:1px;}
+.atag{display:inline-flex;align-items:center;gap:.3rem;background:rgba(227,30,36,.1);border:1px solid rgba(227,30,36,.3);color:var(--red);font-size:.72rem;font-weight:600;padding:.2rem .55rem;border-radius:4px;}
+.atag-x{cursor:pointer;opacity:.7;font-size:.9rem;}
+.atag-x:hover{opacity:1;}
 
-/* LISTA */
-.grid{display:flex;flex-direction:column;gap:.35rem;}
+/* ── ESTADO ── */
+.estado-bar{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.5rem;}
+.estado-txt{font-size:.83rem;color:var(--gray2);}
+.estado-txt strong{color:var(--white);}
+.sort-sel{background:var(--dark3);border:1px solid var(--border2);color:var(--gray2);font-size:.78rem;padding:.25rem .5rem;border-radius:4px;outline:none;cursor:pointer;}
+
+/* ── LISTA ── */
+.main{max-width:1200px;margin:0 auto;padding:1rem 1.5rem 3rem;}
+.lista{display:flex;flex-direction:column;gap:.3rem;}
+
+/* ── CARD PRODUCTO ── */
 .pcard{
   background:var(--dark2);border:1px solid var(--border);border-radius:7px;
-  display:flex;align-items:center;gap:1rem;padding:.6rem 1rem;
-  cursor:pointer;transition:border-color .15s,background .15s;
+  display:grid;grid-template-columns:110px 1fr auto auto;align-items:center;
+  gap:.75rem;padding:.6rem .9rem;cursor:pointer;
+  transition:border-color .15s,background .15s;
 }
-.pcard:hover{border-color:var(--red);background:#130505;}
-.pcard-code{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);width:120px;flex-shrink:0;}
-.pcard-name{font-size:.88rem;color:var(--white);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.pcard-cat{font-size:.72rem;color:var(--gray);width:110px;flex-shrink:0;text-align:right;}
-.pcard-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);width:90px;text-align:right;flex-shrink:0;}
-.pcard-btns{display:flex;gap:.4rem;flex-shrink:0;}
-.btn-wsp{background:#25d366;color:#fff;border:none;border-radius:5px;padding:.3rem .6rem;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap;}
-.btn-wsp:hover{background:#128c7e;}
-.entrega-badge{display:inline-block;background:rgba(245,158,11,.15);color:#f59e0b;font-size:.68rem;font-weight:700;letter-spacing:.5px;padding:.15rem .5rem;border-radius:4px;margin-top:.4rem;}
+.pcard:hover{border-color:var(--red);background:#120404;}
+.pcard-code{font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);word-break:break-all;}
+.pcard-body{min-width:0;}
+.pcard-name{font-size:.85rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;}
+.pcard-meta{display:flex;gap:.5rem;align-items:center;margin-top:.2rem;flex-wrap:wrap;}
+.pcard-cat{font-size:.67rem;color:var(--gray);background:var(--dark3);padding:.1rem .4rem;border-radius:3px;}
+.pcard-compat{font-size:.67rem;color:#60a5fa;background:rgba(59,130,246,.08);padding:.1rem .4rem;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;}
+.pcard-oem{font-size:.65rem;color:var(--amber);font-family:monospace;background:rgba(245,158,11,.08);padding:.1rem .35rem;border-radius:3px;}
+.pcard-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-align:right;white-space:nowrap;}
+.pcard-entrega{font-size:.62rem;color:var(--amber);text-align:right;white-space:nowrap;margin-top:.15rem;}
+.pcard-action{flex-shrink:0;}
+.btn-pedir{background:#25d366;color:#fff;border:none;border-radius:5px;padding:.35rem .7rem;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .15s;}
+.btn-pedir:hover{background:#128c7e;}
 
-/* SKELETON */
-.skeleton{animation:pulse 1.5s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
-.skel-line{height:.7rem;background:var(--dark3);border-radius:4px;}
-.skel-line.w60{width:60%;}
-.skel-line.w40{width:40%;}
+/* highlight OEM match */
+.hl{background:rgba(245,158,11,.25);color:var(--amber);border-radius:2px;}
 
-/* EMPTY */
-.empty-state{
-  grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--gray);
-}
-.empty-state .ico{font-size:3rem;display:block;margin-bottom:1rem;}
-.empty-state h3{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;margin-bottom:.5rem;color:var(--gray2);}
+/* ── PAGINACIÓN ── */
+.pagination{display:flex;gap:.4rem;justify-content:center;padding:1.5rem 0;flex-wrap:wrap;}
+.pg-btn{background:var(--dark3);border:1px solid var(--border2);color:var(--gray2);padding:.35rem .7rem;border-radius:5px;cursor:pointer;font-size:.82rem;transition:all .15s;}
+.pg-btn:hover,.pg-btn.active{background:var(--red);border-color:var(--red);color:#fff;}
+.pg-btn:disabled{opacity:.3;cursor:default;}
 
-/* MODAL */
-.modal-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;
-  display:none;align-items:center;justify-content:center;padding:1rem;
-}
+/* ── EMPTY ── */
+.empty-state{text-align:center;padding:4rem 2rem;color:var(--gray);}
+.empty-state .ico{font-size:2.8rem;display:block;margin-bottom:1rem;}
+.empty-state h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;color:var(--gray2);margin-bottom:.5rem;}
+.empty-state p{font-size:.85rem;}
+
+/* ── SKELETON ── */
+.skel{background:var(--dark2);border:1px solid var(--border);border-radius:7px;height:58px;animation:pulse 1.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.7}}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;}
 .modal-overlay.open{display:flex;}
-.modal{
-  background:var(--dark2);border:1.5px solid var(--border);border-radius:12px;
-  max-width:520px;width:100%;max-height:90vh;overflow-y:auto;
-}
-.modal-img{background:var(--dark3);display:flex;align-items:center;justify-content:center;height:200px;}
-.modal-img img{max-height:180px;max-width:100%;object-fit:contain;padding:.5rem;}
-.modal-body{padding:1.5rem;}
-.modal-close{float:right;background:none;border:none;color:var(--gray);font-size:1.3rem;cursor:pointer;margin-bottom:.5rem;}
+.modal{background:var(--dark2);border:1.5px solid var(--border2);border-radius:12px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;}
+.modal-header{padding:1.25rem 1.5rem .75rem;border-bottom:1px solid var(--border);}
+.modal-close{float:right;background:none;border:none;color:var(--gray);font-size:1.2rem;cursor:pointer;}
 .modal-close:hover{color:var(--white);}
-.modal-code{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.35rem;}
-.modal-name{font-size:1.2rem;font-weight:700;line-height:1.35;margin-bottom:1rem;}
-.modal-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;margin-bottom:1.25rem;}
-.modal-wsp{
-  width:100%;background:#25d366;color:#fff;border:none;border-radius:8px;
-  padding:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:1.05rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;
-}
+.modal-code{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
+.modal-name{font-size:1.1rem;font-weight:700;line-height:1.4;margin-bottom:.75rem;}
+.modal-img-wrap{background:var(--dark3);display:flex;align-items:center;justify-content:center;min-height:160px;border-radius:6px;margin-bottom:1rem;}
+.modal-img-wrap img{max-height:150px;max-width:100%;object-fit:contain;padding:.5rem;}
+.modal-body{padding:1rem 1.5rem 1.5rem;}
+.modal-section{margin-bottom:1rem;}
+.modal-section-title{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.45rem;}
+.modal-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--white);}
+.modal-entrega{font-size:.75rem;color:var(--amber);margin-top:.2rem;}
+.oem-list{display:flex;flex-wrap:wrap;gap:.35rem;}
+.oem-tag{font-family:monospace;font-size:.75rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:var(--amber);padding:.2rem .5rem;border-radius:4px;}
+.compat-list{display:flex;flex-wrap:wrap;gap:.35rem;}
+.compat-tag{font-size:.75rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#93c5fd;padding:.2rem .5rem;border-radius:4px;}
+.desc-text{font-size:.83rem;color:var(--gray2);line-height:1.55;}
+.modal-wsp{width:100%;background:#25d366;color:#fff;border:none;border-radius:8px;padding:.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:.25rem;}
 .modal-wsp:hover{background:#128c7e;}
 
-@media(max-width:600px){
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .search-row{grid-template-columns:1fr 1fr;}
+  .pcard{grid-template-columns:80px 1fr auto;}
+  .pcard-action{grid-column:3;grid-row:1;}
+  .pcard-price{display:none;}
   .nav-links{display:none;}
-  .adv-filters{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .search-row{grid-template-columns:1fr;}
+  .pcard{grid-template-columns:75px 1fr;}
+  .pcard-action{display:none;}
 }
 </style>
 </head>
@@ -153,276 +151,513 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 <!-- NAV -->
 <nav class="nav">
   <a class="logo" href="gocar_web.html">GO<em>CAR'S</em></a>
-  <div class="nav-search">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="searchInput" placeholder="Buscar por código (ej: ALT-13485, BEN-4521)…" autocomplete="off">
-  </div>
+  <span class="nav-badge" id="navBadge">Cargando...</span>
   <div class="nav-links">
     <a class="nav-link" href="gocar_web.html">Inicio</a>
     <a class="nav-link" href="catalogo.html">Catálogo</a>
   </div>
 </nav>
 
-<!-- MODO -->
-<div class="filters" style="gap:.35rem;padding:.5rem 1.5rem;">
-  <span class="chip active" id="modoBtn" onclick="setModo('cat',this)" style="font-weight:700">Por tipo de pieza</span>
-  <span class="chip" id="modoBtn2" onclick="setModo('vehiculo',this)" style="font-weight:700">Por vehículo</span>
-</div>
-<!-- CHIPS FILTROS -->
-<div class="filters" id="chipsBar">
-  <span class="filter-label" id="chipsLabel">Categorías:</span>
-  <span class="chip active" data-filter="">Todas</span>
-</div>
+<!-- HERO BUSCADOR -->
+<div class="hero">
+  <div class="hero-title">Buscar <span>repuestos</span> — catálogo Quiroz Chile</div>
 
-<div class="main">
-
-  <!-- ESTADO -->
-  <div class="estado">
-    <div class="estado-txt" id="estadoTxt">Cargando catálogo…</div>
+  <!-- Fila 1: Marca / Modelo / Tipo -->
+  <div class="search-row">
+    <div class="sel-wrap">
+      <div class="sel-label">Marca del vehículo</div>
+      <select class="sel" id="selMarca" onchange="onMarcaChange()">
+        <option value="">Todas las marcas</option>
+      </select>
+      <span class="sel-arrow">▾</span>
+    </div>
+    <div class="sel-wrap">
+      <div class="sel-label">Modelo</div>
+      <select class="sel" id="selModelo" onchange="doBuscar()">
+        <option value="">Todos los modelos</option>
+      </select>
+      <span class="sel-arrow">▾</span>
+    </div>
+    <div class="sel-wrap">
+      <div class="sel-label">Tipo de pieza</div>
+      <select class="sel" id="selTipo" onchange="doBuscar()">
+        <option value="">Todos los tipos</option>
+      </select>
+      <span class="sel-arrow">▾</span>
+    </div>
   </div>
 
-  <!-- GRID -->
-  <div class="grid" id="grid"></div>
+  <!-- Fila 2: Texto libre + botones -->
+  <div class="search-text-row">
+    <div class="search-box">
+      <svg class="search-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="searchInput"
+        placeholder="Nombre, número OEM, código (ej: Toyota Hilux, 27060-35060, ALT-13485)…"
+        autocomplete="off" oninput="onInputChange()" onkeydown="if(event.key==='Enter')doBuscar()">
+    </div>
+    <button class="btn-buscar" onclick="doBuscar()">🔍 Buscar</button>
+    <button class="btn-clear" onclick="limpiar()">✕ Limpiar</button>
+  </div>
 
+  <!-- Tags activos -->
+  <div class="active-tags" id="activeTags"></div>
+</div>
+
+<!-- ESTADO -->
+<div class="estado-bar">
+  <div class="estado-txt" id="estadoTxt">Cargando catálogo…</div>
+  <select class="sort-sel" id="sortSel" onchange="renderLista()">
+    <option value="rel">Relevancia</option>
+    <option value="az">A → Z</option>
+    <option value="barato">Menor precio</option>
+    <option value="caro">Mayor precio</option>
+  </select>
+</div>
+
+<!-- RESULTADOS -->
+<div class="main">
+  <div class="lista" id="lista"></div>
+  <div class="pagination" id="pagination"></div>
 </div>
 
 <!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal">
-    <div class="modal-img"><img id="mImg" src="" alt=""></div>
-    <div class="modal-body">
+    <div class="modal-header">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-code" id="mCode"></div>
       <div class="modal-name" id="mName"></div>
-      <div class="modal-price" id="mPrice"></div>
-      <div class="entrega-badge">⏱ Entrega 24-48 horas hábiles</div>
-      <br>
-      <button class="modal-wsp" id="mWsp">🛒 Pedir — Entrega 24-48hrs</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-img-wrap" id="mImgWrap">
+        <img id="mImg" src="" alt="" style="display:none">
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-price" id="mPrice"></div>
+        <div class="modal-entrega">⏱ Entrega 24-48 horas hábiles (pedido a proveedor)</div>
+      </div>
+
+      <div class="modal-section" id="mOemSection">
+        <div class="modal-section-title">Números OEM / Originales</div>
+        <div class="oem-list" id="mOemList"></div>
+      </div>
+
+      <div class="modal-section" id="mCompatSection">
+        <div class="modal-section-title">Compatibilidad de vehículos</div>
+        <div class="compat-list" id="mCompatList"></div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción completa</div>
+        <div class="desc-text" id="mDesc"></div>
+      </div>
+
+      <button class="modal-wsp" onclick="wspPedir()">🛒 Pedir — Entrega 24-48hrs</button>
     </div>
   </div>
 </div>
 
 <script>
 // ── CONFIG ──────────────────────────────────────────────────────────
-var DATA_URL = 'quiroz_data.json';
-var WHATSAPP = '56940310991';
+var DATA_URL  = 'quiroz_data.json';
+var WHATSAPP  = '56940310991';
+var PAGE_SIZE = 40;
 
-var _allData        = null;
-var currentProducts = [];
-var currentQuery    = '';
-var currentFilter   = '';
-var currentModo     = 'cat';
-var PAGE_SIZE       = 48;
-var currentPage     = 1;
+// ── ESTADO ──────────────────────────────────────────────────────────
+var _all      = [];       // todos los productos
+var _filtered = [];       // resultado de búsqueda actual
+var _page     = 1;
+var _marcaIdx = {};       // marca → Set(modelos)
+var _catList  = [];       // lista de categorias ordenadas
+var _modalIdx = -1;       // índice en _filtered del modal abierto
 
 function fmt(n){ return '$' + Math.round(n).toLocaleString('es-CL'); }
 function cap(s){ return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+function el(id){ return document.getElementById(id); }
 
-// ── MODO ─────────────────────────────────────────────────────────────
-function setModo(modo, el) {
-  currentModo = modo;
-  currentFilter = '';
-  currentPage = 1;
-  document.getElementById('modoBtn').classList.toggle('active', modo==='cat');
-  document.getElementById('modoBtn2').classList.toggle('active', modo==='vehiculo');
-  document.getElementById('chipsLabel').textContent = modo==='cat' ? 'Categorias:' : 'Vehiculo:';
-  construirChips(_allData, modo);
-  aplicarFiltros();
+// ── EXTRACCIÓN OEM ───────────────────────────────────────────────────
+// Extrae números OEM/originales desde el texto del nombre del producto
+function extractOEMs(name) {
+  var found = [];
+  var seen  = {};
+  // Patrón 1: XX-XXXXXXX (ej: 27060-35060, OK247-11-321A, D4060-EB70A)
+  var p1 = /\b([A-Z0-9]{2,}(?:-[A-Z0-9]{2,}){1,4})\b/gi;
+  // Patrón 2: secuencias alfanuméricas >= 6 chars (ej: LP1077, SD1269)
+  var p2 = /\b([A-Z]{1,3}[0-9]{4,}[A-Z0-9]*)\b/gi;
+  // Patrón 3: solo números >= 7 dígitos (ej: 2312002570)
+  var p3 = /\b([0-9]{7,})\b/g;
+
+  [p1, p2, p3].forEach(function(re) {
+    var m;
+    while ((m = re.exec(name)) !== null) {
+      var v = m[1].toUpperCase();
+      // Excluir años (19xx/20xx) y valores muy genéricos
+      if (/^(19|20)\d{2}$/.test(v)) continue;
+      if (v.length < 5) continue;
+      if (!seen[v]) { seen[v] = true; found.push(v); }
+    }
+  });
+  return found.slice(0, 8);
 }
 
-// ── CARGA DATOS ─────────────────────────────────────────────────────
-function cargarTodos(callback) {
-  if (_allData) { callback(_allData); return; }
-  fetch(DATA_URL + '?_=' + Date.now())
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      _allData = data.products || [];
-      construirChips(_allData, 'cat');
-      callback(_allData);
-    })
-    .catch(function(){
-      _allData = [];
-      mostrarError('Catalogo no disponible. Intenta mas tarde.');
+// ── CONSTRUCCIÓN DE ÍNDICES ──────────────────────────────────────────
+function buildIndexes(products) {
+  _marcaIdx = {};
+  var cats  = {};
+
+  products.forEach(function(p) {
+    // Marcas / modelos desde vehiculos[]
+    (p.vehiculos || []).forEach(function(v) {
+      var sp    = v.indexOf(' ');
+      var marca = sp > -1 ? v.substring(0, sp) : v;
+      var mod   = sp > -1 ? v.substring(sp + 1) : '';
+      if (!_marcaIdx[marca]) _marcaIdx[marca] = {};
+      if (mod) _marcaIdx[marca][mod] = true;
     });
+    // También detectar marcas adicionales del nombre (sin modelo)
+    var nameLow = (p.name || '').toLowerCase();
+    ['toyota','nissan','mitsubishi','ford','mazda','chevrolet','isuzu','hyundai','kia',
+     'volkswagen','subaru','suzuki','peugeot','renault','mercedes','honda','bmw',
+     'audi','mahindra','daewoo','fiat','opel','skoda','seat','volvo','scania','hino'].forEach(function(m) {
+      if (nameLow.indexOf(m) !== -1) {
+        var capM = cap(m);
+        if (!_marcaIdx[capM]) _marcaIdx[capM] = {};
+      }
+    });
+    // Categorias
+    if (p.categoria) cats[p.categoria] = true;
+  });
+
+  _catList = Object.keys(cats).sort();
 }
 
-// ── CHIPS DINÁMICOS ─────────────────────────────────────────────────
-function construirChips(products, modo) {
-  var counts = {};
-  if (modo === 'cat') {
-    products.forEach(function(p){ if (p.categoria) counts[p.categoria] = (counts[p.categoria]||0)+1; });
-  } else {
-    products.forEach(function(p){
-      (p.vehiculos||[]).forEach(function(v){ counts[v] = (counts[v]||0)+1; });
+function populateMarcas() {
+  var sel = el('selMarca');
+  var curr = sel.value;
+  sel.innerHTML = '<option value="">Todas las marcas</option>';
+  Object.keys(_marcaIdx).sort().forEach(function(m) {
+    var opt = document.createElement('option');
+    opt.value = m; opt.textContent = m;
+    sel.appendChild(opt);
+  });
+  if (curr) sel.value = curr;
+}
+
+function onMarcaChange() {
+  var marca  = el('selMarca').value;
+  var selMod = el('selModelo');
+  var currMod = selMod.value;
+  selMod.innerHTML = '<option value="">Todos los modelos</option>';
+  if (marca && _marcaIdx[marca]) {
+    Object.keys(_marcaIdx[marca]).sort().forEach(function(mod) {
+      var opt = document.createElement('option');
+      opt.value = mod; opt.textContent = mod;
+      selMod.appendChild(opt);
     });
   }
-  var sorted = Object.keys(counts).sort();
-  var bar = document.getElementById('chipsBar');
-  Array.from(bar.querySelectorAll('.chip[data-filter]')).forEach(function(c){ c.remove(); });
-  var todas = document.createElement('span');
-  todas.className = 'chip active';
-  todas.setAttribute('data-filter', '');
-  todas.textContent = 'Todas';
-  todas.onclick = function(){ seleccionar('', this); };
-  bar.appendChild(todas);
-  sorted.forEach(function(key) {
-    var chip = document.createElement('span');
-    chip.className = 'chip';
-    chip.setAttribute('data-filter', key);
-    chip.textContent = cap(key) + ' (' + counts[key] + ')';
-    chip.addEventListener('click', function(){ seleccionar(key, this); });
-    bar.appendChild(chip);
+  if (currMod) selMod.value = currMod;
+  doBuscar();
+}
+
+function populateTipos() {
+  var sel = el('selTipo');
+  var curr = sel.value;
+  sel.innerHTML = '<option value="">Todos los tipos</option>';
+  _catList.forEach(function(c) {
+    var opt = document.createElement('option');
+    opt.value = c; opt.textContent = cap(c);
+    sel.appendChild(opt);
   });
+  if (curr) sel.value = curr;
 }
 
-function seleccionar(val, el) {
-  document.querySelectorAll('.chip[data-filter]').forEach(function(c){ c.classList.remove('active'); });
-  el.classList.add('active');
-  currentFilter = val;
-  currentPage = 1;
-  aplicarFiltros();
-}
+// ── BÚSQUEDA ────────────────────────────────────────────────────────
+function doBuscar() {
+  var marca  = el('selMarca').value.toLowerCase();
+  var modelo = el('selModelo').value.toLowerCase();
+  var tipo   = el('selTipo').value.toLowerCase();
+  var q      = el('searchInput').value.trim().toLowerCase();
+  var words  = q ? q.split(/\s+/).filter(Boolean) : [];
 
-// ── FILTRAR Y MOSTRAR ────────────────────────────────────────────────
-function aplicarFiltros() {
-  var q = document.getElementById('searchInput').value.trim().toLowerCase();
-  var words = q ? q.split(/\s+/).filter(Boolean) : [];
-
-  var results = _allData.filter(function(p) {
-    if (currentFilter) {
-      if (currentModo === 'cat' && p.categoria !== currentFilter) return false;
-      if (currentModo === 'vehiculo' && (p.vehiculos||[]).indexOf(currentFilter) === -1) return false;
-    } else if (currentModo === 'vehiculo') {
-      if (!(p.vehiculos||[]).length) return false;
+  _filtered = _all.filter(function(p) {
+    // Filtro marca: busca en vehiculos[] Y en el nombre
+    if (marca) {
+      var inVeh  = (p.vehiculos || []).some(function(v){ return v.toLowerCase().indexOf(marca) !== -1; });
+      var inName = (p.name || '').toLowerCase().indexOf(marca) !== -1;
+      if (!inVeh && !inName) return false;
     }
-    if (!words.length) return true;
-    var hay = ((p.name||'') + ' ' + (p.code||'') + ' ' + (p.categoria||'') + ' ' + (p.vehiculos||[]).join(' ')).toLowerCase();
-    return words.every(function(w){ return hay.indexOf(w) !== -1; });
+    // Filtro modelo: busca en vehiculos[] Y en nombre
+    if (modelo) {
+      var inVeh  = (p.vehiculos || []).some(function(v){ return v.toLowerCase().indexOf(modelo) !== -1; });
+      var inName = (p.name || '').toLowerCase().indexOf(modelo) !== -1;
+      if (!inVeh && !inName) return false;
+    }
+    // Filtro tipo/categoria
+    if (tipo && (p.categoria || '').toLowerCase() !== tipo) return false;
+    // Búsqueda libre (nombre + código + OEM)
+    if (words.length) {
+      var hay = ((p.name||'') + ' ' + (p.code||'') + ' ' + (p.categoria||'') +
+                 ' ' + (p.vehiculos||[]).join(' ')).toLowerCase();
+      if (!words.every(function(w){ return hay.indexOf(w) !== -1; })) return false;
+    }
+    return true;
   });
 
-  currentProducts = results;
-  currentQuery = q || (currentFilter ? cap(currentFilter) : (currentModo==='vehiculo' ? 'Todos los vehiculos' : 'Todas las piezas'));
-  renderProductos();
+  _page = 1;
+  actualizarTags();
+  renderLista();
 }
 
-// ── RENDER CON PAGINACIÓN ────────────────────────────────────────────
-function renderProductos() {
-  var grid = document.getElementById('grid');
-  var est  = document.getElementById('estadoTxt');
-  var total = currentProducts.length;
+function onInputChange() {
+  // Búsqueda en tiempo real
+  doBuscar();
+}
+
+// ── TAGS ACTIVOS ────────────────────────────────────────────────────
+function actualizarTags() {
+  var tags = el('activeTags');
+  var html = '';
+  var marca  = el('selMarca').value;
+  var modelo = el('selModelo').value;
+  var tipo   = el('selTipo').value;
+  var q      = el('searchInput').value.trim();
+  if (marca)  html += tag(marca,  function(){ el('selMarca').value=''; el('selModelo').value=''; doBuscar(); });
+  if (modelo) html += tag(modelo, function(){ el('selModelo').value=''; doBuscar(); });
+  if (tipo)   html += tag(cap(tipo), function(){ el('selTipo').value=''; doBuscar(); });
+  if (q)      html += tag('"'+q+'"', function(){ el('searchInput').value=''; doBuscar(); });
+  tags.innerHTML = html;
+  // Re-attach click handlers via event delegation
+  tags.querySelectorAll('.atag-x').forEach(function(x, i) {
+    var fns = [
+      marca  ? function(){ el('selMarca').value=''; el('selModelo').value=''; doBuscar(); } : null,
+      modelo ? function(){ el('selModelo').value=''; doBuscar(); } : null,
+      tipo   ? function(){ el('selTipo').value=''; doBuscar(); } : null,
+      q      ? function(){ el('searchInput').value=''; doBuscar(); } : null,
+    ].filter(Boolean);
+    if (fns[i]) x.onclick = fns[i];
+  });
+}
+
+function tag(label) {
+  return '<span class="atag"><span>' + label + '</span><span class="atag-x">✕</span></span>';
+}
+
+function limpiar() {
+  el('selMarca').value = '';
+  el('selModelo').value = '';
+  el('selTipo').value = '';
+  el('searchInput').value = '';
+  doBuscar();
+}
+
+// ── RENDER LISTA ────────────────────────────────────────────────────
+function renderLista() {
+  var lista = el('lista');
+  var total = _filtered.length;
+
+  // Ordenar
+  var sort  = el('sortSel').value;
+  var items = _filtered.slice();
+  if (sort === 'az')     items.sort(function(a,b){ return (a.name||'').localeCompare(b.name||''); });
+  if (sort === 'barato') items.sort(function(a,b){ return a.precio - b.precio; });
+  if (sort === 'caro')   items.sort(function(a,b){ return b.precio - a.precio; });
+
+  // Estado
+  var marca  = el('selMarca').value;
+  var modelo = el('selModelo').value;
+  var tipo   = el('selTipo').value;
+  var q      = el('searchInput').value.trim();
+  var desc   = [];
+  if (marca)  desc.push(marca);
+  if (modelo) desc.push(modelo);
+  if (tipo)   desc.push(cap(tipo));
+  if (q)      desc.push('"' + q + '"');
+  var ctx = desc.length ? ' — ' + desc.join(', ') : '';
+
+  el('estadoTxt').innerHTML = total === 0
+    ? 'Sin resultados'
+    : '<strong>' + total.toLocaleString('es-CL') + '</strong> repuesto' + (total!==1?'s':'') + ctx +
+      ' <span style="color:var(--gray)">(pág ' + _page + ' / ' + Math.ceil(total/PAGE_SIZE) + ')</span>';
 
   if (!total) {
-    grid.innerHTML = '<div class="empty-state"><span class="ico">🔍</span><h3>Sin resultados</h3><p>Intenta con otro código o descripción</p></div>';
-    est.innerHTML = 'Sin resultados para <strong>"'+currentQuery+'"</strong>';
+    lista.innerHTML = '<div class="empty-state"><span class="ico">🔍</span><h3>Sin resultados</h3>'
+      + '<p>Prueba con otro nombre, OEM o selecciona una marca/modelo diferente</p></div>';
+    el('pagination').innerHTML = '';
     return;
   }
 
-  var start = (currentPage - 1) * PAGE_SIZE;
-  var page  = currentProducts.slice(start, start + PAGE_SIZE);
-
-  est.innerHTML = '<strong>'+total+'</strong> repuesto'+(total!==1?'s':'')+
-    (currentQuery ? ' — <strong>"'+currentQuery+'"</strong>' : '')+
-    ' (pág '+currentPage+' de '+Math.ceil(total/PAGE_SIZE)+')';
+  var start = (_page - 1) * PAGE_SIZE;
+  var page  = items.slice(start, start + PAGE_SIZE);
+  var qWords = q.toLowerCase().split(/\s+/).filter(Boolean);
 
   var html = '';
   page.forEach(function(p, i) {
-    var idx = start + i;
-    var nombre = cap(p.categoria||'') + (p.name && p.name !== p.code ? ' — ' + p.name : '');
-    html += '<div class="pcard" onclick="openModal('+idx+')">'
-      + '<div class="pcard-code">'+(p.code||'—')+'</div>'
-      + '<div class="pcard-name">'+nombre+'</div>'
-      + '<div class="pcard-cat">'+(p.vehiculos&&p.vehiculos.length ? p.vehiculos[0] : cap(p.categoria||''))+'</div>'
-      + '<div class="pcard-price">'+fmt(p.precio)+'</div>'
-      + '<div class="pcard-btns">'
-      + '<button class="btn-wsp" onclick="event.stopPropagation();wspConsultar('+idx+')">🛒 Pedir</button>'
-      + '</div></div>';
+    var realIdx = _filtered.indexOf(p);
+    var oems    = extractOEMs(p.name || '');
+    var veh     = (p.vehiculos || []).slice(0, 2).join(', ');
+    var nameDis = highlightWords(p.name || '—', qWords);
+    var oemFirst = oems.length ? highlightWords(oems[0], qWords) : '';
+
+    html += '<div class="pcard" onclick="openModal(' + realIdx + ')">'
+      + '<div class="pcard-code">' + (p.code || '—') + '</div>'
+      + '<div class="pcard-body">'
+      +   '<div class="pcard-name">' + nameDis + '</div>'
+      +   '<div class="pcard-meta">'
+      +     (p.categoria ? '<span class="pcard-cat">' + cap(p.categoria) + '</span>' : '')
+      +     (veh ? '<span class="pcard-compat">🚗 ' + veh + '</span>' : '')
+      +     (oemFirst ? '<span class="pcard-oem">OEM: ' + oemFirst + '</span>' : '')
+      +   '</div>'
+      + '</div>'
+      + '<div>'
+      +   '<div class="pcard-price">' + fmt(p.precio) + '</div>'
+      +   '<div class="pcard-entrega">24-48hrs</div>'
+      + '</div>'
+      + '<div class="pcard-action">'
+      +   '<button class="btn-pedir" onclick="event.stopPropagation();wspPedirIdx(' + realIdx + ')">🛒 Pedir</button>'
+      + '</div>'
+      + '</div>';
   });
+  lista.innerHTML = html;
 
   // Paginación
+  renderPagination(total);
+}
+
+function highlightWords(text, words) {
+  if (!words.length) return escHtml(text);
+  var out = escHtml(text);
+  words.forEach(function(w) {
+    if (!w) return;
+    var re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+    out = out.replace(re, '<span class="hl">$1</span>');
+  });
+  return out;
+}
+
+function escHtml(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderPagination(total) {
   var totalPags = Math.ceil(total / PAGE_SIZE);
-  if (totalPags > 1) {
-    html += '<div style="display:flex;gap:.5rem;justify-content:center;padding:1rem 0;flex-wrap:wrap;">';
-    if (currentPage > 1) html += '<button class="btn-clear" onclick="irPag('+(currentPage-1)+')">← Anterior</button>';
-    for (var pg = Math.max(1,currentPage-2); pg <= Math.min(totalPags, currentPage+2); pg++) {
-      html += '<button class="'+(pg===currentPage?'btn-buscar':'btn-clear')+'" onclick="irPag('+pg+')">'+pg+'</button>';
-    }
-    if (currentPage < totalPags) html += '<button class="btn-clear" onclick="irPag('+(currentPage+1)+')">Siguiente →</button>';
-    html += '</div>';
-  }
-
-  grid.innerHTML = html;
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function irPag(n) { currentPage = n; renderProductos(); }
-
-function mostrarSkeletons() {
+  if (totalPags <= 1) { el('pagination').innerHTML = ''; return; }
   var html = '';
-  for (var i=0;i<20;i++) {
-    html += '<div class="pcard skeleton" style="gap:.75rem;">'
-      +'<div class="skel-line" style="width:90px;height:.6rem;flex-shrink:0"></div>'
-      +'<div class="skel-line" style="flex:1;height:.6rem"></div>'
-      +'<div class="skel-line" style="width:70px;height:.6rem;flex-shrink:0"></div>'
-      +'</div>';
+  if (_page > 1)        html += '<button class="pg-btn" onclick="irPag('+(_page-1)+')">← Anterior</button>';
+  var lo = Math.max(1, _page-2), hi = Math.min(totalPags, _page+2);
+  for (var pg = lo; pg <= hi; pg++) {
+    html += '<button class="pg-btn' + (pg===_page?' active':'') + '" onclick="irPag('+pg+')">'+pg+'</button>';
   }
-  document.getElementById('grid').innerHTML = html;
-  document.getElementById('estadoTxt').textContent = 'Cargando…';
+  if (_page < totalPags) html += '<button class="pg-btn" onclick="irPag('+(_page+1)+')">Siguiente →</button>';
+  el('pagination').innerHTML = html;
 }
 
-function mostrarError(msg) {
-  document.getElementById('grid').innerHTML = '<div class="empty-state"><span class="ico">⚠️</span><h3>'+msg+'</h3></div>';
-  document.getElementById('estadoTxt').textContent = '';
-}
+function irPag(n) { _page = n; renderLista(); window.scrollTo({top:0,behavior:'smooth'}); }
 
-// ── MODAL ───────────────────────────────────────────────────────────
+// ── MODAL ────────────────────────────────────────────────────────────
 function openModal(idx) {
-  var p = currentProducts[idx];
+  var p = _filtered[idx];
   if (!p) return;
-  document.getElementById('mImg').src    = p.img || '';
-  document.getElementById('mImg').style.display = p.img ? 'block' : 'none';
-  document.getElementById('mCode').textContent  = p.code || '';
-  document.getElementById('mName').textContent  = p.name;
-  document.getElementById('mPrice').textContent = fmt(p.precio);
-  document.getElementById('mWsp').onclick = function(){ wspConsultar(idx); };
-  document.getElementById('modalOverlay').classList.add('open');
-}
+  _modalIdx = idx;
 
-function closeModal(e) {
-  if (!e || e.target === document.getElementById('modalOverlay')) {
-    document.getElementById('modalOverlay').classList.remove('open');
+  el('mCode').textContent  = p.code || '';
+  el('mName').textContent  = p.name || '';
+  el('mPrice').textContent = fmt(p.precio);
+  el('mDesc').textContent  = p.name || '';
+
+  // Imagen
+  var img = el('mImg');
+  if (p.img) { img.src = p.img; img.style.display = 'block'; }
+  else { img.style.display = 'none'; el('mImgWrap').style.minHeight = '0'; }
+
+  // OEM
+  var oems = extractOEMs(p.name || '');
+  var oemSec = el('mOemSection');
+  if (oems.length) {
+    el('mOemList').innerHTML = oems.map(function(o){ return '<span class="oem-tag">' + o + '</span>'; }).join('');
+    oemSec.style.display = 'block';
+  } else {
+    oemSec.style.display = 'none';
   }
+
+  // Compatibilidad
+  var veh = p.vehiculos || [];
+  var compSec = el('mCompatSection');
+  if (veh.length) {
+    el('mCompatList').innerHTML = veh.map(function(v){ return '<span class="compat-tag">🚗 ' + v + '</span>'; }).join('');
+    compSec.style.display = 'block';
+  } else {
+    compSec.style.display = 'none';
+  }
+
+  el('modalOverlay').classList.add('open');
 }
 
-function wspConsultar(idx) {
-  var p = currentProducts[idx];
+function closeModal() {
+  el('modalOverlay').classList.remove('open');
+  _modalIdx = -1;
+}
+
+// ── WHATSAPP ─────────────────────────────────────────────────────────
+function wspPedir() { if (_modalIdx >= 0) wspPedirIdx(_modalIdx); }
+
+function wspPedirIdx(idx) {
+  var p = _filtered[idx];
   if (!p) return;
-  var msg = '👋 Hola GoCar\'s, quiero *PEDIR* el siguiente repuesto:\n\n'
-    + '📦 *'+p.name+'*\n'
-    + (p.code ? '🔢 Código: '+p.code+'\n' : '')
-    + '💰 Precio: *'+fmt(p.precio)+'*\n'
+  var oems = extractOEMs(p.name || '');
+  var veh  = (p.vehiculos || []).slice(0, 3).join(', ');
+  var msg  = '👋 Hola GoCar\'s, quiero *PEDIR* el siguiente repuesto:\n\n'
+    + '📦 *' + p.name + '*\n'
+    + '🔢 Código Quiroz: ' + (p.code || '') + '\n'
+    + (oems.length ? '🔩 OEM / Nro. original: ' + oems.slice(0,3).join(', ') + '\n' : '')
+    + (veh ? '🚗 Vehículo: ' + veh + '\n' : '')
+    + '💰 Precio referencia: *' + fmt(p.precio) + '*\n'
     + '⏱ Entrega: 24-48 horas hábiles\n\n'
     + '¿Pueden confirmar disponibilidad y coordinar el pago?';
-  window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg), '_blank');
+  window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
 }
 
+// ── CARGA ────────────────────────────────────────────────────────────
+function mostrarSkeletons() {
+  var html = '';
+  for (var i = 0; i < 12; i++) html += '<div class="skel"></div>';
+  el('lista').innerHTML = html;
+}
 
-// ── TECLA ENTER / INPUT ──────────────────────────────────────────────
-document.getElementById('searchInput').addEventListener('input', function() {
-  currentPage = 1;
-  if (_allData) aplicarFiltros();
-});
-document.getElementById('searchInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') { currentPage = 1; if (_allData) aplicarFiltros(); }
-});
-document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+function cargar() {
+  mostrarSkeletons();
+  fetch(DATA_URL + '?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d) {
+      _all = (d.products || []).filter(function(p){ return p.precio >= 5000; });
 
-// ── INICIO: cargar todo al abrir ─────────────────────────────────────
-mostrarSkeletons();
-cargarTodos(function(all) {
-  if (!all.length) { mostrarError('Catálogo no disponible. Vuelve mañana.'); return; }
-  aplicarFiltros();
-});
+      // Pre-calcular OEM para búsqueda rápida
+      _all.forEach(function(p){ p._oems = extractOEMs(p.name || ''); });
+
+      buildIndexes(_all);
+      populateMarcas();
+      populateTipos();
+
+      el('navBadge').textContent = _all.length.toLocaleString('es-CL') + ' repuestos';
+
+      // Leer parámetros de URL si los hay
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('marca')) { el('selMarca').value = params.get('marca'); onMarcaChange(); }
+      if (params.get('modelo')){ el('selModelo').value = params.get('modelo'); }
+      if (params.get('tipo'))  { el('selTipo').value = params.get('tipo'); }
+      if (params.get('q'))     { el('searchInput').value = params.get('q'); }
+
+      doBuscar();
+    })
+    .catch(function(e) {
+      el('lista').innerHTML = '<div class="empty-state"><span class="ico">⚠️</span>'
+        + '<h3>Catálogo no disponible</h3><p>Intenta de nuevo en unos minutos.</p></div>';
+      el('estadoTxt').textContent = 'Error al cargar.';
+    });
+}
+
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+cargar();
 </script>
-
 </body>
 </html>

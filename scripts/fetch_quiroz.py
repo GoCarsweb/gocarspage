@@ -142,14 +142,32 @@ def extraer_vehiculos(name):
     name_up = name.upper()
     tags = []
     for marca, modelo in VEHICULOS:
-        # Algunos modelos tienen espacios o guiones → buscar como regex
-        pat = re.compile(r'\b' + re.escape(marca.upper()) + r'\b')
+        pat  = re.compile(r'\b' + re.escape(marca.upper()) + r'\b')
         pat2 = re.compile(r'\b' + re.escape(modelo.upper().replace(' ', r'[\s\-]?')) + r'\b')
         if pat.search(name_up) and pat2.search(name_up):
             tag = f"{marca} {modelo}"
             if tag not in tags:
                 tags.append(tag)
     return tags
+
+def extraer_oem(name):
+    """Extrae números OEM/originales del nombre del producto"""
+    found = []
+    seen  = set()
+    pats  = [
+        re.compile(r'\b([A-Z0-9]{2,}(?:-[A-Z0-9]{2,}){1,4})\b', re.IGNORECASE),
+        re.compile(r'\b([A-Z]{1,3}[0-9]{4,}[A-Z0-9]*)\b',        re.IGNORECASE),
+        re.compile(r'\b([0-9]{7,})\b'),
+    ]
+    for pat in pats:
+        for m in pat.finditer(name):
+            v = m.group(1).upper()
+            if re.match(r'^(19|20)\d{2}$', v): continue   # excluir años
+            if len(v) < 5: continue
+            if v not in seen:
+                seen.add(v)
+                found.append(v)
+    return found[:8]
 
 def fix_img(src):
     if not src: return ""
@@ -296,11 +314,14 @@ def main():
 
     print(f"\n[fase1] {len(all_products)} productos únicos por keyword")
 
-    print("\n=== FASE 2: Extraer vehículos desde nombre del producto ===")
+    print("\n=== FASE 2: Extraer vehículos y OEM desde nombre ===")
     for key, p in all_products.items():
         tags = extraer_vehiculos(p.get("name", ""))
         if tags:
             p["vehiculos"] = tags
+        oems = extraer_oem(p.get("name", ""))
+        if oems:
+            p["oem"] = oems
 
     final = list(all_products.values())
     for p in final:
@@ -308,7 +329,8 @@ def main():
         del p["precioBase"]
 
     con_vehiculo = sum(1 for p in final if p.get("vehiculos"))
-    print(f"[fase2] {con_vehiculo} de {len(final)} productos con vehículo detectado en nombre")
+    con_oem      = sum(1 for p in final if p.get("oem"))
+    print(f"[fase2] {con_vehiculo} con vehículo | {con_oem} con OEM detectado")
 
     output = {
         "ok":         True,
