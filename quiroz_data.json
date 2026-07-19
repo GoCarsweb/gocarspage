@@ -1,7 +1,7 @@
 {
   "ok": true,
   "total": 1839,
-  "updated_at": "2026-07-18T11:50:19.103022Z",
+  "updated_at": "2026-07-19T11:59:14.145639Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -15839,7 +15839,7 @@
       "precio": 47300
     },
     {
-      "name": "OEM 23510-2E400 BIELA MOTOR HYUNDAI KIA TUCSON 17-> SPORTAGE 17-> G4NA",
+      "name": "OEM 23510-2E400 BIELA MOTOR HYUNDAI KIA TUCSON 17-> SPORTAGE 17-> G4NA 23510-2E410",
       "code": "BIE-0074",
       "img": "https://cart.quirozchile.cl/uploads/bie-0074.jpg",
       "categoria": "biela",
@@ -15848,7 +15848,8 @@
         "Kia Sportage"
       ],
       "oem": [
-        "23510-2E400"
+        "23510-2E400",
+        "23510-2E410"
       ],
       "precio": 31900
     },
@@ -15950,7 +15951,7 @@
       "precio": 54000
     },
     {
-      "name": "OEM 23510-2E400 BIELA MOTOR HYUNDAI KIA TUCSON 17-> SPORTAGE 17-> G4NA",
+      "name": "OEM 23510-2E400 BIELA MOTOR HYUNDAI KIA TUCSON 17-> SPORTAGE 17-> G4NA 23510-2E410",
       "code": "BIE-0084",
       "img": "https://cart.quirozchile.cl/uploads/bie-0084.jpg",
       "categoria": "biela",
@@ -15959,7 +15960,8 @@
         "Kia Sportage"
       ],
       "oem": [
-        "23510-2E400"
+        "23510-2E400",
+        "23510-2E410"
       ],
       "precio": 39200
     },
@@ -16521,7 +16523,7 @@
         "06-11",
         "05-11"
       ],
-      "precio": 15300
+      "precio": 16700
     },
     {
       "name": "OEM 51712-21350 DISCO FRENO HYUNDAI ACCENT 94-99 EXCEL MEDIDAS 242*86*40, 50 4 HOYOS MARCA WASSHARDT",
@@ -16617,7 +16619,7 @@
         "05-10",
         "10-14"
       ],
-      "precio": 23000
+      "precio": 25000
     },
     {
       "name": "OEM 51712-C1000 DISCO FRENO HYUNDAI TUCSON 16-> MARCA WASSHARDT",
@@ -16631,7 +16633,7 @@
         "51712-C1000",
         "C1000"
       ],
-      "precio": 25500
+      "precio": 25900
     },
     {
       "name": "OEM 51712-FD200 DISCO FRENO KIA RIO 03-05 234, 8*55*51 4 HOYOS MARCA WASSHARDT",
@@ -16645,7 +16647,7 @@
         "51712-FD200",
         "03-05"
       ],
-      "precio": 18500
+      "precio": 20300
     },
     {
       "name": "OEM 51712-25061 DISCO FRENO HYUNDAI ACCENT PRIME 00-05 MEDIDAS 240*63, 2*52 4 HOYOS MARCA WASSHARDT",
@@ -16659,7 +16661,7 @@
         "51712-25061",
         "00-05"
       ],
-      "precio": 15900
+      "precio": 16600
     },
     {
       "name": "OEM 51712-07500 DISCO FRENO KIA MORNING 04-17 MARCA WASSHARDT",
@@ -16671,7 +16673,7 @@
         "51712-07500",
         "04-17"
       ],
-      "precio": 15300
+      "precio": 14600
     },
     {
       "name": "OEM 58129-44010 DISCO FRENO HYUNDAI H100 VAN 94-04 MARCA WASSHARDT",
@@ -16685,7 +16687,7 @@
         "58129-44010",
         "94-04"
       ],
-      "precio": 16600
+      "precio": 15900
     },
     {
       "name": "OEM 51712-2H000 DISCO FRENO HYUNDAI ELANTRA 06-11 51712-3B000 51712-3B010MARCA WASSHARDT",
@@ -16699,7 +16701,7 @@
         "51712-3B000",
         "51712-3B010MARCA"
       ],
-      "precio": 21000
+      "precio": 22300
     },
     {
       "name": "OEM 51712-1R000 DISCO FRENO HYUNDAI KIA ACCENT RB 12->SOLUTO 1.4 21-> RIO 4-5 12-> MEDIDAS 256*62, 20*43, 80 4 HOYOS",
@@ -16713,7 +16715,7 @@
       "oem": [
         "51712-1R000"
       ],
-      "precio": 28700
+      "precio": 16900
     },
     {
       "name": "OEM 51712-2W000 DISCO FRENO HYUNDAI KIA SANTA FE 13-18 SORENTO 10-16 MARCA WASSHARDT",
@@ -16728,7 +16730,7 @@
         "13-18",
         "10-16"
       ],
-      "precio": 31900
+      "precio": 33200
     },
     {
       "name": "OEM 93490-2B200 CINTA AIRBAG HYUNDAI SANTA FE 07-12",
@@ -18388,13 +18390,14 @@
       "precio": 24400
     },
     {
-      "name": "OEM 55300-4F000 AMORTIGUADOR TRASERO LH RH HYUNDAI PORTER 05->",
+      "name": "OEM 55300-4F000 AMORTIGUADOR TRASERO LH RH HYUNDAI PORTER 05-> 55300-4F300",
       "code": "AMO-0039",
       "img": "https://cart.quirozchile.cl/uploads/amo-0039.jpg",
       "categoria": "amortiguadores",
       "vehiculos": [],
       "oem": [
-        "55300-4F000"
+        "55300-4F000",
+        "55300-4F300"
       ],
       "precio": 31900
     },
@@ -21686,7 +21689,7 @@
       "precio": 11800
     },
     {
-      "name": "OEM OK30E-18-140 CABLE BUJIA KIA RIO 1.5",
+      "name": "OEM OK30E-18-140 CABLE BUJIA KIA RIO 1.5 27400-2X140",
       "code": "CAB-0026",
       "img": "https://cart.quirozchile.cl/uploads/cab-0026.jpg",
       "categoria": "cable bujia",
@@ -21694,7 +21697,8 @@
         "Kia Rio"
       ],
       "oem": [
-        "OK30E-18-140"
+        "OK30E-18-140",
+        "27400-2X140"
       ],
       "precio": 12700
     },
