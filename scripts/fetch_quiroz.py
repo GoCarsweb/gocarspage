@@ -276,6 +276,45 @@ KEYWORDS_EXTRA = [
     # Varios
     "aceite motor","aceite transmision","correa ventilador","kit reparacion",
     "reten aceite","retén ciguenal","sello transmision","fusible","rele relay",
+    # Marca + pieza (Toyota)
+    "alternador toyota","filtro toyota","correa toyota hilux","bomba agua toyota",
+    "amortiguador toyota","pastilla toyota hilux","disco freno toyota",
+    "bujia toyota","sensor toyota","inyector toyota hilux",
+    # Marca + pieza (Ford Ranger)
+    "alternador ranger","filtro ranger","amortiguador ranger","pastilla ranger",
+    "disco freno ranger","bomba agua ranger","correa ranger","bujia ranger",
+    "sensor ranger","inyector ranger","palier ranger",
+    # Marca + pieza (Nissan)
+    "alternador nissan","filtro nissan navara","amortiguador nissan",
+    "pastilla nissan","disco freno nissan","bomba agua nissan",
+    # Marca + pieza (Mitsubishi L200)
+    "alternador mitsubishi","filtro l200","amortiguador l200",
+    "pastilla l200","disco freno l200","bomba agua l200","correa l200",
+    # Marca + pieza (Mazda)
+    "alternador mazda","filtro mazda","amortiguador mazda bt50",
+    "pastilla mazda","bomba agua mazda",
+    # Marca + pieza (Hyundai/Kia)
+    "alternador hyundai","filtro hyundai","amortiguador hyundai",
+    "pastilla hyundai","alternador kia","filtro kia","amortiguador kia",
+    # Marca + pieza (VW Amarok)
+    "alternador amarok","filtro amarok","amortiguador amarok",
+    "pastilla amarok","disco freno amarok","bomba agua amarok",
+    # Marca + pieza (Chevrolet)
+    "alternador chevrolet","filtro dmax","amortiguador dmax",
+    "pastilla dmax","disco freno dmax",
+    # Piezas específicas adicionales
+    "caja transfer","diferencial","reduccion 4x4","kit suspension lift",
+    "muñon direccion","brazo suspension","bieleta estabilizadora",
+    "termostato motor","valvula termostatica","enfriador aceite",
+    "compresor aire acondicionado","condensador ac","valvula expansion ac",
+    "ciguenal","biela motor","cabeza motor","bloque motor",
+    "culata","valvula admision","valvula escape","resorte valvula",
+    "tapa valvula","junta tapa valvula","carter aceite","junta carter",
+    "turbo diesel","intercooler","valvula wastegate","manguera turbo",
+    "bomba inyeccion diesel","common rail","inyector diesel",
+    "precalentador","bujia precalentamiento","sensor map","sensor maf",
+    "abs sensor rueda","modulo abs","bomba abs","central abs",
+    "airbag","cinturon seguridad","pretensor cinturon",
 ]
 
 def main():
