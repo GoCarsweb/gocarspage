@@ -148,6 +148,14 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 .success-detail-row span:last-child{color:var(--white);font-weight:600;}
 .success-btn{width:100%;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:2px;text-transform:uppercase;border:none;padding:.85rem;border-radius:6px;cursor:pointer;transition:background .2s;}
 .success-btn:hover{background:var(--red-dark);}
+.success-btn-sec{width:100%;background:transparent;color:var(--blue);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--blue);padding:.7rem;border-radius:6px;cursor:pointer;transition:all .2s;margin-bottom:.5rem;}
+.success-btn-sec:hover{background:var(--blue);color:#fff;}
+/* ── COMPROBANTE IMPRIMIBLE ── */
+#comprobante{display:none;}
+@media print{
+  body>*{display:none!important;}
+  #comprobante{display:block!important;}
+}
 
 /* ── TOAST ── */
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--dark2);color:var(--white);padding:.75rem 1.25rem;border-radius:8px;font-size:.88rem;z-index:1000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;border-left:3px solid var(--red);}
@@ -181,11 +189,6 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 .cot-wa:disabled,.cot-mail:disabled{opacity:.35;cursor:not-allowed;}
 
 /* ── PRINT / PDF ── */
-@media print {
-  body > *:not(#printArea){display:none!important;}
-  #printArea{display:block!important;font-family:'Arial',sans-serif;color:#000;padding:0;margin:0;}
-  #printArea *{color:#000;}
-}
 #printArea{display:none;}
 
 /* ── RESPONSIVE ── */
@@ -353,11 +356,25 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 
         <!-- Medio de pago -->
         <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;">Medio de pago</div>
-        <div class="pago-btns">
-          <button class="pago-btn active" onclick="setPago('Efectivo',this)">💵 Efectivo</button>
-          <button class="pago-btn" onclick="setPago('Débito',this)">💳 Débito</button>
-          <button class="pago-btn" onclick="setPago('Crédito',this)">💳 Crédito</button>
-          <button class="pago-btn" onclick="setPago('Transferencia',this)">🏦 Transferencia</button>
+        <div class="pago-btns" style="grid-template-columns:1fr 1fr;">
+          <button class="pago-btn active" id="btnPagoEfectivo" onclick="setPago('Efectivo',this)">💵 Efectivo</button>
+          <button class="pago-btn" id="btnPagoTransferencia" onclick="setPago('Transferencia',this)">🏦 Transferencia</button>
+        </div>
+        <!-- Vuelto (solo efectivo) -->
+        <div id="vueltoWrap" style="margin-bottom:.75rem;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray2);margin-bottom:.3rem;">Recibido del cliente</div>
+          <input type="number" id="montoRecibido" placeholder="$0" min="0" step="100"
+            style="width:100%;background:var(--dark3);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;padding:.5rem .75rem;border-radius:6px;outline:none;"
+            oninput="calcVuelto()">
+          <div id="vueltoResult" style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;color:var(--green);margin-top:.3rem;min-height:1.4rem;"></div>
+        </div>
+        <!-- Transferencia info -->
+        <div id="transferenciaWrap" style="display:none;background:var(--dark3);border:1px solid var(--border);border-radius:6px;padding:.65rem .75rem;margin-bottom:.75rem;font-size:.78rem;line-height:1.8;color:var(--gray2);">
+          🏦 <strong style="color:var(--white);">Banco BCI</strong><br>
+          Cuenta Corriente <strong style="color:var(--white);">12345678</strong><br>
+          RUT: <strong style="color:var(--white);">78.040.615-1</strong><br>
+          Nombre: <strong style="color:var(--white);">GoCar's Repuestos SpA</strong><br>
+          Email: <strong style="color:var(--white);">pagos@gocars.cl</strong>
         </div>
 
         <!-- Cotizar -->
@@ -414,6 +431,9 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
 <!-- ÁREA DE IMPRESIÓN -->
 <div id="printArea"></div>
 
+<!-- COMPROBANTE IMPRIMIBLE -->
+<div id="comprobante"></div>
+
 <!-- MODAL ÉXITO -->
 <div class="success-overlay" id="successOverlay">
   <div class="success-box">
@@ -422,6 +442,8 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);m
     <div class="success-sub" id="successSub"></div>
     <div class="success-total" id="successTotal"></div>
     <div class="success-detail" id="successDetail"></div>
+    <div id="successVuelto" style="display:none;background:rgba(34,197,94,.1);border:1px solid var(--green);border-radius:6px;padding:.6rem .75rem;margin-bottom:.75rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--green);text-align:center;"></div>
+    <button class="success-btn-sec" onclick="imprimirComprobante()">🖨️ Imprimir Comprobante</button>
     <button class="success-btn" onclick="closeSuccess()">Nueva venta</button>
   </div>
 </div>
@@ -2025,6 +2047,24 @@ function setPago(pago, btn) {
   var btns = document.querySelectorAll('.pago-btn');
   for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
   btn.classList.add('active');
+  el('vueltoWrap').style.display       = pago === 'Efectivo'      ? '' : 'none';
+  el('transferenciaWrap').style.display = pago === 'Transferencia' ? '' : 'none';
+  el('montoRecibido').value = '';
+  el('vueltoResult').textContent = '';
+}
+
+function calcVuelto() {
+  var total = cart.reduce(function(s,i){ return s + i.precio * i.qty; }, 0);
+  var rec = parseFloat(el('montoRecibido').value) || 0;
+  var vuelto = rec - total;
+  if (rec <= 0) { el('vueltoResult').textContent = ''; return; }
+  if (vuelto < 0) {
+    el('vueltoResult').style.color = '#e31e24';
+    el('vueltoResult').textContent = 'Faltan ' + fmt(Math.abs(vuelto));
+  } else {
+    el('vueltoResult').style.color = 'var(--green)';
+    el('vueltoResult').textContent = 'Vuelto: ' + fmt(vuelto);
+  }
 }
 
 // ── CONFIRMAR VENTA ──
@@ -2135,7 +2175,79 @@ function mostrarExito(total, vendedor, numItems) {
     detailHtml += '<div class="success-detail-row" style="color:#f59e0b;font-weight:700;border-top:1px solid rgba(251,191,36,.3);margin-top:.5rem;padding-top:.5rem;"><span>⚡ PEDIDO ESPECIAL IMISA</span><span>Solicitar a proveedor</span></div>';
     el('successDetail').innerHTML = detailHtml;
   }
+  // Vuelto
+  var vueltoEl = el('successVuelto');
+  if (pagoActual === 'Efectivo') {
+    var recibido = parseFloat(el('montoRecibido').value) || 0;
+    if (recibido > 0) {
+      var vuelto = recibido - total;
+      vueltoEl.style.display = '';
+      vueltoEl.textContent = vuelto >= 0 ? 'Vuelto: ' + fmt(vuelto) : 'Monto insuficiente';
+    } else { vueltoEl.style.display = 'none'; }
+  } else { vueltoEl.style.display = 'none'; }
+
+  // Guardar datos para comprobante
+  _ultimaVenta = { total: total, vendedor: vendedor, canal: canalActual, pago: pagoActual,
+    fecha: now, items: cart.map(function(i){ return { nombre: i.nombre, qty: i.qty, precio: i.precio, proveedor: i.proveedor||null }; }),
+    recibido: parseFloat(el('montoRecibido').value)||0,
+    folio: 'V-' + String(now.getFullYear()).slice(-2) + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0') };
+
   el('successOverlay').classList.add('open');
+}
+
+var _ultimaVenta = null;
+
+function imprimirComprobante() {
+  if (!_ultimaVenta) return;
+  var v = _ultimaVenta;
+  var now = v.fecha;
+  var fechaStr = String(now.getDate()).padStart(2,'0') + '/' + String(now.getMonth()+1).padStart(2,'0') + '/' + now.getFullYear()
+    + ' ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+
+  var lineas = v.items.map(function(i) {
+    var prov = i.proveedor ? ' <span style="font-size:9px;color:#666;">[' + i.proveedor + ']</span>' : '';
+    return '<tr><td style="padding:2px 0;font-size:11px;">' + i.nombre.slice(0,38) + prov + '</td>'
+      + '<td style="text-align:center;padding:2px 4px;font-size:11px;">' + i.qty + '</td>'
+      + '<td style="text-align:right;padding:2px 0;font-size:11px;">' + fmt(i.precio*i.qty) + '</td></tr>';
+  }).join('');
+
+  var vueltoLinea = '';
+  if (v.pago === 'Efectivo' && v.recibido > 0) {
+    var vuelto = v.recibido - v.total;
+    vueltoLinea = '<tr><td colspan="2" style="padding-top:4px;font-size:11px;">Recibido</td><td style="text-align:right;padding-top:4px;font-size:11px;">' + fmt(v.recibido) + '</td></tr>'
+      + '<tr><td colspan="2" style="font-size:11px;font-weight:bold;">Vuelto</td><td style="text-align:right;font-size:11px;font-weight:bold;">' + fmt(Math.max(vuelto,0)) + '</td></tr>';
+  }
+
+  var html = '<div style="width:80mm;font-family:Arial,sans-serif;font-size:12px;color:#000;margin:0 auto;">'
+    + '<div style="text-align:center;margin-bottom:8px;">'
+    + '<div style="font-size:18px;font-weight:900;letter-spacing:-1px;">GoCar\'s Repuestos</div>'
+    + '<div style="font-size:10px;color:#444;">RUT: 78.040.615-1</div>'
+    + '<div style="font-size:10px;color:#444;">Viña del Mar — +56 9 4031 0991</div>'
+    + '<div style="font-size:10px;color:#444;">gocars-repuestosvina.cl</div>'
+    + '</div>'
+    + '<div style="border-top:1px dashed #000;border-bottom:1px dashed #000;padding:4px 0;margin-bottom:6px;font-size:10px;">'
+    + '<strong>Folio:</strong> ' + v.folio + '&nbsp;&nbsp; <strong>Fecha:</strong> ' + fechaStr + '<br>'
+    + '<strong>Vendedor:</strong> ' + v.vendedor + '&nbsp;&nbsp; <strong>Pago:</strong> ' + v.pago
+    + '</div>'
+    + '<table style="width:100%;border-collapse:collapse;">'
+    + '<thead><tr style="border-bottom:1px solid #000;">'
+    + '<th style="text-align:left;font-size:11px;padding-bottom:3px;">Producto</th>'
+    + '<th style="text-align:center;font-size:11px;padding-bottom:3px;">Cant</th>'
+    + '<th style="text-align:right;font-size:11px;padding-bottom:3px;">Total</th>'
+    + '</tr></thead>'
+    + '<tbody>' + lineas + '</tbody>'
+    + '</table>'
+    + '<div style="border-top:1px dashed #000;margin-top:6px;padding-top:6px;">'
+    + '<table style="width:100%;"><tbody>'
+    + '<tr><td style="font-size:13px;font-weight:900;">TOTAL</td><td style="text-align:right;font-size:13px;font-weight:900;">' + fmt(v.total) + '</td></tr>'
+    + vueltoLinea
+    + '</tbody></table></div>'
+    + '<div style="text-align:center;margin-top:10px;font-size:9px;color:#666;border-top:1px dashed #000;padding-top:6px;">'
+    + 'Documento no tributario — Solo para uso interno<br>¡Gracias por su preferencia!'
+    + '</div></div>';
+
+  el('comprobante').innerHTML = html;
+  window.print();
 }
 
 function closeSuccess() {
