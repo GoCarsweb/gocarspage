@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "total": 1839,
-  "updated_at": "2026-07-19T11:59:14.145639Z",
+  "total": 1936,
+  "updated_at": "2026-07-20T15:08:45.398967Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -22500,6 +22500,1268 @@
         "13-19"
       ],
       "precio": 20400
+    },
+    {
+      "name": "OEM 22100-42421 CULATA COMPLETA HYUNDAI H1 H100 PORTER KIA FRONTIER 2.5 MOTOR BH",
+      "code": "CUL-0001",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0001.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai H1",
+        "Hyundai H100"
+      ],
+      "oem": [
+        "22100-42421"
+      ],
+      "precio": 306900
+    },
+    {
+      "name": "OEM OK65A-10-100C CULATA KIA BESTA FRONTIER 2.7 3.0 98-07 COMPLETA COREALINE",
+      "code": "CUL-0003",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0003.jpg",
+      "categoria": "culata",
+      "vehiculos": [],
+      "oem": [
+        "OK65A-10-100C",
+        "98-07"
+      ],
+      "precio": 537600
+    },
+    {
+      "name": "OEM 22100-2A350 CULATA HYUNDAI ACCENT 06-11 D4FA DIESEL",
+      "code": "CUL-0004",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0004.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22100-2A350",
+        "06-11"
+      ],
+      "precio": 204800
+    },
+    {
+      "name": "OEM OK65A-10-100C CULATA KIA BESTA FRONTIER 2.7 3.0 98-07 SOLA",
+      "code": "CUL-0010",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0010.jpg",
+      "categoria": "culata",
+      "vehiculos": [],
+      "oem": [
+        "OK65A-10-100C",
+        "98-07"
+      ],
+      "precio": 150600
+    },
+    {
+      "name": "OEM 22100-03451 CULATA HYUNDAI GRAND I10 1, 2 14-> H20 INDIA",
+      "code": "CUL-0015",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0015.jpg",
+      "categoria": "culata",
+      "vehiculos": [],
+      "oem": [
+        "22100-03451"
+      ],
+      "precio": 648200
+    },
+    {
+      "name": "OEM 6711410125 CUERPO ACELERACION SSANGYONG ACTYON 2, 0 06-11 ACTYON 2, 0 12-> REXTON 2, 7 06-10 STAVIC 2, 0 13-15 6711410225",
+      "code": "CUE-0006",
+      "img": "https://cart.quirozchile.cl/uploads/cue-0006.jpg",
+      "categoria": "culata",
+      "vehiculos": [],
+      "oem": [
+        "06-11",
+        "06-10",
+        "13-15",
+        "6711410125",
+        "6711410225"
+      ],
+      "precio": 226500
+    },
+    {
+      "name": "OEM 22100-27750 CULATA HYUNDAI SANTA FE 2.2 06-12 DIESEL",
+      "code": "CUL-0016",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0016.jpg",
+      "categoria": "culata",
+      "vehiculos": [],
+      "oem": [
+        "22100-27750",
+        "06-12"
+      ],
+      "precio": 493100
+    },
+    {
+      "name": "OEM 201H242U009 ENSAMBLE HYUNDAI KIA H1 05-11 PORTER 05-11 FRONTIER 2.5 -05-11 MOTOR BH COMPLETO NUMERO MOTOR A0007",
+      "code": "ENS-0001",
+      "img": "https://cart.quirozchile.cl/uploads/ens-0001.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "05-11",
+        "A0007"
+      ],
+      "precio": 1573300
+    },
+    {
+      "name": "OEM 2J0224AU00AA ENSAMBLE HYUNDAI KIA H1 12-> PORTER 12-> FRONTIER 2.5 12-> CB COMPLETO PARA BOMBA DELPHI",
+      "code": "ENS-0002",
+      "img": "https://cart.quirozchile.cl/uploads/ens-0002.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "precio": 2666500
+    },
+    {
+      "name": "OEM 22100-2A350 CULATA HYUNDAI ACCENT 1.5 06-10 DIESEL 22100-2A100",
+      "code": "CUL-0017",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0017.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22100-2A350",
+        "06-10",
+        "22100-2A100"
+      ],
+      "precio": 369900
+    },
+    {
+      "name": "OEM 22100-2A200 CULATA HYUNDAI ACCENT RB 1.6 12-> DIESEL D4FB D4FA",
+      "code": "CUL-0018",
+      "img": "https://cart.quirozchile.cl/uploads/cul-0018.jpg",
+      "categoria": "culata",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22100-2A200"
+      ],
+      "precio": 476100
+    },
+    {
+      "name": "OEM 22410-22610 TAPA VALVULA HYUNDAI ACCENT 94-05 12 VALVULA",
+      "code": "TAP-0020",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0020.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22410-22610",
+        "94-05"
+      ],
+      "precio": 43400
+    },
+    {
+      "name": "OEM 22410-26610 TAPA VALVULA HY KIA ACCENT 06-10 16V CERATO 04-08 RIO 05-11",
+      "code": "TAP-0019",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0019.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Kia Rio"
+      ],
+      "oem": [
+        "22410-26610",
+        "06-10",
+        "04-08",
+        "05-11"
+      ],
+      "precio": 46000
+    },
+    {
+      "name": "OEM 22410-42903 TAPA VALVULA HYUNDAI H1",
+      "code": "TAP-0024",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0024.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "22410-42903"
+      ],
+      "precio": 63600
+    },
+    {
+      "name": "OEM 22410-2A101 TAPA VALVULA HYUNDAI ACCENT CRDI 06-11 22410-2A230 22410-2A210",
+      "code": "TAP-0037",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0037.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22410-2A101",
+        "06-11",
+        "22410-2A230",
+        "22410-2A210"
+      ],
+      "precio": 126700
+    },
+    {
+      "name": "OEM 22410-4X860 TAPA VALVULA HYUNDAI KIA GRAND CARNIVAL 2.9 TERRACAN 2.9",
+      "code": "TAP-0043",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0043.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-4X860"
+      ],
+      "precio": 159900
+    },
+    {
+      "name": "OEM 22410-26640 TAPA VALVULA HY KIA ACCENT 06-10 16V CERATO 04-08 RIO 05-11",
+      "code": "TAP-0042",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0042.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Kia Rio"
+      ],
+      "oem": [
+        "22410-26640",
+        "06-10",
+        "04-08",
+        "05-11"
+      ],
+      "precio": 76700
+    },
+    {
+      "name": "OEM 22410-22610 TAPA VALVULA HYUNDAI ACCENT 94-05 12 VALVULA",
+      "code": "TAP-0044",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0044.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22410-22610",
+        "94-05"
+      ],
+      "precio": 52700
+    },
+    {
+      "name": "OEM 22410-26614 TAPA VALVULA KIA CERATO 1.6 04-06 16 VALVULAS 22410-26635",
+      "code": "TAP-0049",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0049.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-26614",
+        "04-06",
+        "22410-26635"
+      ],
+      "precio": 93400
+    },
+    {
+      "name": "OEM 22410-04050 TAPA VALVULA KIA MORNING 1, 0 15->",
+      "code": "TAP-0050",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0050.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-04050"
+      ],
+      "precio": 77000
+    },
+    {
+      "name": "OEM 22410-4A460 TAPA VALVULA HYUNDAI NEW H1 12->D4CB 22410-4A450",
+      "code": "TAP-0051",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0051.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "22410-4A460",
+        "22410-4A450"
+      ],
+      "precio": 110000
+    },
+    {
+      "name": "OEM 22410-4A700 TAPA VALVULA HYUNDAI NEW H1 12->D4CB",
+      "code": "TAP-0052",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0052.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "22410-4A700"
+      ],
+      "precio": 105800
+    },
+    {
+      "name": "OEM 22410-2A600 TAPA VALVULA HYUNDAI ACCENT RB D4FB 11-> DIESEL",
+      "code": "TAP-0058",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0058.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22410-2A600"
+      ],
+      "precio": 118500
+    },
+    {
+      "name": "OEM 22410-03070 TAPA VALVULA HYUNDAI GRAND I10 1, 2 16-> G4LA INDIA",
+      "code": "TAP-0059",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0059.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-03070"
+      ],
+      "precio": 55200
+    },
+    {
+      "name": "OEM 22410-2B800 TAPA VALVULA HYUNDAI KIA CRETA 16 ELANTRA 1.6 15->G4FG SELTOS 1.6 21->",
+      "code": "TAP-0064",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0064.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-2B800"
+      ],
+      "precio": 125400
+    },
+    {
+      "name": "OEM 22410-03100 TAPA VALVULA HYUNDAI ACCENT RB 1.4",
+      "code": "TAP-0063",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0063.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "22410-03100"
+      ],
+      "precio": 47300
+    },
+    {
+      "name": "OEM 22410-2G100 TAPA VALVULA KIA SPORTAGE 2, 0 BENCINERA 11->",
+      "code": "TAP-0115",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0115.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Kia Sportage"
+      ],
+      "oem": [
+        "22410-2G100"
+      ],
+      "precio": 71600
+    },
+    {
+      "name": "OEM 22410-2G100 TAPA VALVULA KIA SPORTAGE 2, 0 BENCINERA 11->",
+      "code": "TAP-0114",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0114.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Kia Sportage"
+      ],
+      "oem": [
+        "22410-2G100"
+      ],
+      "precio": 74900
+    },
+    {
+      "name": "OEM 22410-42510 TAPA VALVULA HYUNDAI PORTER 05->",
+      "code": "TAP-0125",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0125.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-42510"
+      ],
+      "precio": 80600
+    },
+    {
+      "name": "OEM 22410-03150 TAPA VALVULA KIA SOLUTO 1, 4 21-> COREALINE",
+      "code": "TAP-0129",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0129.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-03150"
+      ],
+      "precio": 61400
+    },
+    {
+      "name": "OEM 22410-27003 TAPA VALVULA HYUNDAI TUCSON 2, 0 05-10 SANTA FE 2, 0 00-05",
+      "code": "TAP-0137",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0137.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Tucson"
+      ],
+      "oem": [
+        "22410-27003",
+        "05-10",
+        "00-05"
+      ],
+      "precio": 133200
+    },
+    {
+      "name": "OEM 6710160705 TAPA VALVULA SSANGYONG KORANDO 2, 0 11-18 6720160105",
+      "code": "TAP-0152",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0152.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "11-18",
+        "6710160705",
+        "6720160105"
+      ],
+      "precio": 125400
+    },
+    {
+      "name": "OEM 22410-4A801 TAPA VALVULA HYUNDAI PORTER 2, 5 12->",
+      "code": "TAP-0154",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0154.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-4A801"
+      ],
+      "precio": 104900
+    },
+    {
+      "name": "OEM 22410-2F701 TAPA VALVULA HYUNDAI KIA SANTA FE 2, 2 15-21 TUCSON 2, 0 16, 21 SPORTAGE 2, 0 16-21",
+      "code": "TAP-0157",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0157.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Kia Sportage"
+      ],
+      "oem": [
+        "22410-2F701",
+        "15-21",
+        "16-21"
+      ],
+      "precio": 135600
+    },
+    {
+      "name": "OEM 22410-27401 TAPA VALVULA HYUNDAI KIA SANTA FE 2, 0 00-05 DIESEL CARENS 2, 0 07-13",
+      "code": "TAP-0158",
+      "img": "https://cart.quirozchile.cl/uploads/tap-0158.jpg",
+      "categoria": "tapa valvula",
+      "vehiculos": [],
+      "oem": [
+        "22410-27401",
+        "00-05",
+        "07-13"
+      ],
+      "precio": 142000
+    },
+    {
+      "name": "OEM 28190-42701 INTERCOOLER HYUNDAI PORTER 05->",
+      "code": "INT-0001",
+      "img": "https://cart.quirozchile.cl/uploads/int-0001.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28190-42701"
+      ],
+      "precio": 195000
+    },
+    {
+      "name": "OEM 28190-42650 INTERCOOLER HYUNDAI H1 05-07",
+      "code": "INT-0041",
+      "img": "https://cart.quirozchile.cl/uploads/int-0041.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "28190-42650",
+        "05-07"
+      ],
+      "precio": 358600
+    },
+    {
+      "name": "OEM 2371109050 INTERCOOLER SSANGYONG ACTYON 06-11 KYRON 2371109060",
+      "code": "INT-0046",
+      "img": "https://cart.quirozchile.cl/uploads/int-0046.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "06-11",
+        "2371109050",
+        "2371109060"
+      ],
+      "precio": 340400
+    },
+    {
+      "name": "OEM 28271-2F700 INTERCOLER HYUNDAI SANTA FE 2, 2 12-> DIESEL",
+      "code": "INT-0047",
+      "img": "https://cart.quirozchile.cl/uploads/int-0047.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-2F700"
+      ],
+      "precio": 281500
+    },
+    {
+      "name": "OEM 28270-27251 INTERCOOLER HYUNDAI KIA TUCSON 2, 0 05-10 SPORTAGE 2, 0 05-10 DIESEL",
+      "code": "INT-0048",
+      "img": "https://cart.quirozchile.cl/uploads/int-0048.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Kia Sportage"
+      ],
+      "oem": [
+        "28270-27251",
+        "05-10"
+      ],
+      "precio": 278000
+    },
+    {
+      "name": "OEM 28271-2A640 INTERCOOLER HYUNDAI ACCENT 1, 6 12-> DIESEL",
+      "code": "INT-0051",
+      "img": "https://cart.quirozchile.cl/uploads/int-0051.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28271-2A640"
+      ],
+      "precio": 241300
+    },
+    {
+      "name": "OEM 28271-2A740 INTERCOOLER HYUNDAI ACCENT 1, 6 14-> DIESEL",
+      "code": "INT-0052",
+      "img": "https://cart.quirozchile.cl/uploads/int-0052.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28271-2A740"
+      ],
+      "precio": 211500
+    },
+    {
+      "name": "OEM 28190-4A850 INTERCOOLER HYUNDAI PORTER 16-> CB",
+      "code": "INT-0053",
+      "img": "https://cart.quirozchile.cl/uploads/int-0053.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28190-4A850"
+      ],
+      "precio": 246400
+    },
+    {
+      "name": "OEM 28190-4A800 INTERCOOLER KIA FRONTIER 2, 5 12-> CB",
+      "code": "INT-0054",
+      "img": "https://cart.quirozchile.cl/uploads/int-0054.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28190-4A800"
+      ],
+      "precio": 369000
+    },
+    {
+      "name": "OEM 28190-4A600 INTERCOOLER HYUNDAI H350 SOLATI 2, 5 18->",
+      "code": "INT-0059",
+      "img": "https://cart.quirozchile.cl/uploads/int-0059.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28190-4A600"
+      ],
+      "precio": 362600
+    },
+    {
+      "name": "OEM 28271-2F870 INTERCOOLER HYUNDAI STARIA 2, 2 21->",
+      "code": "INT-0064",
+      "img": "https://cart.quirozchile.cl/uploads/int-0064.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-2F870"
+      ],
+      "precio": 303300
+    },
+    {
+      "name": "OEM 28190-4A481 INTERCOOLER HYUNDAI H1 12->",
+      "code": "INT-0061",
+      "img": "https://cart.quirozchile.cl/uploads/int-0061.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "28190-4A481"
+      ],
+      "precio": 286600
+    },
+    {
+      "name": "OEM 28190-4A820 INTERCOOLER KIA FRONTIER 2, 5 16->",
+      "code": "INT-0062",
+      "img": "https://cart.quirozchile.cl/uploads/int-0062.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28190-4A820"
+      ],
+      "precio": 330000
+    },
+    {
+      "name": "OEM 28271-2F000 INTERCOOLER KIA SORENTO 2, 2 10-13 DIESEL",
+      "code": "INT-0063",
+      "img": "https://cart.quirozchile.cl/uploads/int-0063.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Kia Sorento"
+      ],
+      "oem": [
+        "28271-2F000",
+        "10-13"
+      ],
+      "precio": 236700
+    },
+    {
+      "name": "OEM 28271-27800 INTERCOOLER HYUNDAI SANTA FE 2, 2 06-11",
+      "code": "INT-0066",
+      "img": "https://cart.quirozchile.cl/uploads/int-0066.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-27800",
+        "06-11"
+      ],
+      "precio": 214800
+    },
+    {
+      "name": "OEM 28271-2F450 INTERCOOLER HYUNDAI TUCSON 2, 0 10-15 DIESEL",
+      "code": "INT-0067",
+      "img": "https://cart.quirozchile.cl/uploads/int-0067.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai Tucson"
+      ],
+      "oem": [
+        "28271-2F450",
+        "10-15"
+      ],
+      "precio": 232900
+    },
+    {
+      "name": "OEM 28271-27800 INTERCOOLER HYUNDAI SANTA FE 2, 2 06-11",
+      "code": "INT-0068",
+      "img": "https://cart.quirozchile.cl/uploads/int-0068.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-27800",
+        "06-11"
+      ],
+      "precio": 158100
+    },
+    {
+      "name": "OEM 28271-2R000 INTERCOOLER HYUNDAI SANTA FE 2.2 22-> DIESEL",
+      "code": "INT-0070",
+      "img": "https://cart.quirozchile.cl/uploads/int-0070.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-2R000"
+      ],
+      "precio": 332700
+    },
+    {
+      "name": "OEM 2371034100 INTERCOOLER SSANGYONG KORANDO 2.0 12-14 DIESEL 2371034101",
+      "code": "INT-0071",
+      "img": "https://cart.quirozchile.cl/uploads/int-0071.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "12-14",
+        "2371034100",
+        "2371034101"
+      ],
+      "precio": 190600
+    },
+    {
+      "name": "OEM 2371034200 INTERCOOLER SSANGYONG KORANDO 2.2 16-18 DIESEL",
+      "code": "INT-0074",
+      "img": "https://cart.quirozchile.cl/uploads/int-0074.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "16-18",
+        "2371034200"
+      ],
+      "precio": 174000
+    },
+    {
+      "name": "OEM 2371035100 INTERCOOLER SSANGYONG TIVOLI 1.6 16-19 DIESEL",
+      "code": "INT-0075",
+      "img": "https://cart.quirozchile.cl/uploads/int-0075.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "16-19",
+        "2371035100"
+      ],
+      "precio": 204700
+    },
+    {
+      "name": "OEM 28271-2A680 INTERCOOLER",
+      "code": "INT-08A",
+      "img": "https://cart.quirozchile.cl/uploads/int-08a.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [],
+      "oem": [
+        "28271-2A680"
+      ],
+      "precio": 263600
+    },
+    {
+      "name": "OEM 28190-4A700 INTERCOOLER HYUNDAI H1 12-> CAJA SEXTA",
+      "code": "INT-0076",
+      "img": "https://cart.quirozchile.cl/uploads/int-0076.jpg",
+      "categoria": "intercooler",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "28190-4A700"
+      ],
+      "precio": 179100
+    },
+    {
+      "name": "MAP1101 SENSOR MAP CHEVROLET CORSA, BLAZER, MONZA, S10, VECTRA - DAEWOO LANOS - HYUNDAI ACCENT, EXCEL, SEPHIA, RENAULT MEGANE TWINGO MTE 7120 DAEWOO 16137039 GM 12569240 16017460 16137039 16158055 16254719 17112715 33000153 33000273 33004212 35178920 4723039 8125692400 8160174600 8161370390 8161580550 9389131 95047198 HYUNDAI 3933024750 KIA OK95018211",
+      "code": "SEN-MAP1101",
+      "img": "https://cart.quirozchile.cl/uploads/sen-map1101.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "MAP1101",
+        "OK95018211",
+        "16137039",
+        "12569240",
+        "16017460",
+        "16158055",
+        "16254719",
+        "17112715"
+      ],
+      "precio": 26100
+    },
+    {
+      "name": "VOLKSWAGEN GOL, GOLF, JETTA, POLO, SAVEIRO, CORBOBA, IBIZA, AUDI A2 A4 A5 A6 Q5, SKODA FABIA, FELICIA, OCTAVIA. .(4 PIN) MAP9303 50202402 SENSOR MAP OEM WOLKSWAGEN 0279980411 036906051 BOSCH 0261230095 0261230280 MARELLI 50202402",
+      "code": "SEN-MAP9303",
+      "img": "https://cart.quirozchile.cl/uploads/sen-map9303.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Volkswagen Golf"
+      ],
+      "oem": [
+        "MAP9303",
+        "50202402",
+        "0279980411",
+        "036906051",
+        "0261230095",
+        "0261230280"
+      ],
+      "precio": 33600
+    },
+    {
+      "name": "FORD AEROSTAR, RANGER, TAURUS, MUSTANG, TEMPO HASTA 1996, MAP1201, E7EF-9F479-A2A SENSOR ( 3 PIN )",
+      "code": "SEN-MAP1201",
+      "img": "https://cart.quirozchile.cl/uploads/sen-map1201.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Ford Ranger"
+      ],
+      "oem": [
+        "E7EF-9F479-A2A",
+        "MAP1201"
+      ],
+      "precio": 18000
+    },
+    {
+      "name": "FIAT PALIO, SIENA, STRADA, UNO, PREMIO, BRAVO, DUCATO, CITROEN JUMPER, PEUGEOT BOXER MAP9301 SENSOR MAP GAUSS GI3002",
+      "code": "SEN-MAP9301",
+      "img": "https://cart.quirozchile.cl/uploads/sen-map9301.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "MAP9301",
+        "GI3002"
+      ],
+      "precio": 23600
+    },
+    {
+      "name": "SENSOR MAP 3 PINES, Chrysler (1995-2000), Dodge (1995-2000), Eagle (1996-1998), Mitsubishi (1995-1999), Plymouth (1995-2000), Saab (1999-2005)",
+      "code": "SEN-MAP1010",
+      "img": "https://cart.quirozchile.cl/uploads/sen-map1010.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "1995-2000",
+        "1996-1998",
+        "1995-1999",
+        "1999-2005"
+      ],
+      "precio": 19700
+    },
+    {
+      "name": "OEM 39200-2F000 SENSOR M.A.P. KIA FRONTIER 2.5 12-13 EURO V D4CB STARIA 2.2 21->",
+      "code": "SEN-0126",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0126.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "39200-2F000",
+        "12-13"
+      ],
+      "precio": 12700
+    },
+    {
+      "name": "CHEVROLET ASTRA CORSA MERIVA, DAEWOO LEGANZA NUBIRA REZZO, PEUGEOT 206 RENAULT CLIO KANGOO LAGUNA MEGANE TWINGO SENSOR MAP GAUSS",
+      "code": "MAP-GI3060",
+      "img": "https://cart.quirozchile.cl/uploads/map-gi3060.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "precio": 11000
+    },
+    {
+      "name": "CITROEN BERLINGO C2 C3 C4 C5 EXPERT SAXO XSARA PEUGEOT 106 206 207 306 307 PARTNER SENSOR MAP GAUSS GI3130 CITROEN 96393830 PEUGEOT 1920 AJ, 467680",
+      "code": "MAP-GI3130",
+      "img": "https://cart.quirozchile.cl/uploads/map-gi3130.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Peugeot Partner",
+        "Peugeot 207"
+      ],
+      "oem": [
+        "GI3130",
+        "96393830"
+      ],
+      "precio": 12500
+    },
+    {
+      "name": "SENSOR MAP HYUNDAI KIA, VOLTAJE TENSION 0.4>045V, PRESION 10>115PA, 39300-38200, 9480930201,",
+      "code": "MAP-GI3200",
+      "img": "https://cart.quirozchile.cl/uploads/map-gi3200.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "39300-38200",
+        "9480930201"
+      ],
+      "precio": 11100
+    },
+    {
+      "name": "OEM 6715420017 SENSOR MAP SSANGYONG ACTYON 12-17 STAVIC 13-15 6715420017",
+      "code": "SEN-0210",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0210.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "12-17",
+        "13-15",
+        "6715420017"
+      ],
+      "precio": 52400
+    },
+    {
+      "name": "OEM 39300-4A800 SENSOR MAP HYUNDAI PORTER 17->, 4 PINES",
+      "code": "SEN-0278",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0278.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "39300-4A800"
+      ],
+      "precio": 29400
+    },
+    {
+      "name": "OEM 39300-4A800 SENSOR MAP HYUNDAI H350 17-> SOLATI 2, 5 17->, 4 PINES",
+      "code": "SEN-0279",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0279.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "39300-4A800"
+      ],
+      "precio": 20400
+    },
+    {
+      "name": "SENSOR MAP CHEVROLET CORSA, BLAZER, MONZA, S10, VECTRA - DAEWOO LANOS - HYUNDAI ACCENT, EXCEL, SEPHIA, RENAULT MEGANE TWINGO MTE 7120 DAEWOO 16137039 GM 12569240 16017460 16137039 16158055 16254719 17112715 33000153 33000273 33004212 35178920 4723039 8125692400 8160174600 8161370390 8161580550 9389131 95047198 HYUNDAI 3933024750 KIA OK95018211 MTE-THOMSON 7120",
+      "code": "MTE-7120",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7120.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "MTE-THOMSON",
+        "OK95018211",
+        "16137039",
+        "12569240",
+        "16017460",
+        "16158055",
+        "16254719",
+        "17112715"
+      ],
+      "precio": 19500
+    },
+    {
+      "name": "VOLKSWAGEN GOL, PARATI, POLO, SAVEIRO, SEAT CORDOBA, IBIZA SENSOR MAP MTE-THOMSON 7143 OEM WOLKSWAGEN 0279980411 036906051 036906051D 0369980411 03D906051 03D906051A",
+      "code": "MTE-7143",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7143.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "0279980411",
+        "036906051",
+        "0369980411"
+      ],
+      "precio": 20400
+    },
+    {
+      "name": "SENSOR MAP, CHEVROLET CELTA 1.0, CORSA 1.0 1.4 1.8, MONTANA 1.8, PRISMA 1.0 1.4, ZAFIRA 1.8, DOBLO 1.8, PALIO 1.8, SIENA 1.8, STILO 1.8, STRADA 1.8, 4 TERMINALES, RANGO MEDICION 20 115 KPA, RANGO DE OPERACION 400 4650MV, 7083328, 12232201, 24580287, 93333350, MTE-THOMSON 7197 GAUSS GI3350",
+      "code": "MTE-7197",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7197.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "GI3350",
+        "7083328",
+        "12232201",
+        "24580287",
+        "93333350"
+      ],
+      "precio": 19000
+    },
+    {
+      "name": "SENSOR MAP, AUDI A3 A4 A6 A8 Q5 Q7 RS5 S5 S6, VOLKSWAGEN-VW AMAROK 2.0 3.0, BEETLE 2.5 BORA 2.0, FOX 1.0 1.6, GOL 1.0 1.6 1.8 2.0, GOLF 1.6 2.0, JETTA 2.5, PASSAT 2.0 2.5, POLO 1.6, SAVEIRO 1.6 1.8 2.0, 4 TERMINALES, RANGO MEDICION 10 117 KPA, RANGO DE OPERACION 405 4750MV, 03C906051, 95860618010, MTE-THOMSON",
+      "code": "MTE-7144",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7144.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [
+        "Volkswagen Amarok",
+        "Volkswagen Golf"
+      ],
+      "oem": [
+        "VOLKSWAGEN-VW",
+        "MTE-THOMSON",
+        "95860618010"
+      ],
+      "precio": 20400
+    },
+    {
+      "name": "SENSOR MAP, CITROEN JUMPER 2.0, XANTIA 1.8 2.0, XSARA 1.8, BRAVA 1.6, COUPE 2.0, DUCATO 2.8, DUNA 1.6, ELBA 1.5 1.6, FIORINO 1.0, PALIO 1.0, SIENA 1.0 1.6, STRADA 1.3 1.5, TEMPRA 2.0, TIPO 2.0, UNO 1.0, VOLKSWAGEN-VW GOL 2.0, PARATI 2.0, 3 TERMINALES, RANGO MEDICION 17 105 KPA, RANGO DE OPERACION 250 4750MV MTE-THOMSON",
+      "code": "MTE-7182",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7182.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "VOLKSWAGEN-VW",
+        "MTE-THOMSON"
+      ],
+      "precio": 20800
+    },
+    {
+      "name": "SENSOR MAP, CHEVROLET CELTA 1.0, CORSA 1.0 1.4 1.8, MONTANA 1.4 1.8, PRISMA 1.4, DODGE VISION 1.6, FIAT 500 1.4, DOBLO 1.3 1.4 1.8, FIORINO 1.3 1.4, PALIO 1.0 1.3 1.4 1.8, PUNTO 1.4 1.6, SIENA 1.0 1.3 1.4 1.8, STRADA 1.4 1.8, UNO 1.0 1.3 1.4, RENAULT KWID 1.0, SANDERO 1.0, 4 TERMINALES, 77364145, 02411082, 2411082, 68143574AA, 46533518, 46553045, 1562724, 1580533, 12568929, 93313154, A0051536128, MN195775, RANGO MEDICION 10 118 KPA, RANGO DE OPERACION 385 4700MV, MTE-THOMSON",
+      "code": "MTE-7145",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7145.jpg",
+      "categoria": "sensor map",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "A0051536128",
+        "MN195775",
+        "77364145",
+        "02411082",
+        "2411082",
+        "46533518",
+        "46553045"
+      ],
+      "precio": 24600
+    },
+    {
+      "name": "SENSOR MAF GAUSS SUBARU IMPRESA 1.8, LEGACY, FORESTER",
+      "code": "SEN-GH5274",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5274.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Subaru Forester"
+      ],
+      "precio": 126700
+    },
+    {
+      "name": "SENSOR MAF GAUSS NISSAN D21 PICK UP 2.4, PATHFINDER 2.4 3.0",
+      "code": "SEN-GH5285",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5285.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "precio": 65400
+    },
+    {
+      "name": "SENSOR MAF GAUSS GH5027 BOSCH 0280217117 VW 037906461C 12B529BA, AUDI A3, A4, A6, SKODA OCTAVIA VW BORA, GOLF, PASSAT",
+      "code": "SEN-GH5027",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5027.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "GH5027",
+        "0280217117"
+      ],
+      "precio": 45900
+    },
+    {
+      "name": "NISSAN D21 2.4 1990-1996 SENSOR MAF GAUSS GH5286",
+      "code": "SEN-GH5286",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5286.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "1990-1996",
+        "GH5286"
+      ],
+      "precio": 44300
+    },
+    {
+      "name": "SENSOR MAF GAUSS MERCEDES C-CLASS (W202) C280 (202.028) SALOON, COUPE E-CLASS E280 E320 S-CLASS",
+      "code": "SEN-GH5020",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5020.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "precio": 45900
+    },
+    {
+      "name": "SENSOR MAF GAUSS NISSAN SUNNY III, V16, SENTRA 1.6",
+      "code": "SEN-GH5287",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5287.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "precio": 50900
+    },
+    {
+      "name": "NISSAN 22680-5M000 BOSCH 0280218152 SENSOR MAF GAUSS GH5049 NISSAN MAXIMA PATROL X-TRAIL - SUBARU FORESTER IMPREZA",
+      "code": "SEN-GH5049",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5049.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Nissan X-Trail",
+        "Subaru Forester"
+      ],
+      "oem": [
+        "22680-5M000",
+        "GH5049",
+        "0280218152"
+      ],
+      "precio": 41400
+    },
+    {
+      "name": "NISSAN 22680-7S000 CARDONE 86-50036 NISSAN INFINITI ARMADA TERRANO PATHFINDER TITAN VERSA SENSOR MAF GAUSS GH5163",
+      "code": "SEN-GH5163",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5163.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "22680-7S000",
+        "86-50036",
+        "GH5163"
+      ],
+      "precio": 47700
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI, 0281002600, 28164-27900, TUCSON 2.0 CRDI 04>08,",
+      "code": "SEN-GH5084",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5084.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Hyundai Tucson"
+      ],
+      "oem": [
+        "28164-27900",
+        "0281002600"
+      ],
+      "precio": 53500
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI 5 PINES, 28164-27000, 0281002447, HYUNDAI TRAJET(F0) 2.0 CRD I MPV 04.01, HYUNDAI SANTAF (SM) 2.0 CRDI 4X4 CLOSED OFF ROAD 04.01, HYUNDAI SANTAF (SM) 2.0 CRDI 4X4 CLOSED OFF ROAD 08.01, KIA CARENS II(FJ) 2.0 CRDI MPV 07.02",
+      "code": "SEN-GH5085",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5085.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "28164-27000",
+        "0281002447"
+      ],
+      "precio": 46500
+    },
+    {
+      "name": "SENSOR MAF HITACHI, NISSAN D21 2.4 95>97, NISSAN FRONTIER 2.4 98>04, XTERRA 2.4 00>04 AFH55M12, 16017 1S710, 3 PINES",
+      "code": "SEN-GH5284",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5284.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Nissan Frontier"
+      ],
+      "precio": 54700
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI, 0280218111, 28164-38200, 28164-38210, SANTA FE 2.4 2.7, SORENTO, 5 PINES",
+      "code": "SEN-GH5044",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5044.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "28164-38200",
+        "28164-38210",
+        "0280218111"
+      ],
+      "precio": 37500
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI, ACCENT 1.6 00>01, 0280218027, 28164-22610",
+      "code": "SEN-GH5045",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5045.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28164-22610",
+        "0280218027"
+      ],
+      "precio": 46500
+    },
+    {
+      "name": "SENSOR MAF KIA, 0K08013210, SPORTAGE 2.0 99>00, 4 PINES",
+      "code": "SEN-GH5047",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5047.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Kia Sportage"
+      ],
+      "precio": 55300
+    },
+    {
+      "name": "SENSOR MAF BOSCH, 0280217102, 4646928, 28164-22060, 28164-22051, 4646928, 4 PINES, ALFA 145(930) 1.4 i.e 16V T.S. Hatchback 12.96-01.01, ALFA 146(930) 1.4 i.e 16V T.S Hatchback 11.96-01.01, HYUNDAI ACCENT(X-3) 1.3 Hatchback 10.94-01.00, HYUNDAI ACCENT(X-3) 1.5 I 12V Hatchback 10.94-01.00, HYUNDAI ACCENT(X-3) 1.5 I 16 V 12.95-01.00, HYUNDAI ACCENT Saloon(X-3) 1.3 10.94-01.00, HYUNDAI ACCENT Saloon(X-3) 1.3 I 12V 10.94-01.00, HYUNDAI ACCENT Saloon(X-3) 1.5 I 12V 10.94-01.00, HYUNDAI ACCENT Saloon(X-3) 1.5 I 16V 10.95-01.00, HYUNDAI S COUPE(SLC) 1.5 I 04.92-05.9",
+      "code": "SEN-GH5065",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5065.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28164-22060",
+        "28164-22051",
+        "96-01",
+        "94-01",
+        "95-01",
+        "92-05",
+        "0280217102",
+        "4646928"
+      ],
+      "precio": 47500
+    },
+    {
+      "name": "SENSOR MAF GAUSS, BMW VARIOS MODELOS, HYUNDAI SONATA, KIA CARNIVAL, 13621432356, 28164-37100, 5WK9605, 5WK9608, 5WK9626, OK5581321, OK55813210, 8ET009142-021",
+      "code": "SEN-GH5037",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5037.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "28164-37100",
+        "8ET009142-021",
+        "OK5581321",
+        "OK55813210",
+        "13621432356"
+      ],
+      "precio": 43700
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI, 28164-27500, 0281002528, HYUNDAI ACCENT 1.5 CRDI, GETZ 1.5 CRDI, HYUNDAI MATRIX 1.5 CRDI",
+      "code": "SEN-GH5042",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5042.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28164-27500",
+        "0281002528"
+      ],
+      "precio": 47700
+    },
+    {
+      "name": "SENSOR MAF HYUNDAI, 0281002554, 281644A000, 5 PINES, HYUNDAI H1 2.5 CRDI, TERRACAN 2.9 CRDI, SORENTO 2.5 CRDI",
+      "code": "SEN-GH5043",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5043.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "0281002554"
+      ],
+      "precio": 44500
+    },
+    {
+      "name": "SENSOR MAF, TOYOTA CELICA (ZZT23_) 1.8 16V VT-I(ZZT230_) Coupe 11.99, TOYOTA COROLLA Verso(_E12J_) 1.4 VVT I MPV 01.02-05.04, TOYOTA COROLLA Verso(_E12J_) 1.6 VVT- I MPV 01.02-05.04, TOYOTA COROLLA Verso(_E12J_) 1.8 VVT-I MPV 01.02-05.04, TOYOTA RAV 4 II (XA2) 2.0 VVT I 4WD Colsed off road 06.00, TOYOTA YARIS (_CP10) 1.0 16V (SCP10_) Hatchback 04.99, TOYOTA YARIS (_CP10) 1.3 16V (NCP10_) Hatchback 11.99, TOYOTA YARIS (_CP10) 1.4 D-4D Hatchback 12.01, TOYOTA YARIS VERSO (NC LP2_) 1.3 (NCP22) MPV 11.99, TOYOTA YARIS VERSO (NC LP2_) 1.4 D-4D(NLP22) MPV 12.01, 197400 2030C, 22204-22010",
+      "code": "SEN-GH5100",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5100.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [
+        "Toyota Yaris",
+        "Toyota Corolla"
+      ],
+      "oem": [
+        "02-05",
+        "22204-22010"
+      ],
+      "precio": 36500
+    },
+    {
+      "name": "SENSOR MAF, MAZDA 3 (BK14) 1.4 Hatchback 02.04, MAZDA 3 (BK14) 1.4 Hatchback 10.03, MAZDA 3 (BK14) 1.6 Hatchback 10.03, MAZDA 3 Saloon(BK12) 1.6 02.04, MAZDA 3 Saloon(BK12) 2.0 02.04, MAZDA 5 (CR19) 1.8 MPV 03.05, MAZDA 5 (CR19) 2.0 MPV 03.05, MAZDA 5 (CR19) 2.0 CD MPV 03.05, MAZDA 6 (GG) 1.8 Saloon 08.02, MAZDA 6 (GG) 2.0 Saloon 06.02, MAZDA 6 (GG) 2.0 DI Saloon 08.02, MAZDA 6 (GG) 2.3 Saloon 06.02, MAZDA 6 Hatchback(GG) 1.8 08.02, MAZDA 6 Hatchback(GG) 2.0 08.02, MAZDA 6 Hatchback(GG) 2.0 DI 08.02, MAZDA 6 Hatchback(GG) 2.3 08.02, MAZDA 6 Station Wagon (GY) 1.8 Estate 08.02, MAZDA 6 Station Wagon (GY) 2.0 Estate 08.02, MAZDA 6 Station Wagon (GY) 2.0 Di Estate 08.02, MAZDA 6 Station Wagon (GY) 2.3 Estate 08.02, MAZDA MPV II(LW) 2.0 Di 07.02, MAZDA MPV II(LW) 2.3 07.02, DENSO DMA-0113; JAGUAR 1X43-12B579-AA, 1X43-12B579-AB, C2S2670; LAND ROVER PHF000140; LEXUS 22204-21010; MAGNETI MARELLI AMMQ19698; MAZDA 197400-2010, ZL0113215, L321-13-215, WLS1-13-215, ZLY1-13-215; MITSUBISHI 1525A016, MR547077; SUZUKI 13800-63J00, 13800-84E00",
+      "code": "SEN-GH5097",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5097.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "DMA-0113",
+        "1X43-12B579-AA",
+        "1X43-12B579-AB",
+        "22204-21010",
+        "197400-2010",
+        "L321-13-215",
+        "WLS1-13-215",
+        "ZLY1-13-215"
+      ],
+      "precio": 36500
+    },
+    {
+      "name": "SENSOR MAF HITACHI, ISUZU AFH70M-40611B, 8976019670",
+      "code": "SEN-GH5147",
+      "img": "https://cart.quirozchile.cl/uploads/sen-gh5147.jpg",
+      "categoria": "sensor maf",
+      "vehiculos": [],
+      "oem": [
+        "AFH70M-40611B",
+        "8976019670"
+      ],
+      "precio": 46100
     }
   ]
 }
