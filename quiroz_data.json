@@ -1,7 +1,7 @@
 {
   "ok": true,
   "total": 1936,
-  "updated_at": "2026-08-10T09:54:53.732106Z",
+  "updated_at": "2026-08-11T09:29:21.582822Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -13569,7 +13569,7 @@
       "precio": 59200
     },
     {
-      "name": "OEM 51715-1R002 MUÑON DELANTERO LH HYUNDAI ACCENT RB 11->",
+      "name": "OEM 51715-1R000 MUÑON DELANTERO LH HYUNDAI ACCENT RB 11->",
       "code": "MUN-0020",
       "img": "https://cart.quirozchile.cl/uploads/mun-0020.jpg",
       "categoria": "mu&ntilde;on",
@@ -13577,7 +13577,7 @@
         "Hyundai Accent"
       ],
       "oem": [
-        "51715-1R002"
+        "51715-1R000"
       ],
       "precio": 107400
     },
