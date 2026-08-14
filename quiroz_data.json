@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "total": 1927,
-  "updated_at": "2026-08-13T09:41:29.776438Z",
+  "total": 1936,
+  "updated_at": "2026-08-14T09:37:13.709821Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -22190,6 +22190,137 @@
         "35100-4A810"
       ],
       "precio": 156100
+    },
+    {
+      "name": "VALVULA EGR, NISSAN NP300 NAVARA 2.5 DCI 2005->, PATHFINDER III 2.5 DCI 4WD 2005->, PICKUP 2.5 DI 2002->2010, NP300 PICKUP 2.5 DCI 4X4 2008->, CABSTAR DCI 2.5 2006->2012, NISSAN 14710-EC00B, 14719-EC00AX2, 14710-EC00D, 14710-EC00A, 100471, DELPHI EG1053612B1, MAGNETI MARELLI 571822112123, MEAT & DORIA 88276",
+      "code": "GI-2004",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2004.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Nissan Navara"
+      ],
+      "oem": [
+        "14710-EC00B",
+        "14719-EC00AX2",
+        "14710-EC00D",
+        "14710-EC00A",
+        "EG1053612B1",
+        "571822112123"
+      ],
+      "precio": 95000
+    },
+    {
+      "name": "VALVULA EGR HYUNDAI ACCENT II 1.5 2002>2005, ELLANTRA III 2.0 2001>2006, MATRIX 1.5 2001>2010, SANTA FÉ 2.0 2001>2006, TAJET 2.0 2004>2008, KIA CARENS II 2.0 2002>, CERATO 2.0 2004>2006, HYUNDAI 28410-27001, MEAT & DORIA 88132",
+      "code": "GI-2070",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2070.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28410-27001"
+      ],
+      "precio": 50600
+    },
+    {
+      "name": "VALVULA EGR HYUNDAI I30 I 2007>, I20 2008>2015, IX20 2010>, Accent IV 2015>, Elantra V 2011>2015, KIA Ceed I 2006>2012, Pro Ceed 2010>2012, Soul I 2009>, Venga 2010>, HYUNDAI 28410-2A300, NGK EGE5-D038, DELPHI EG10609, FEBI 174388, MEAT & DORIA 88305",
+      "code": "GI-2071",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2071.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "28410-2A300",
+        "EGE5-D038",
+        "EG10609"
+      ],
+      "precio": 64400
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI Getz (TB) 1.5 2003>2009, I10 1.1 2008>2011, I30 1.6 2007>2012, KIA CEED (ED) 1.6 2006>2012, Picanto 1.1 2005>2011, Pro CEED 1.6 2008>2012, Rio II 1.5 2005>2011, HYUNDAI 28410-2A120, NGK 90295, DELPHI EG10614, MEAT & DORIA 88128",
+      "code": "GI-2069",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2069.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Kia Rio"
+      ],
+      "oem": [
+        "28410-2A120",
+        "EG10614"
+      ],
+      "precio": 68900
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI Grand Santa Fé 2.2 2013>2018, Santa Fé 2.0 2012>, Santa Fé 2.2 2012>, Staria 2.2 2021>, Tucson 2.0 2015>2020, HYUNDAI 28410-2F600, DELPHI EG10617, ERA 555406, MEAT & DORIA 88180",
+      "code": "GI-2088",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2088.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Tucson"
+      ],
+      "oem": [
+        "28410-2F600",
+        "EG10617"
+      ],
+      "precio": 123600
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI I40 1.7 2017>, Accent IV 1.6 2011>, I20 II 1.4 2014>, Tucson 1.7 2015>, KIA Rio III 1.4 2011>, Carens IV 1.7 2013>, Soul II 1.6 2014>, Optima 1.7 2015>, HYUNDAI 28410-2A600, MEAT & DORIA 88314",
+      "code": "GI-2072",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2072.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Hyundai Accent",
+        "Kia Rio"
+      ],
+      "oem": [
+        "28410-2A600"
+      ],
+      "precio": 155800
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI I40 1.7 2017>, Tucson 1.7 2017>, KIA Carens 1.7 2013>, Optima 1.7 2013>, HYUNDAI 28410-4A470, DELPHI EG10649, ERA 555275, MEAT & DORIA 88304",
+      "code": "GI-2079",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2079.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Tucson"
+      ],
+      "oem": [
+        "28410-4A470",
+        "EG10649"
+      ],
+      "precio": 68900
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI Getz 1.5 2005>2009, Tucson 2.0 2006>2010, KIA Sportage II 2.0 2007>2010, HYUNDAI 28410-27410, NGK EGE5-D085, DELPHI EG10442, ERA 555122, MEAT & DORIA 88130",
+      "code": "GI-2084",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2084.jpg",
+      "categoria": "egr",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Kia Sportage"
+      ],
+      "oem": [
+        "28410-27410",
+        "EGE5-D085",
+        "EG10442"
+      ],
+      "precio": 64400
+    },
+    {
+      "name": "VALVULA EGR, HYUNDAI Grand Santa Fé 2.0 2010>2015, Grand Santa Fé 2.2 2010>2015, IX35 2.0 2010>2015, Carnival 2.2 2010>, Sorento 2.0 2009>2015, Sportage 2.0 2010>, HYUNDAI 28410-2F000, DELPHI EG10617, ERA 555216, MEAT & DORIA 88180",
+      "code": "GI-2087",
+      "img": "https://cart.quirozchile.cl/uploads/gi-2087.jpg",
+      "categoria": "egr",
+      "vehiculos": [],
+      "oem": [
+        "28410-2F000",
+        "EG10617"
+      ],
+      "precio": 123600
     },
     {
       "name": "SENSOR ABS HYUNDAI, 95670-1S300, HYUNDAI HB20 1.6 2012>, CONJUNTO GS2004, GS2006",
