@@ -1,7 +1,7 @@
 {
   "ok": true,
   "total": 1933,
-  "updated_at": "2026-09-02T13:03:39.934578Z",
+  "updated_at": "2026-09-03T13:04:57.499393Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -695,7 +695,7 @@
       "oem": [
         "23040-03HA0"
       ],
-      "precio": 67800
+      "precio": 71600
     },
     {
       "name": "OEM 23040-2B600 ANILLOS STD",
@@ -1623,7 +1623,7 @@
       "oem": [
         "25613-4A000"
       ],
-      "precio": 9300
+      "precio": 10200
     },
     {
       "name": "OEM 25620-26160 BASE TERMOSTATO HYUNDAI NEW ACCENT",
@@ -1702,7 +1702,7 @@
       "oem": [
         "25630-03100"
       ],
-      "precio": 14000
+      "precio": 16000
     },
     {
       "name": "OEM 25620-23001 BASE TERMOSTATO HYUNDAI ELANTRA 1, 6 1, 8 96-99",
@@ -1754,7 +1754,7 @@
         "10-18",
         "26310-2F011"
       ],
-      "precio": 49600
+      "precio": 57400
     },
     {
       "name": "OEM 25329-1R300 BASE TAPA RADIADOR HYUNDAI ACCENT RB DIESEL",
@@ -1820,7 +1820,7 @@
         "26310-2A501",
         "06-11"
       ],
-      "precio": 74700
+      "precio": 51100
     },
     {
       "name": "OEM 25620-23640 BASE TERMOSTATO HYUNDAI KIA TUCSON 05-10 SPORTAGE 05-10",
@@ -1835,7 +1835,7 @@
         "25620-23640",
         "05-10"
       ],
-      "precio": 24200
+      "precio": 27600
     },
     {
       "name": "OEM 25620-33001 BASE TERMOSTATO HYUNDAI SONATA 94-98 SANTAMO",
@@ -2166,7 +2166,7 @@
         "04-11",
         "23510-42010"
       ],
-      "precio": 57500
+      "precio": 62600
     },
     {
       "name": "OEM 23510-23000 BIELA MOTOR HYUNDAI ELANTRA 96->02",
@@ -2292,7 +2292,7 @@
       "oem": [
         "23510-04040"
       ],
-      "precio": 46000
+      "precio": 46900
     },
     {
       "name": "OEM 23510-23000 BIELA MOTOR HYUNDAI ELANTRA 96->02",
@@ -3407,7 +3407,7 @@
         "21310-03900",
         "2131003900"
       ],
-      "precio": 28100
+      "precio": 29400
     },
     {
       "name": "OEM 21310-03900 BOMBA ACEITE HYUNDAI KIA ACCENT RB 1.4 G4LC SOLUTO 1.4 21-> VERNA 1.4 20-> 2131003900",
@@ -3488,7 +3488,7 @@
         "26100-4A011",
         "26100-4A010"
       ],
-      "precio": 79300
+      "precio": 81800
     },
     {
       "name": "OEM 21350-2B000 BOMBA ACEITE HYUNDAI KIA ELANTRA 07-10 I20 I30 ACCENT RB",
@@ -3575,7 +3575,7 @@
       "oem": [
         "21350-2A503"
       ],
-      "precio": 158800
+      "precio": 169300
     },
     {
       "name": "OEM OK47A-14-100 BOMBA ACEITE KIA K-3600 K-4000",
@@ -3601,7 +3601,7 @@
         "21310-2G011",
         "21310-2G001"
       ],
-      "precio": 104900
+      "precio": 111900
     },
     {
       "name": "OEM 26110-4A701 BOMBA ACEITE HYUNDAI KIA PORTER 12-> FRONTIER 2.5 CB H1 12->",
@@ -3652,7 +3652,7 @@
       "oem": [
         "21350-2A700"
       ],
-      "precio": 142000
+      "precio": 151400
     },
     {
       "name": "OEM 25100-2B000 BOMBA AGUA HYUNDAI KIA CERATO 07-13 ELANTRA 07-13 I30 SANTA FE CRETA 1, 6 VENUE 1.6 19-> SELTOS 1.6 21-> 25100-2B700 25100-2B710",
@@ -4242,7 +4242,7 @@
         "41605-F9100",
         "F9100"
       ],
-      "precio": 39600
+      "precio": 45000
     },
     {
       "name": "OEM 41610-22060 BOMBA EMBRAGUE HYUNDAI ACCENT 94-99 DEPOSITO ATRÁS",
@@ -4355,7 +4355,7 @@
         "41605-D3000",
         "D3000"
       ],
-      "precio": 28700
+      "precio": 33200
     },
     {
       "name": "OEM 41600-5H000 BOMBA EMBRAGUE HYUNDAI KIA MIGHTY 00-> PAMAX 02-05",
@@ -4390,7 +4390,7 @@
       "oem": [
         "58510-1R100"
       ],
-      "precio": 108700
+      "precio": 112600
     },
     {
       "name": "OEM 58510-1R000 BOMBA FRENO ACCENT RB C TAMBOR OEM 585101R000",
@@ -4710,7 +4710,7 @@
         "05-11",
         "36710-42021"
       ],
-      "precio": 13000
+      "precio": 16400
     },
     {
       "name": "OEM 36710-4A710 BUJIA INCANDECENTE HYUNDAI KIA H1 FRONTIER 2, 5 CB OEM 367104A710",
@@ -5126,7 +5126,7 @@
         "10-14",
         "07-13"
       ],
-      "precio": 53700
+      "precio": 53900
     },
     {
       "name": "OEM 24321-23001 CADENA LEVA HYUNDAI ELANTRA 96->",
@@ -5770,7 +5770,7 @@
       "oem": [
         "28485-4A700"
       ],
-      "precio": 37000
+      "precio": 42200
     },
     {
       "name": "OEM 37392-27011 CAÑERIA DEPRESOR HYUNDAI KIA SPORTAGE 05-10 TUCSON 04-09 DIESEL",
@@ -5797,7 +5797,7 @@
       "oem": [
         "31480-4A800"
       ],
-      "precio": 30600
+      "precio": 33200
     },
     {
       "name": "OEM 31420-27001 CAÑERIA RIEL INYECTORES HYUNDAI KIA SPORTAGE 05-10 TUCSON 05-10 D4EA",
@@ -5825,7 +5825,7 @@
       "oem": [
         "28491-4A800"
       ],
-      "precio": 43400
+      "precio": 48600
     },
     {
       "name": "OEM 28491-27250 CAÑERIA EGR HYUNDAI KIA SPORTAGE 05-10 CAREN DIESE TUCSON 05-10",
@@ -5879,7 +5879,7 @@
         "31471-27003",
         "05-10"
       ],
-      "precio": 37000
+      "precio": 39600
     },
     {
       "name": "OEM 31517-42000 CAÑERIA RETORNO HYUNDAI KIA FRONTIER 2.5 H-1 04-07 H100 PORTER",
@@ -6799,7 +6799,7 @@
         "11-14",
         "10-14"
       ],
-      "precio": 34500
+      "precio": 33200
     },
     {
       "name": "OEM 81900-1RB00 CHAPA CONTACTO CILINDRO HYUNDAI ACCENT RB",
@@ -6812,7 +6812,7 @@
       "oem": [
         "81900-1RB00"
       ],
-      "precio": 28100
+      "precio": 30600
     },
     {
       "name": "OEM 81901-43006 CHAPA CONTACTO HYUNDAI H100 94-04 COMPLETA",
@@ -6996,7 +6996,7 @@
       "oem": [
         "93490-2K200"
       ],
-      "precio": 34500
+      "precio": 38300
     },
     {
       "name": "OEM 93490-4H100 CINTA AIRBAG HYUNDAI H1 08->",
@@ -7021,7 +7021,7 @@
         "93490-2B200",
         "07-12"
       ],
-      "precio": 60100
+      "precio": 63400
     },
     {
       "name": "OEM 93490-2K200 CINTA AIRBAG KIA SOUL CERATO",
@@ -7045,7 +7045,7 @@
       "oem": [
         "93490-1R110"
       ],
-      "precio": 38300
+      "precio": 39700
     },
     {
       "name": "OEM 93490-1R410 CINTA AIRBAG HYUNDAI ACCENT RB 12-> DIESEL",
@@ -7058,7 +7058,7 @@
       "oem": [
         "93490-1R410"
       ],
-      "precio": 40900
+      "precio": 44700
     },
     {
       "name": "OEM 93490-A4010 CINTA AIRBAG KIA RIO 12-> INDIA 93490-1W010",
@@ -7073,7 +7073,7 @@
         "93490-1W010",
         "A4010"
       ],
-      "precio": 28100
+      "precio": 29600
     },
     {
       "name": "OEM 93490-2S900 CINTA AIRBAG HYUNDAI TUCSON 11- PORTER 2012->",
@@ -7097,7 +7097,7 @@
       "oem": [
         "93490-3V110"
       ],
-      "precio": 52400
+      "precio": 56200
     },
     {
       "name": "OEM 93490-1W010 CINTA AIRBAG KIA RIO 12->",
@@ -7110,7 +7110,7 @@
       "oem": [
         "93490-1W010"
       ],
-      "precio": 29400
+      "precio": 30800
     },
     {
       "name": "OEM 93490-1Y010 CINTA AIRBAG KIA MORNING 12->",
@@ -7121,7 +7121,7 @@
       "oem": [
         "93490-1Y010"
       ],
-      "precio": 38300
+      "precio": 41200
     },
     {
       "name": "OEM 93480-3L002 CINTA AIRBAG SENSOR ANGULAR HYUNDAI KIA SANTA FE I20 GENESIS AZERA SONATA",
@@ -7143,7 +7143,7 @@
       "oem": [
         "93490-2W110"
       ],
-      "precio": 60100
+      "precio": 65300
     },
     {
       "name": "OEM 93490-3Q120 CINTA",
@@ -7615,7 +7615,7 @@
         "82403-4F010",
         "04-13"
       ],
-      "precio": 28100
+      "precio": 31900
     },
     {
       "name": "OEM OS084-59-560C CREMALLERA A VID LH KIA BESTA 2.2 TOPIC K2400",
@@ -7722,7 +7722,7 @@
       "oem": [
         "25430-4F100"
       ],
-      "precio": 9600
+      "precio": 10200
     },
     {
       "name": "OEM 25431-4A400 DEPOSITO AGUA HYUNDAI H1 05-07 OEM 254314A400",
@@ -7800,7 +7800,7 @@
         "25430-2S000",
         "11-14"
       ],
-      "precio": 10200
+      "precio": 9300
     },
     {
       "name": "OEM 25430-4H200 DEPOSITO AGUA HYUNDAI H1 08->",
@@ -8249,7 +8249,7 @@
         "24100-03051",
         "24100-03052"
       ],
-      "precio": 84400
+      "precio": 89500
     },
     {
       "name": "OEM 23343-42000 EJE COMPENSADOR CORTO RH HYUNDAI H100 H1 05-11 PORTER 96-11 FRONTIER 2, 5 05-11 DIESEL",
@@ -8320,7 +8320,7 @@
         "05-11",
         "96-11"
       ],
-      "precio": 46000
+      "precio": 49800
     },
     {
       "name": "OEM 24100-42500 EJE LEVA HYUNDAI KIA H100 H-1 PORTER FRONTIER 2.5 24100-42500",
@@ -8333,7 +8333,7 @@
       "oem": [
         "24100-42500"
       ],
-      "precio": 101000
+      "precio": 107600
     },
     {
       "name": "OEM OK30E-12-440A EJE LEVA ESCAPE KIA RIO 1.5 00-05",
@@ -8512,7 +8512,7 @@
         "24100-4A100",
         "24100-4A200"
       ],
-      "precio": 121600
+      "precio": 129200
     },
     {
       "name": "OEM 24100-03052 EJE LEVA ADMISION HYUNDAI GRAND I10 1.2 G4LA 16-18 MORNING 1.2 25-> INDIA",
@@ -8950,7 +8950,7 @@
         "12-13",
         "09-11"
       ],
-      "precio": 78000
+      "precio": 75400
     },
     {
       "name": "OEM 26400-4A450 ENFRIADOR ACEITE HYUNDAI KIA H-1 12-> SORENTO 2.5 07-11 D4CB",
@@ -8986,7 +8986,7 @@
       "oem": [
         "26300-4X400"
       ],
-      "precio": 211100
+      "precio": 228900
     },
     {
       "name": "OEM 47210-H1901 ENFRIADOR ACEITE HYUNDAI TERRACAN 2.9 DIESEL",
@@ -9010,7 +9010,7 @@
         "26400-4A700",
         "26400-4A701"
       ],
-      "precio": 193200
+      "precio": 198300
     },
     {
       "name": "OEM 26410-27000 ENFRIADOR ACEITE HYUNDAI KIA TUCSON 05-10 SPORTAGE 05-10 DIESEL",
@@ -9067,7 +9067,7 @@
       "oem": [
         "26410-2G000"
       ],
-      "precio": 90800
+      "precio": 92000
     },
     {
       "name": "OEM 26410-2A300 ENFRIADOR ACEITE HYUNDAI ACCENT RB 1, 6",
@@ -9091,7 +9091,7 @@
       "oem": [
         "26410-2F020"
       ],
-      "precio": 76700
+      "precio": 75400
     },
     {
       "name": "OEM 26420-48000 ENFRIADOR ACEITE HYUNDAI MIGHTY 12->",
@@ -10186,7 +10186,7 @@
         "A9100",
         "C30027"
       ],
-      "precio": 26100
+      "precio": 28800
     },
     {
       "name": "OEM 28113-D3300 FILTRO AIRE HYUNDAI KIA TUCSON 2, 0 16-20 BENCINERO SPORTAGE 2, 0 16-20 BENCINERO C28035",
@@ -10203,7 +10203,7 @@
         "D3300",
         "C28035"
       ],
-      "precio": 14800
+      "precio": 15900
     },
     {
       "name": "OEM OK62W-13-480A FILTRO PETROLEO COMPLETO KIA FRONTIER OEM OK62W13480A",
@@ -10279,7 +10279,7 @@
         "86613-3X000",
         "11-13"
       ],
-      "precio": 8900
+      "precio": 8200
     },
     {
       "name": "OEM 86614-3X000 GUIA PARACHOQUE TRASERO RH HYUNDAI ELANTRA 11-13",
@@ -10306,7 +10306,7 @@
         "24431-25001",
         "11-13"
       ],
-      "precio": 7600
+      "precio": 8000
     },
     {
       "name": "OEM 24377-2A000 GUIA CADENA LARGA DISTRIBUCION HYUNDAI ACCENT 1.5 1.6 DIESEL 06-17",
@@ -11928,7 +11928,7 @@
         "51750-F2000",
         "F2000"
       ],
-      "precio": 128300
+      "precio": 134400
     },
     {
       "name": "OEM 51750-1P000 MAZA DELANTERA HYUNDAI KIA ELANTRA 11-18 VELOSTER CERATO 15-18",
@@ -12096,7 +12096,7 @@
       "oem": [
         "01358-26-131A"
       ],
-      "precio": 129200
+      "precio": 132200
     },
     {
       "name": "OEM OK63B-33-061 MAZA DELANTERA KIA FRONTIER 2, 5 4WD",
@@ -13331,7 +13331,7 @@
       "oem": [
         "51715-4E103"
       ],
-      "precio": 140700
+      "precio": 152000
     },
     {
       "name": "OEM 51715-FD000 MUÑON DELANTERO KIA IZQUIERDO RIO 03-05 OEM 51715FD000",
@@ -14284,7 +14284,7 @@
         "07-10",
         "2312002570"
       ],
-      "precio": 14000
+      "precio": 11400
     },
     {
       "name": "OEM 23121-2F000 PIÑON CIGUENAL HYUNDAI KIA SORENTO 2.2 SANTA FE 2.2 10-12 STARIA 2.2 21-> 23121-2F001",
@@ -14299,7 +14299,7 @@
         "10-12",
         "23121-2F001"
       ],
-      "precio": 20400
+      "precio": 23600
     },
     {
       "name": "OEM OK247-11-321A PINON CIGUENAL KIA CARENS 1, 8 OEM OK247-11-321A",
@@ -14352,7 +14352,7 @@
         "04-06",
         "00-10"
       ],
-      "precio": 7600
+      "precio": 8000
     },
     {
       "name": "OEM 23120-27000 PIÑON CIGÜEÑAL HYUNDAI KIA TUCSON 05-10 SPORTAGE 05-10 ACCENT PRIME DIESEL MATRIX DIESEL",
@@ -14368,7 +14368,7 @@
         "23120-27000",
         "05-10"
       ],
-      "precio": 17800
+      "precio": 17500
     },
     {
       "name": "OEM 24423-42000 PIÑON CIGÜEÑAL HYUNDAI H100 DIESEL 94-96",
@@ -14459,7 +14459,7 @@
       "oem": [
         "24340-4A000"
       ],
-      "precio": 43400
+      "precio": 44700
     },
     {
       "name": "OEM ORFB3-11-320 PINON CIGUENAL KIA SPORTAGE",
@@ -16936,7 +16936,7 @@
         "54530-G6000",
         "G6000"
       ],
-      "precio": 19100
+      "precio": 22100
     },
     {
       "name": "OEM 54530-2K000 ROTULA HYNDAI GRAND I10 14-> INDIA",
@@ -18319,7 +18319,7 @@
         "93810-2E000",
         "9381038000"
       ],
-      "precio": 8900
+      "precio": 9300
     },
     {
       "name": "OEM 93810-3S700 SWITCH FRENO HYUNDAI ELANTRA 15-> SELTOS 1.6 21-> OEM 938103S700",
@@ -18683,7 +18683,7 @@
       "oem": [
         "24410-04001"
       ],
-      "precio": 36000
+      "precio": 37500
     },
     {
       "name": "OEM 24380-4A030 TENSOR CADENA DISTRIBUCION HYUNDAI H1 D4CB 24380-4A100",
@@ -18784,7 +18784,7 @@
         "12-18",
         "24410-2F001"
       ],
-      "precio": 28100
+      "precio": 31400
     },
     {
       "name": "OEM 24410-2F000 TENSOR CADENA HYUNDAI SANTA FE 2, 2 12-> SPORTAGE 10-14 TUCSON 10-15 CARNIVAL 2, 2 12-18 DIESEL STARIA 2.2 21-> 24410-2F001",
@@ -18951,7 +18951,7 @@
         "10-12",
         "25281-2G000"
       ],
-      "precio": 70300
+      "precio": 75400
     },
     {
       "name": "OEM 25510-41010 TERMOSTATO HYUNDAI MIGHTY OEM 25510-41010",
@@ -19004,7 +19004,7 @@
         "25510-42100",
         "2551042100"
       ],
-      "precio": 15300
+      "precio": 16600
     },
     {
       "name": "OEM 25500-23010 TERMOSTATO NEW ACCENT 16V OEM 2550023010",
@@ -19258,7 +19258,7 @@
         "06-11",
         "2550023010"
       ],
-      "precio": 15300
+      "precio": 17000
     },
     {
       "name": "OEM 25611-02502 PORTA TERMOSTATO KIA MORNING 04-11",
@@ -19459,7 +19459,7 @@
         "25620-2A750",
         "11-13"
       ],
-      "precio": 37700
+      "precio": 43400
     },
     {
       "name": "OEM 25431-27410 TUBO AGUA HYUNDAI KIA SPORTAGE 05-10 TUCSON 04-10 CARENS 05-10 DIESEL",
@@ -19675,7 +19675,7 @@
       "oem": [
         "28235-2A600"
       ],
-      "precio": 163800
+      "precio": 183200
     },
     {
       "name": "OEM 28231-4A751 TURBO HYUNDAI NEW H1 19->",
@@ -19892,7 +19892,7 @@
       "oem": [
         "24355-2B700"
       ],
-      "precio": 74200
+      "precio": 90000
     },
     {
       "name": "OEM OK65B-10-220B TAPA VALVULA FRONTIER PREGIO 2.7 3.0 OEM OK65B10220B",
@@ -19917,7 +19917,7 @@
         "24375-03020",
         "2437503020"
       ],
-      "precio": 39700
+      "precio": 46000
     },
     {
       "name": "OEM 33137-42000 VALVULA CORTA PETROLEO HYUNDAI H100 PORTER 94-11",
@@ -20139,7 +20139,7 @@
       "oem": [
         "31973-59000"
       ],
-      "precio": 29900
+      "precio": 34600
     },
     {
       "name": "OEM 31965-48700 FILTRO PETROLEO HYUNDAI HD65 15->",
@@ -20150,7 +20150,7 @@
       "oem": [
         "31965-48700"
       ],
-      "precio": 26400
+      "precio": 28200
     },
     {
       "name": "OEM 31922-CG900 FILTRO PETROLEO HYUNDAI STARIA 2, 2 21-> DIESEL ELEMENTO 31922-CG950",
@@ -20162,7 +20162,7 @@
         "31922-CG900",
         "31922-CG950"
       ],
-      "precio": 38700
+      "precio": 42400
     },
     {
       "name": "OEM 31922-CG900 FILTRO PETROLEO HYUNDAI STARIA 2, 2 21-> DIESEL ELEMENTO 31922-CG950",
@@ -20188,7 +20188,7 @@
         "31920-N9800",
         "N9800"
       ],
-      "precio": 51000
+      "precio": 57500
     },
     {
       "name": "VOLKSWAGEN FOX GOL GOLF KOMBI POLO SAVEIRO SPACE VOYAGE, AUDI A3 KIT DISTRIBUICION ZEN 15000 CONTITECH CT453K1 DAYCO KTB341 GATES KS101 SKF VKMA01107A",
@@ -22042,7 +22042,7 @@
         "35100-26860",
         "06-11"
       ],
-      "precio": 102300
+      "precio": 111100
     },
     {
       "name": "OEM 35100-2F900 CUERPO ACELERACION HYUNDAI SANTA FE 2, 2 18-> STARIA 2, 2 21-> DIESEL",
@@ -22064,7 +22064,7 @@
       "oem": [
         "35100-4A800"
       ],
-      "precio": 135600
+      "precio": 139200
     },
     {
       "name": "OEM 35100-25400 CUERPO ACELERACION HYUNDAI TUCSON 2, 0 10-15 SANTA FE 2, 4 15-> BENCINERA 35100-25200",
@@ -22103,7 +22103,7 @@
       "oem": [
         "35100-2J101"
       ],
-      "precio": 159300
+      "precio": 171000
     },
     {
       "name": "OEM 35100-2M329 CUERPO ACELERACION HYUNDAI CRETA 20->",
@@ -22114,7 +22114,7 @@
       "oem": [
         "35100-2M329"
       ],
-      "precio": 124100
+      "precio": 136000
     },
     {
       "name": "OEM 35100-2R000 CUERPO ACELERACION HYUNDAI TUCSON 2.0 21-> DIESEL",
@@ -22351,7 +22351,7 @@
         "95671-D3000",
         "D3000"
       ],
-      "precio": 33200
+      "precio": 35900
     },
     {
       "name": "OEM 95671-D3000 SENSOR ABS DELANTERO RH HYUNDAI TUCSON 15->",
@@ -22403,7 +22403,7 @@
         "58930-G6300",
         "G6300"
       ],
-      "precio": 47300
+      "precio": 48600
     },
     {
       "name": "OEM 58940-G6300 SENSOR ABS RH KIA MORNING 1.2 24->",
@@ -22694,7 +22694,7 @@
         "04-08",
         "05-11"
       ],
-      "precio": 75400
+      "precio": 87000
     },
     {
       "name": "OEM 22410-22610 TAPA VALVULA HYUNDAI ACCENT 94-05 12 VALVULA",
@@ -22746,7 +22746,7 @@
         "22410-4A460",
         "22410-4A450"
       ],
-      "precio": 106200
+      "precio": 121400
     },
     {
       "name": "OEM 22410-4A700 TAPA VALVULA HYUNDAI NEW H1 12->D4CB",
@@ -22794,7 +22794,7 @@
       "oem": [
         "22410-2B800"
       ],
-      "precio": 108700
+      "precio": 120300
     },
     {
       "name": "OEM 22410-03100 TAPA VALVULA HYUNDAI ACCENT RB 1.4",
@@ -22894,7 +22894,7 @@
       "oem": [
         "22410-4A801"
       ],
-      "precio": 103600
+      "precio": 115100
     },
     {
       "name": "OEM 22410-2F701 TAPA VALVULA HYUNDAI KIA SANTA FE 2, 2 15-21 TUCSON 2, 0 16, 21 SPORTAGE 2, 0 16-21",
@@ -22910,7 +22910,7 @@
         "15-21",
         "16-21"
       ],
-      "precio": 139400
+      "precio": 158700
     },
     {
       "name": "OEM 22410-27401 TAPA VALVULA HYUNDAI KIA SANTA FE 2, 0 00-05 DIESEL CARENS 2, 0 07-13",
@@ -22923,7 +22923,7 @@
         "00-05",
         "07-13"
       ],
-      "precio": 133000
+      "precio": 150000
     },
     {
       "name": "OEM 28190-42701 INTERCOOLER HYUNDAI PORTER 05->",
@@ -23024,7 +23024,7 @@
       "oem": [
         "28190-4A850"
       ],
-      "precio": 246400
+      "precio": 238900
     },
     {
       "name": "OEM 28190-4A800 INTERCOOLER KIA FRONTIER 2, 5 12-> CB",
@@ -23095,7 +23095,7 @@
         "28271-2F000",
         "10-13"
       ],
-      "precio": 236700
+      "precio": 235600
     },
     {
       "name": "OEM 28271-27800 INTERCOOLER HYUNDAI SANTA FE 2, 2 06-11",
@@ -23354,7 +23354,7 @@
       "oem": [
         "39300-4A800"
       ],
-      "precio": 28100
+      "precio": 30400
     },
     {
       "name": "OEM 39300-4A800 SENSOR MAP HYUNDAI H350 17-> SOLATI 2, 5 17->, 4 PINES",
