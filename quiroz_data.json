@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "total": 1933,
-  "updated_at": "2026-09-10T13:09:02.853852Z",
+  "total": 1923,
+  "updated_at": "2026-09-11T13:05:47.993071Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -385,7 +385,7 @@
       "oem": [
         "55300-3X100"
       ],
-      "precio": 34500
+      "precio": 40700
     },
     {
       "name": "OEM 54661-D3000 AMORTIGUADOR DELANTERO DERECHO HYUNDAI TUCSON 2.0 17->",
@@ -1060,7 +1060,7 @@
       "oem": [
         "57730-4F000"
       ],
-      "precio": 8900
+      "precio": 8600
     },
     {
       "name": "OEM 57716-34000 AXIAL DIRECCION HYUNDAI SONATA 94-98 OEM 5771634000",
@@ -1136,7 +1136,7 @@
         "56540-3X000",
         "11-13"
       ],
-      "precio": 9700
+      "precio": 8900
     },
     {
       "name": "OEM 57724-0X000 AXIAL DIRECCION HYUNDAI KIA I-10 MORNING 04-11 57724-07100",
@@ -1174,7 +1174,7 @@
         "57724-2G000",
         "06-09"
       ],
-      "precio": 8900
+      "precio": 8200
     },
     {
       "name": "OEM 57724-A4000 AXIAL DIRECCION KIA CARENS 13- OEM 57724A4000",
@@ -1186,7 +1186,7 @@
         "57724-A4000",
         "A4000"
       ],
-      "precio": 9500
+      "precio": 9000
     },
     {
       "name": "OEM 56540-A7000 AXIAL DIRECCION KIA CERATO 13- OEM 56540A7000",
@@ -1477,7 +1477,7 @@
         "54501-G6000",
         "G6000"
       ],
-      "precio": 95100
+      "precio": 89500
     },
     {
       "name": "OEM 54501-D3000 BANDEJA DERECHA RH HYUNDAI TUCSON 17-> OEM 54501D300",
@@ -2481,52 +2481,6 @@
       "precio": 6600
     },
     {
-      "name": "OEM 54830-2V000 BIELETA B ESTAB KIA SOUL 15->",
-      "code": "BIE-0004",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0004.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-2V000"
-      ],
-      "precio": 6800
-    },
-    {
-      "name": "OEM 54840-4D000 BIELETA DERECHA KIA CARNIVAL 07-> OEM 548404D000",
-      "code": "BIE-0006",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0006.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54840-4D000"
-      ],
-      "precio": 7600
-    },
-    {
-      "name": "OEM 54830-07000 BIELETA IZQUIERDA KIA MORNING 05-> OEM 5483007000",
-      "code": "BIE-0005",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0005.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-07000",
-        "5483007000"
-      ],
-      "precio": 6700
-    },
-    {
-      "name": "OEM 54830-2H200 BIELETA DERECHA IZQUIERDA HYUNDAI ELANTRA 06-10 OEM 548302H000",
-      "code": "BIE-0012",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0012.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-2H200",
-        "06-10"
-      ],
-      "precio": 7000
-    },
-    {
       "name": "OEM 54440-38000 BIELETA DERECHA IZQUIERDA SONATA EF OEM 5444038000",
       "code": "BIE-0013",
       "img": "https://cart.quirozchile.cl/uploads/bie-0013.jpg",
@@ -2547,79 +2501,6 @@
       "oem": [
         "OK2FA-34-170",
         "03-06"
-      ],
-      "precio": 7200
-    },
-    {
-      "name": "OEM 54830-4D000 BIELETA IZQUIERDA KIA CARNIVAL 07-> OEM 548304D000",
-      "code": "BIE-0017",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0017.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-4D000"
-      ],
-      "precio": 7600
-    },
-    {
-      "name": "OEM 54830-2F000 BIELETA IZQUIERDA KIA CERATO 04-> OEM 548302F000",
-      "code": "BIE-0018",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0018.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-2F000"
-      ],
-      "precio": 7500
-    },
-    {
-      "name": "OEM 54830-0X000 BIELETA IZQUIERDA HYUNDAI I-10 OEM 548300X000",
-      "code": "BIE-0021",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0021.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-0X000"
-      ],
-      "precio": 6700
-    },
-    {
-      "name": "OEM 54830-1G000 BIELETA IZQUIERDA HYUNDAI NEW ACCENT 06-11 54830-1G500",
-      "code": "BIE-0022",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0022.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [
-        "Hyundai Accent"
-      ],
-      "oem": [
-        "54830-1G000",
-        "06-11",
-        "54830-1G500"
-      ],
-      "precio": 6800
-    },
-    {
-      "name": "OEM 54830-4H000 BIELETA IZQUIERDA HYUNDAI NEW H1 08->",
-      "code": "BIE-0023",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0023.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [
-        "Hyundai H1"
-      ],
-      "oem": [
-        "54830-4H000"
-      ],
-      "precio": 6600
-    },
-    {
-      "name": "OEM 54830-2B000 BIELETA IZQUIERDA HYUNDAI SANTA FE 06-> 54830-2B200",
-      "code": "BIE-0026",
-      "img": "https://cart.quirozchile.cl/uploads/bie-0026.jpg",
-      "categoria": "bieleta",
-      "vehiculos": [],
-      "oem": [
-        "54830-2B000",
-        "54830-2B200"
       ],
       "precio": 7200
     },
@@ -4268,7 +4149,7 @@
         "41610-29100",
         "96-99"
       ],
-      "precio": 39600
+      "precio": 42000
     },
     {
       "name": "OEM 41610-25010 BOMBA EMBRAGUE HYUNDAI ACCENT PRIME 00-05 DEPOSITO ATRÁS",
@@ -4710,7 +4591,7 @@
         "05-11",
         "36710-42021"
       ],
-      "precio": 16400
+      "precio": 13600
     },
     {
       "name": "OEM 36710-4A710 BUJIA INCANDECENTE HYUNDAI KIA H1 FRONTIER 2, 5 CB OEM 367104A710",
@@ -4723,7 +4604,7 @@
       "oem": [
         "36710-4A710"
       ],
-      "precio": 23100
+      "precio": 23900
     },
     {
       "name": "OEM 36710-4A710 BUJIA INCANDECENTE HYUNDAI KIA H1 FRONTIER 2, 5 CB NGK",
@@ -5770,7 +5651,7 @@
       "oem": [
         "28485-4A700"
       ],
-      "precio": 42200
+      "precio": 36000
     },
     {
       "name": "OEM 37392-27011 CAÑERIA DEPRESOR HYUNDAI KIA SPORTAGE 05-10 TUCSON 04-09 DIESEL",
@@ -6094,7 +5975,7 @@
       "oem": [
         "7973532500"
       ],
-      "precio": 38300
+      "precio": 39600
     },
     {
       "name": "OEM 7975032000 ALETA GUARDAFANGO DELANTERA LH SSANGYONG ACTYON 06-11",
@@ -8333,7 +8214,7 @@
       "oem": [
         "24100-42500"
       ],
-      "precio": 107600
+      "precio": 101000
     },
     {
       "name": "OEM OK30E-12-440A EJE LEVA ESCAPE KIA RIO 1.5 00-05",
@@ -8512,7 +8393,7 @@
         "24100-4A100",
         "24100-4A200"
       ],
-      "precio": 129200
+      "precio": 127900
     },
     {
       "name": "OEM 24100-03052 EJE LEVA ADMISION HYUNDAI GRAND I10 1.2 G4LA 16-18 MORNING 1.2 25-> INDIA",
@@ -8986,7 +8867,7 @@
       "oem": [
         "26300-4X400"
       ],
-      "precio": 228900
+      "precio": 225200
     },
     {
       "name": "OEM 47210-H1901 ENFRIADOR ACEITE HYUNDAI TERRACAN 2.9 DIESEL",
@@ -9010,7 +8891,7 @@
         "26400-4A700",
         "26400-4A701"
       ],
-      "precio": 198300
+      "precio": 199600
     },
     {
       "name": "OEM 26410-27000 ENFRIADOR ACEITE HYUNDAI KIA TUCSON 05-10 SPORTAGE 05-10 DIESEL",
@@ -9177,7 +9058,7 @@
       "oem": [
         "28416-4A750"
       ],
-      "precio": 334000
+      "precio": 351900
     },
     {
       "name": "HYUNDAI MIGHTY 3 TON.(MODELO NUEVO MITSUBISHI CANTER 3.3 DIESEL 4D31T, CANTER 3.9 DIESEL (4D33, 4D34), BUS ROSA, EXCAVADORA KOBELCO SK60 4JB1, SK70 4JB1, CON ARRANQUE MITSUBISHI - MANDO GR 24V., M135X01771, ME701486, 139821, (DI=50.7MM, DE=62MM, 44 DIENTES, DIAMETRO INTERIOR 20.7MM ENGRANAJE PLANETARIO",
@@ -9598,7 +9479,7 @@
       "oem": [
         "56820-2W000"
       ],
-      "precio": 10200
+      "precio": 10900
     },
     {
       "name": "OEM 56820-2W050 EXTREMO CORTO RH HYUNDAI SANTA FE 13->",
@@ -9609,7 +9490,7 @@
       "oem": [
         "56820-2W050"
       ],
-      "precio": 10200
+      "precio": 10900
     },
     {
       "name": "OEM 56820-02000 EXTREMO CORTO HYUNDAI ATOS 56820-02500",
@@ -9672,7 +9553,7 @@
         "56820-1R501",
         "56820-1W000"
       ],
-      "precio": 11400
+      "precio": 10200
     },
     {
       "name": "OEM 56820-2H000 EXTREMO CORTO IZQUIERDO HYUNDAI ELANTRA 07-> OEM 56820-2H000",
@@ -9795,7 +9676,7 @@
         "56820-1R591",
         "56820-1W090"
       ],
-      "precio": 11400
+      "precio": 10200
     },
     {
       "name": "OEM 56820-3X090 EXTREMO CORTO DERECHO HYUNDAI ELANTRA 11-> OEM 56820-3X090",
@@ -9817,7 +9698,7 @@
       "oem": [
         "56820-2M010"
       ],
-      "precio": 21600
+      "precio": 23700
     },
     {
       "name": "OEM 56820-4H100 EXTREMO CORTO DERECHO HYUNDAI NEW H1 08-> OEM 56820-4H100",
@@ -9830,7 +9711,7 @@
       "oem": [
         "56820-4H100"
       ],
-      "precio": 10500
+      "precio": 11500
     },
     {
       "name": "OEM 56820-2B900 EXTREMO CORTO DERECHO HYUNDAI SANTA FE 10-> OEM 56820-2B900",
@@ -9891,7 +9772,7 @@
       "oem": [
         "MDX50-32-280"
       ],
-      "precio": 6700
+      "precio": 7100
     },
     {
       "name": "OEM OK7A1-51-180 FAROL GARNICH KIA PREGIO II 05-08",
@@ -13306,7 +13187,7 @@
         "51715-4F000",
         "51715-4A950"
       ],
-      "precio": 116400
+      "precio": 119000
     },
     {
       "name": "OEM 51716-FD000 MUÑON DELANTERO KIA DERECHO RIO 03-05 OEM 51716FD000",
@@ -13379,7 +13260,7 @@
         "51716-4A900",
         "51716-4A950"
       ],
-      "precio": 116400
+      "precio": 119000
     },
     {
       "name": "OEM MD001-26-115D MUNON TRASERO LH KIA PRIDE POP",
@@ -14945,7 +14826,7 @@
       "oem": [
         "32700-4F107"
       ],
-      "precio": 88200
+      "precio": 88400
     },
     {
       "name": "OEM OK2Y4-11-SAO PISTON STD KIA CARENS SEPHIA 1.8",
@@ -18880,7 +18761,7 @@
       "oem": [
         "25281-4X100"
       ],
-      "precio": 49800
+      "precio": 46000
     },
     {
       "name": "OEM 6712000370 TENSOR CORREA ALTERNADOR SSANGYONG ACTYON 12-> KORANDO 11-17 STAVIC 13-18 MUSSO 2.2 19->",
@@ -18893,7 +18774,7 @@
         "13-18",
         "6712000370"
       ],
-      "precio": 112600
+      "precio": 101000
     },
     {
       "name": "OEM 6710500111 TENSOR CADENA DISTRIBUCION SUPERIOR SSANGYONG ACTYON 2, 0 12-17 6710500211",
@@ -19088,7 +18969,7 @@
         "96-06",
         "2550023001"
       ],
-      "precio": 9800
+      "precio": 9000
     },
     {
       "name": "OEM 25500-33060 TERMOSTATO HYUNDAI ELANTRA SONATA SANTAMO OEM 2550033060",
@@ -19128,7 +19009,7 @@
         "KHE41-15-171",
         "KHE4115171"
       ],
-      "precio": 8000
+      "precio": 7700
     },
     {
       "name": "OEM OK201-15-171 TERMOSTATO KIA SEPHIA AVELLA OEM OK20115171",
@@ -19181,7 +19062,7 @@
         "94-05",
         "2550022250"
       ],
-      "precio": 8900
+      "precio": 9800
     },
     {
       "name": "OEM 25500-27000 TERMOSTATO HYUNDAI ACCENT DIE 00-05 ACCEN 1.5 DIE DTCI 06-11 OEM 2550027000",
@@ -20071,7 +19952,7 @@
         "WK-824",
         "D3900"
       ],
-      "precio": 29900
+      "precio": 27500
     },
     {
       "name": "OEM 31922-2E900 FILTRO PETROLEO HYUNDAI NEW H1 TUCSON FRONTIER 2, 5 TUCSON 16-> ACCENT RB 1.6 I30 12-> D4FB TUCSON 2.0 12-> SPORTAGE 2.0 12-> CB OEM 319222E900 31922-45700 31922-D3900 WK-824 1",
@@ -21380,7 +21261,7 @@
       "oem": [
         "41710-22650"
       ],
-      "precio": 24000
+      "precio": 25800
     },
     {
       "name": "OEM 41710-28000 CILINDRO EMBRAGUE HYUNDAI ELANTRA ->95",
@@ -21987,7 +21868,7 @@
         "10-14",
         "35100-2F600"
       ],
-      "precio": 149700
+      "precio": 151200
     },
     {
       "name": "OEM 35100-2B150 CUERPO ACELERACION HYUNDAI KIA ACCENT RB 1, 6 12-> RIO 4 1, 4 12->",
@@ -22064,7 +21945,7 @@
       "oem": [
         "35100-4A800"
       ],
-      "precio": 139200
+      "precio": 139400
     },
     {
       "name": "OEM 35100-25400 CUERPO ACELERACION HYUNDAI TUCSON 2, 0 10-15 SANTA FE 2, 4 15-> BENCINERA 35100-25200",
@@ -22079,7 +21960,7 @@
         "10-15",
         "35100-25200"
       ],
-      "precio": 186800
+      "precio": 189300
     },
     {
       "name": "OEM 35100-03700 CUERPO ACELERACION KIA RIO 1, 4 18-> COREALINE",
@@ -22403,7 +22284,7 @@
         "58930-G6300",
         "G6300"
       ],
-      "precio": 48600
+      "precio": 49200
     },
     {
       "name": "OEM 58940-G6300 SENSOR ABS RH KIA MORNING 1.2 24->",
@@ -22415,7 +22296,7 @@
         "58940-G6300",
         "G6300"
       ],
-      "precio": 47300
+      "precio": 49800
     },
     {
       "name": "OEM 95670-1R000 SENSOR ABS DELANTERO LH HYUNDAI ACCENT 12->",
@@ -22694,7 +22575,7 @@
         "04-08",
         "05-11"
       ],
-      "precio": 87000
+      "precio": 78000
     },
     {
       "name": "OEM 22410-22610 TAPA VALVULA HYUNDAI ACCENT 94-05 12 VALVULA",
@@ -22721,7 +22602,7 @@
         "04-06",
         "22410-26635"
       ],
-      "precio": 90800
+      "precio": 91600
     },
     {
       "name": "OEM 22410-04050 TAPA VALVULA KIA MORNING 1, 0 15->",
@@ -22759,7 +22640,7 @@
       "oem": [
         "22410-4A700"
       ],
-      "precio": 106200
+      "precio": 108700
     },
     {
       "name": "OEM 22410-2A600 TAPA VALVULA HYUNDAI ACCENT RB D4FB 11-> DIESEL",
@@ -22844,7 +22725,7 @@
       "oem": [
         "22410-42510"
       ],
-      "precio": 72900
+      "precio": 71700
     },
     {
       "name": "OEM 22410-03150 TAPA VALVULA KIA SOLUTO 1, 4 21-> COREALINE",
@@ -23095,7 +22976,7 @@
         "28271-2F000",
         "10-13"
       ],
-      "precio": 235600
+      "precio": 236000
     },
     {
       "name": "OEM 28271-27800 INTERCOOLER HYUNDAI SANTA FE 2, 2 06-11",
@@ -23181,7 +23062,7 @@
         "16-19",
         "2371035100"
       ],
-      "precio": 204700
+      "precio": 204800
     },
     {
       "name": "OEM 28271-2A680 INTERCOOLER",
@@ -23343,7 +23224,7 @@
         "13-15",
         "6715420017"
       ],
-      "precio": 52400
+      "precio": 53700
     },
     {
       "name": "OEM 39300-4A800 SENSOR MAP HYUNDAI PORTER 17->, 4 PINES",
