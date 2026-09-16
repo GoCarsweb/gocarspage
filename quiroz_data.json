@@ -1,7 +1,7 @@
 {
   "ok": true,
   "total": 1923,
-  "updated_at": "2026-09-15T13:42:47.765434Z",
+  "updated_at": "2026-09-16T13:40:35.581613Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -14106,7 +14106,7 @@
       "img": "https://cart.quirozchile.cl/uploads/be-12656.jpg",
       "categoria": "pi&ntilde;on",
       "vehiculos": [],
-      "precio": 11400
+      "precio": 10500
     },
     {
       "name": "PIÑON 9 DIENTES 20 ESTRIAS 17 LARGO 35 DIAMETRO PIÑON CW, MITSUBISHI CANTER MIGHTY PIÑON",
@@ -15792,7 +15792,7 @@
         "VKM4806",
         "46756937"
       ],
-      "precio": 13100
+      "precio": 13200
     },
     {
       "name": "FIAT PALIO, FIAT SIENA, FIAT STRADA 1.0, 1.5 8V, SIN AIRE ACONDICIONADO 1996-2004, 12763, 46440604, F110672300, VKM32005H POLEA TENSORA",
@@ -19474,7 +19474,7 @@
         "28200-42650",
         "05-07"
       ],
-      "precio": 263200
+      "precio": 250800
     },
     {
       "name": "OEM 28201-2A400 TURBO HYUNDAI NEW ACCENT 06-11 MOTOR D4FA",
@@ -19580,7 +19580,7 @@
       "oem": [
         "28231-4A800"
       ],
-      "precio": 282300
+      "precio": 276400
     },
     {
       "name": "OEM 6710900780 TURBO SSANGYONG ACTYON 12-17 BORG",
