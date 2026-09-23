@@ -1,7 +1,7 @@
 {
   "ok": true,
   "total": 1923,
-  "updated_at": "2026-09-22T13:37:13.860735Z",
+  "updated_at": "2026-09-23T13:52:32.355168Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -472,13 +472,14 @@
       "precio": 29400
     },
     {
-      "name": "OEM 81770-A000 AMORTIGUADOR PORTALON LH HYUNDAI CRETA 17-> INDIA",
+      "name": "OEM 81770-A0000 AMORTIGUADOR PORTALON LH HYUNDAI CRETA 17-> INDIA",
       "code": "AMO-0043",
       "img": "https://cart.quirozchile.cl/uploads/amo-0043.jpg",
       "categoria": "amortiguadores",
       "vehiculos": [],
       "oem": [
-        "81770-A000"
+        "81770-A0000",
+        "A0000"
       ],
       "precio": 23800
     },
