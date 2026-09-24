@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "total": 1923,
-  "updated_at": "2026-09-23T13:52:32.355168Z",
+  "total": 1947,
+  "updated_at": "2026-09-24T13:48:04.486616Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -6756,6 +6756,309 @@
         "OK76B-09-010E"
       ],
       "precio": 72400
+    },
+    {
+      "name": "OEM 58320-4F000 CILINDRO FRENO LH HYUNDAI KIA PORTER 05-> FRONTIER 2.5 05->",
+      "code": "CIL-0011",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0011.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58320-4F000"
+      ],
+      "precio": 19200
+    },
+    {
+      "name": "OEM OK72A-26-710 CILINDRO FRENO LH KIA PREGIO 2.7 TOPIC FRONTIER 2.7",
+      "code": "CIL-0012",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0012.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "OK72A-26-710"
+      ],
+      "precio": 23000
+    },
+    {
+      "name": "OEM 58330-1Y000 CILINDRO FRENO LH KIA MORNING 12->",
+      "code": "CIL-0013",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0013.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58330-1Y000"
+      ],
+      "precio": 16900
+    },
+    {
+      "name": "OEM 58380-4E000 CILINDRO FRENO RH HYUNDAI KIA PORTER 05-> FRONTIER 2.5 05-> HD35 2.5 17->",
+      "code": "CIL-0014",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0014.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58380-4E000"
+      ],
+      "precio": 21000
+    },
+    {
+      "name": "OEM OK72A-26-610 CILINDRO FRENO RH KIA PREGIO 2.7 TOPIC FRONTIER 2.7",
+      "code": "CIL-0015",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0015.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "OK72A-26-610"
+      ],
+      "precio": 20400
+    },
+    {
+      "name": "OEM 58380-1Y000 CILINDRO FRENO RH KIA MORNING 12->",
+      "code": "CIL-0016",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0016.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58380-1Y000"
+      ],
+      "precio": 18100
+    },
+    {
+      "name": "OEM 58420-4F000 CILINDRO FRENO RH PORTER II 2005->",
+      "code": "CIL-0017",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0017.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58420-4F000"
+      ],
+      "precio": 19200
+    },
+    {
+      "name": "OEM 58420-4A020 CILINDRO FRENO DERECHO RH HYUNDAI H-1 05-07",
+      "code": "CIL-0019",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0019.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58420-4A020",
+        "05-07"
+      ],
+      "precio": 23600
+    },
+    {
+      "name": "OEM 58330-4H000 CILINDRO FRENO LH RH HYUNDAI H1 08->",
+      "code": "CIL-0028",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0028.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "58330-4H000"
+      ],
+      "precio": 24200
+    },
+    {
+      "name": "OEM 58330-07000 CILINDRO FRENO LH RH KIA MORNING 04-11",
+      "code": "CIL-0029",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0029.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58330-07000",
+        "04-11"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 58320-4E000 CILINDRO FRENO LH HYUNDAI KIA FRONTIER 2, 5 05-> PORTER 05-> HD35 2.5 17->",
+      "code": "CIL-0030",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0030.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58320-4E000"
+      ],
+      "precio": 21000
+    },
+    {
+      "name": "OEM 58330-1R000 CILINDRO FRENO LH RH HYUNDAI ACCENT RB 12-> 58330-0P000",
+      "code": "CIL-0031",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0031.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "58330-1R000",
+        "58330-0P000"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 58330-22000 CILINDRO FRENO LH HYUNDAI ACCENT 94-99",
+      "code": "CIL-0023",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0023.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "58330-22000",
+        "94-99"
+      ],
+      "precio": 18800
+    },
+    {
+      "name": "OEM 58380-22000 CILINDRO FRENO RH HYUNDAI ACCENT 94-99",
+      "code": "CIL-0024",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0024.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "58380-22000",
+        "94-99"
+      ],
+      "precio": 18800
+    },
+    {
+      "name": "OEM 41710-02200 CILINDRO EMBRAGUE KIA RIO 3 4 5 1, 2 12-> SOLUTO 1.4 21-> G4LA",
+      "code": "CIL-0025",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0025.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Kia Rio"
+      ],
+      "oem": [
+        "41710-02200"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 58330-0P000 CILINDRO FRENO HYUNDAI GRAND I10 17-> INDIA",
+      "code": "CIL-0041",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0041.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58330-0P000"
+      ],
+      "precio": 25100
+    },
+    {
+      "name": "OEM 58330-05500 CILINDRO FRENO LH HYUNDAI I10 11-14 INDIA",
+      "code": "CIL-0042",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0042.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58330-05500",
+        "11-14"
+      ],
+      "precio": 21100
+    },
+    {
+      "name": "OEM 58380-05500 CILINDRO FRENO RH HYUNDAI I10 11-14 INDIA",
+      "code": "CIL-0043",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0043.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58380-05500",
+        "11-14"
+      ],
+      "precio": 22100
+    },
+    {
+      "name": "OEM OK60A-26-710 CILINDRO FRENO LH KIA FRONTIER 2, 7 98-04",
+      "code": "CIL-0044",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0044.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "OK60A-26-710",
+        "98-04"
+      ],
+      "precio": 19500
+    },
+    {
+      "name": "OEM OK60A-26-610 CILINDRO FRENO RH KIA FRONTIER 2, 7 98-04",
+      "code": "CIL-0045",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0045.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "OK60A-26-610",
+        "98-04"
+      ],
+      "precio": 19500
+    },
+    {
+      "name": "OEM 58320-4A020 CILINDRO FRENO LH HYUNDAI H1 05-07",
+      "code": "CIL-0046",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0046.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "58320-4A020",
+        "05-07"
+      ],
+      "precio": 24200
+    },
+    {
+      "name": "OEM 58380-1G000 CILINDRO FRENO LH RH HYUNDAI ACCENT 06-11 RIO JB 05-10",
+      "code": "CIL-0047",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0047.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai Accent"
+      ],
+      "oem": [
+        "58380-1G000",
+        "06-11",
+        "05-10"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 58320-5H601 CILINDRO FRENO TRASERO LH HYUNDAI MIGHTY 03-> TCIC",
+      "code": "CIL-0049",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0049.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58320-5H601"
+      ],
+      "precio": 94300
+    },
+    {
+      "name": "OEM 58420-5H602 CILINDRO FRENO TRASERO RH HYUNDAI MIGHTY HD65",
+      "code": "CIL-0050",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0050.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [],
+      "oem": [
+        "58420-5H602"
+      ],
+      "precio": 169600
+    },
+    {
+      "name": "OEM 58420-44210 CILINDRO FRENO HYUNDAI H100",
+      "code": "CIL-0070",
+      "img": "https://cart.quirozchile.cl/uploads/cil-0070.jpg",
+      "categoria": "cilindro freno",
+      "vehiculos": [
+        "Hyundai H100"
+      ],
+      "oem": [
+        "58420-44210"
+      ],
+      "precio": 19100
     },
     {
       "name": "OEM 93490-2B200 CINTA AIRBAG HYUNDAI SANTA FE 07-12",
@@ -17487,6 +17790,323 @@
       "precio": 33200
     },
     {
+      "name": "CABLE 66CM CHEVROLET ASTRA CORSA MERVINA MONTANA GM 90451442 VDO 324003001R SENSOR POSICION GAUSS GS8342 MTE 7048",
+      "code": "SP-GS8342",
+      "img": "https://cart.quirozchile.cl/uploads/sp-gs8342.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "GS8342",
+        "90451442"
+      ],
+      "precio": 8300
+    },
+    {
+      "name": "INFINITI G20 (1991-94 ISUZU TROOPER (1988-91 NISSAN 20SX, 240SX, 280ZX, 300ZX, NISSAN 720 (1986 NISSAN D21 (1986-949, NISSAN MAXIMA (1985-94 PATHFINDER (1987-95 SENTRA (1991-94 NISSAN STANZA (1986-92 SUBARU DL, GL, SUBARU LOYALE (1990-94 SUBARU RX, XT, SENSOR DE POSICIÓN CIGUEÑAL REGITAR",
+      "code": "BO-RLX653",
+      "img": "https://cart.quirozchile.cl/uploads/bo-rlx653.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "1991-94",
+        "1988-91",
+        "1986-949",
+        "1985-94",
+        "1987-95",
+        "1986-92",
+        "1990-94"
+      ],
+      "precio": 52900
+    },
+    {
+      "name": "OEM 39250-23900 SENSOR POSICION HYUNDAI I30 2.0 16 VALVULAS, 2 PINES",
+      "code": "SEN-0175",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0175.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39250-23900"
+      ],
+      "precio": 19700
+    },
+    {
+      "name": "OEM 39180-27000 SENSOR POSICION CIGÜEÑAL HYUNDAIACCENT PRIME 00-05 DIESEL MATRIX SANTA FE 00-09 TUCSON 04-11 SPORTAGE 05-10 CARENS 03-06",
+      "code": "SEN-0172",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0172.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39180-27000",
+        "00-05",
+        "00-09",
+        "04-11",
+        "05-10",
+        "03-06"
+      ],
+      "precio": 15300
+    },
+    {
+      "name": "OEM 39180-27400 SENSOR POSICION CIGÜEÑAL HYUNDAI KIA TUCSON 05-10 SPORTAGE 05-10 SANTA FE 00-09 MATRIX",
+      "code": "SEN-0235",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0235.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Kia Sportage"
+      ],
+      "oem": [
+        "39180-27400",
+        "05-10",
+        "00-09"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 39180-3E100 SENSOR POSICION CIGÜEÑAL HYUNDAI SANTA FE 2, 7 06-09, 3 PINES",
+      "code": "SEN-0244",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0244.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39180-3E100",
+        "06-09"
+      ],
+      "precio": 26300
+    },
+    {
+      "name": "OEM 39350-03040 SENSOR POSICION LEVA KIA SOLUTO 1, 4 21-> MORNING 1.2 25-> 3 PINES",
+      "code": "SEN-0258",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0258.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39350-03040"
+      ],
+      "precio": 17800
+    },
+    {
+      "name": "OEM 39180-03700 SENSOR POSICION CIGÜEÑAL KIA SOLUTO 1, 4 21->, 2 PINES",
+      "code": "SEN-0262",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0262.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39180-03700"
+      ],
+      "precio": 21200
+    },
+    {
+      "name": "OEM 39180-04200 SENSOR POSICION CIGÜEÑAL KIA MORNING 1, 2 17->, 2 PINES",
+      "code": "SEN-0298",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0298.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39180-04200"
+      ],
+      "precio": 21700
+    },
+    {
+      "name": "OEM 39180-04200 SENSOR POSICION CIGÜEÑAL HYUNDAI I10 1, 0 18->",
+      "code": "SEN-0306",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0306.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "39180-04200"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 39180-4A512 SENSOR POSICION CIGÜEÑAL HYUNDAI H1 16->",
+      "code": "SEN-0324",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0324.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "39180-4A512"
+      ],
+      "precio": 21700
+    },
+    {
+      "name": "OEM 39180-03251 SENSOR POSICION CIGÜEÑAL KIA RIO 1, 4 18-> COREALINE",
+      "code": "SEN-0329",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0329.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Kia Rio"
+      ],
+      "oem": [
+        "39180-03251"
+      ],
+      "precio": 19100
+    },
+    {
+      "name": "OEM 39180-03250 SENSOR POSICION CIGUENAL HYUNDAI KIA RIO 1, 4 17-> ACCENT 1.4 21-> COREALINE",
+      "code": "SEN-0332",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0332.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Hyundai Accent",
+        "Kia Rio"
+      ],
+      "oem": [
+        "39180-03250"
+      ],
+      "precio": 15300
+    },
+    {
+      "name": "OEM 39180-4A512 SENSOR POSICION CIGÜEÑAL HYUNDAI H1 16->",
+      "code": "SEN-0333",
+      "img": "https://cart.quirozchile.cl/uploads/sen-0333.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Hyundai H1"
+      ],
+      "oem": [
+        "39180-4A512"
+      ],
+      "precio": 29600
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL CKP CHEVROLET ASTRA, CORSA, MERIVA, MONTANA, PRISMA MTE-THOMSON 7048 GAUSS GS8342 GM 90357491 90451442 OPEL 1238983 6238325",
+      "code": "MTE-7048",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7048.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "GS8342",
+        "90357491",
+        "90451442",
+        "1238983",
+        "6238325"
+      ],
+      "precio": 12100
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, VOLKSWAGEN-VW BEETLE 2.0 2013 14, GOL SEDAN 2010 11, JETTA 2005 08, 03C906433E, COLOR NEGRO, CONECTOR OVALADO, MAGNETICO, 3 TERMINALES, PROFUNDIDAD 20.7MM, MTE-THOMSON",
+      "code": "MTE-70333",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70333.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "VOLKSWAGEN-VW",
+        "MTE-THOMSON"
+      ],
+      "precio": 24500
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, COLOR NEGRO, ENCHUFE RECTANGULAR, LARGO CABLES 615MM, 3 TERMINALES, PROFUNDIDAD 34.5MM, 46774532, 55187333, 55189517, 55216915, 7777960, MTE-THOMSON",
+      "code": "MTE-7040",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7040.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "46774532",
+        "55187333",
+        "55189517",
+        "55216915",
+        "7777960"
+      ],
+      "precio": 12500
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, CITROEN, COLOR NEGRO, ENCHUFE CUADRADO, 2 TERMINALES, PROFUNDIDAD 17.2MM, 96374659, 9639998, 1920AW, MTE-THOMSON",
+      "code": "MTE-70338",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70338.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "96374659",
+        "9639998"
+      ],
+      "precio": 8300
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, SAAB, GM, OPEL, SCANIA, VAUXHALL, COLOR NEGRO, ENCHUFE RECTANGULAR, LARGO CABLES 990MM, 3 TERMINALES, PROFUNDIDAD 24MM, RESISTENCIA 550 OHM, MTE-THOMSON",
+      "code": "MTE-7041",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7041.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON"
+      ],
+      "precio": 16800
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, FIAT, COLOR NEGRO, CONECTOR RECTANGULAR, LARGO CABLES 39CM, 3 TERMINALES, PROFUNDIDAD 20.7MM, 46445731, 758729, 7735697, MTE-THOMSON",
+      "code": "MTE-7033",
+      "img": "https://cart.quirozchile.cl/uploads/mte-7033.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "46445731",
+        "7735697"
+      ],
+      "precio": 11000
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, FIAT, GM, OPEL, VAUXHALL, COLOR NEGRO, CONECTOR RECTANGULAR, 2 TERMINALES, PROFUNDIDAD 39MM, 71739726, 10456604, 1238938 MTE-THOMSON",
+      "code": "MTE-70337",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70337.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "71739726",
+        "10456604",
+        "1238938"
+      ],
+      "precio": 26500
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, NISSAN KICKS 1.6 2017 19, MARCH 1.6 2012 15, NOTE 1.6 2014 19, SENTRA 2.0 2007 12, TIIDA 1.6 2013 18, TIIDA 1.8 2007 15, VERSA 1.6 2009 17, VERSA 1.8 2007 12, 237311KT0A, 23731ED001, COLOR NEGRO, CONECTOR RECTANGULAR, 3 TERMINALES, PROFUNDIDAD 32.8MM, MTE-THOMSON",
+      "code": "MTE-70436",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70436.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Nissan Note"
+      ],
+      "oem": [
+        "MTE-THOMSON"
+      ],
+      "precio": 13200
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, VOLKSWAGEN, COLOR NEGRO, ENCHUFE OVALADO, 3 TERMINALES, 036906433, MTE-THOMSON",
+      "code": "MTE-70418",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70418.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [],
+      "oem": [
+        "MTE-THOMSON",
+        "036906433"
+      ],
+      "precio": 24200
+    },
+    {
+      "name": "SENSOR DE POSICIÓN CIGUEÑAL, HYUNDAI ACCENT, ELANTRA, TUCSON, VELOSTER, KIA RIO 1.6 2012 19, SOUL 2.0 2014 20, COLOR NEGRO, DIAMETRO 21MM, CONECTOR RECTANGULAR, LARGO CABLE 28CM, 2 TERMINALES, PROFUNDIDAD 46MM, 39180-2B000, 39180-2B100MTE-THOMSON",
+      "code": "MTE-70316",
+      "img": "https://cart.quirozchile.cl/uploads/mte-70316.jpg",
+      "categoria": "sensor de posici&oacute;n cigue&ntilde;al",
+      "vehiculos": [
+        "Hyundai Tucson",
+        "Hyundai Accent",
+        "Kia Rio"
+      ],
+      "oem": [
+        "39180-2B000",
+        "39180-2B100MTE-THOMSON"
+      ],
+      "precio": 14500
+    },
+    {
       "name": "MERCEDES BENZ 914, 915 CON ARRANQUE DELCO REMY 28MT 24V . ZM815, 231800, 10457368 SOLENOIDE",
       "code": "SOL-231800",
       "img": "https://cart.quirozchile.cl/uploads/sol-zm815.jpg",
@@ -20234,309 +20854,6 @@
         "7701477014"
       ],
       "precio": 70600
-    },
-    {
-      "name": "OEM 58320-4F000 CILINDRO FRENO LH HYUNDAI KIA PORTER 05-> FRONTIER 2.5 05->",
-      "code": "CIL-0011",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0011.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58320-4F000"
-      ],
-      "precio": 19200
-    },
-    {
-      "name": "OEM OK72A-26-710 CILINDRO FRENO LH KIA PREGIO 2.7 TOPIC FRONTIER 2.7",
-      "code": "CIL-0012",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0012.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "OK72A-26-710"
-      ],
-      "precio": 23000
-    },
-    {
-      "name": "OEM 58330-1Y000 CILINDRO FRENO LH KIA MORNING 12->",
-      "code": "CIL-0013",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0013.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58330-1Y000"
-      ],
-      "precio": 16900
-    },
-    {
-      "name": "OEM 58380-4E000 CILINDRO FRENO RH HYUNDAI KIA PORTER 05-> FRONTIER 2.5 05-> HD35 2.5 17->",
-      "code": "CIL-0014",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0014.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58380-4E000"
-      ],
-      "precio": 21000
-    },
-    {
-      "name": "OEM OK72A-26-610 CILINDRO FRENO RH KIA PREGIO 2.7 TOPIC FRONTIER 2.7",
-      "code": "CIL-0015",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0015.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "OK72A-26-610"
-      ],
-      "precio": 20400
-    },
-    {
-      "name": "OEM 58380-1Y000 CILINDRO FRENO RH KIA MORNING 12->",
-      "code": "CIL-0016",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0016.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58380-1Y000"
-      ],
-      "precio": 18100
-    },
-    {
-      "name": "OEM 58420-4F000 CILINDRO FRENO RH PORTER II 2005->",
-      "code": "CIL-0017",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0017.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58420-4F000"
-      ],
-      "precio": 19200
-    },
-    {
-      "name": "OEM 58420-4A020 CILINDRO FRENO DERECHO RH HYUNDAI H-1 05-07",
-      "code": "CIL-0019",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0019.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58420-4A020",
-        "05-07"
-      ],
-      "precio": 23600
-    },
-    {
-      "name": "OEM 58330-4H000 CILINDRO FRENO LH RH HYUNDAI H1 08->",
-      "code": "CIL-0028",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0028.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai H1"
-      ],
-      "oem": [
-        "58330-4H000"
-      ],
-      "precio": 24200
-    },
-    {
-      "name": "OEM 58330-07000 CILINDRO FRENO LH RH KIA MORNING 04-11",
-      "code": "CIL-0029",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0029.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58330-07000",
-        "04-11"
-      ],
-      "precio": 19100
-    },
-    {
-      "name": "OEM 58320-4E000 CILINDRO FRENO LH HYUNDAI KIA FRONTIER 2, 5 05-> PORTER 05-> HD35 2.5 17->",
-      "code": "CIL-0030",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0030.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58320-4E000"
-      ],
-      "precio": 21000
-    },
-    {
-      "name": "OEM 58330-1R000 CILINDRO FRENO LH RH HYUNDAI ACCENT RB 12-> 58330-0P000",
-      "code": "CIL-0031",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0031.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai Accent"
-      ],
-      "oem": [
-        "58330-1R000",
-        "58330-0P000"
-      ],
-      "precio": 19100
-    },
-    {
-      "name": "OEM 58330-22000 CILINDRO FRENO LH HYUNDAI ACCENT 94-99",
-      "code": "CIL-0023",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0023.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai Accent"
-      ],
-      "oem": [
-        "58330-22000",
-        "94-99"
-      ],
-      "precio": 18800
-    },
-    {
-      "name": "OEM 58380-22000 CILINDRO FRENO RH HYUNDAI ACCENT 94-99",
-      "code": "CIL-0024",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0024.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai Accent"
-      ],
-      "oem": [
-        "58380-22000",
-        "94-99"
-      ],
-      "precio": 18800
-    },
-    {
-      "name": "OEM 41710-02200 CILINDRO EMBRAGUE KIA RIO 3 4 5 1, 2 12-> SOLUTO 1.4 21-> G4LA",
-      "code": "CIL-0025",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0025.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Kia Rio"
-      ],
-      "oem": [
-        "41710-02200"
-      ],
-      "precio": 19100
-    },
-    {
-      "name": "OEM 58330-0P000 CILINDRO FRENO HYUNDAI GRAND I10 17-> INDIA",
-      "code": "CIL-0041",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0041.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58330-0P000"
-      ],
-      "precio": 25100
-    },
-    {
-      "name": "OEM 58330-05500 CILINDRO FRENO LH HYUNDAI I10 11-14 INDIA",
-      "code": "CIL-0042",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0042.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58330-05500",
-        "11-14"
-      ],
-      "precio": 21100
-    },
-    {
-      "name": "OEM 58380-05500 CILINDRO FRENO RH HYUNDAI I10 11-14 INDIA",
-      "code": "CIL-0043",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0043.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58380-05500",
-        "11-14"
-      ],
-      "precio": 22100
-    },
-    {
-      "name": "OEM OK60A-26-710 CILINDRO FRENO LH KIA FRONTIER 2, 7 98-04",
-      "code": "CIL-0044",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0044.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "OK60A-26-710",
-        "98-04"
-      ],
-      "precio": 19500
-    },
-    {
-      "name": "OEM OK60A-26-610 CILINDRO FRENO RH KIA FRONTIER 2, 7 98-04",
-      "code": "CIL-0045",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0045.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "OK60A-26-610",
-        "98-04"
-      ],
-      "precio": 19500
-    },
-    {
-      "name": "OEM 58320-4A020 CILINDRO FRENO LH HYUNDAI H1 05-07",
-      "code": "CIL-0046",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0046.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai H1"
-      ],
-      "oem": [
-        "58320-4A020",
-        "05-07"
-      ],
-      "precio": 24200
-    },
-    {
-      "name": "OEM 58380-1G000 CILINDRO FRENO LH RH HYUNDAI ACCENT 06-11 RIO JB 05-10",
-      "code": "CIL-0047",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0047.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai Accent"
-      ],
-      "oem": [
-        "58380-1G000",
-        "06-11",
-        "05-10"
-      ],
-      "precio": 19100
-    },
-    {
-      "name": "OEM 58320-5H601 CILINDRO FRENO TRASERO LH HYUNDAI MIGHTY 03-> TCIC",
-      "code": "CIL-0049",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0049.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58320-5H601"
-      ],
-      "precio": 94300
-    },
-    {
-      "name": "OEM 58420-5H602 CILINDRO FRENO TRASERO RH HYUNDAI MIGHTY HD65",
-      "code": "CIL-0050",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0050.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [],
-      "oem": [
-        "58420-5H602"
-      ],
-      "precio": 169600
-    },
-    {
-      "name": "OEM 58420-44210 CILINDRO FRENO HYUNDAI H100",
-      "code": "CIL-0070",
-      "img": "https://cart.quirozchile.cl/uploads/cil-0070.jpg",
-      "categoria": "cilindro freno",
-      "vehiculos": [
-        "Hyundai H100"
-      ],
-      "oem": [
-        "58420-44210"
-      ],
-      "precio": 19100
     },
     {
       "name": "CALIPER LH KIA FRONTIER 2.7 00-> OEM 0K60A33990",
