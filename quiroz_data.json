@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "total": 1947,
-  "updated_at": "2026-10-04T14:15:50.574062Z",
+  "total": 1971,
+  "updated_at": "2026-10-05T17:21:37.257693Z",
   "products": [
     {
       "name": "TOYOTA COROLLA TERCEL, PASEO 1993 AL 1999, CON ALTERNADOR NIPONDENSO 12V. 60AMP., POLEA 4PK, 101211-2130, 101211-3030, TOYOTA 27060-11250, 27060-11250-84, 27060-11260, LESTER 13485, 22959, ALTERNADOR",
@@ -9773,6 +9773,287 @@
         "G6080"
       ],
       "precio": 62600
+    },
+    {
+      "name": "OPEL ASTRA 1.4I PS, 1.6I PS 1992> ASTRA 1.7D 1994> ASTRA 1.8I 16V 1992> ASTRA 2.0I 16V 1992>97, OPEL COMBO 1.4I PS.AC 1994>96, CORSA 1.4, 1.4 AC 1.6I 1993>1.7D 1996, OMEGA B 2.0I, 2.0I 16V 1994> VECTRA 1.6, 1.6I, 1.8, 2.0 2.0I, CON ALTERNADOR DELCO REMY FRANCIA CS130D, 12V. 100AMP. ( DI=96.5MM, DE=130MM, E=26MM ) 137052, 10475030, 10476400, S 316, T-140009",
+      "code": "EST-137052",
+      "img": "https://cart.quirozchile.cl/uploads/est-137052.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "10475030",
+        "10476400"
+      ],
+      "precio": 38400
+    },
+    {
+      "name": "NISSAN 200SX 2.0, NISSAN 210 1.2, 1.4, 1.5, NISSAN 310 1.4, 1.5, NISSAN 720 2.0, 2.2, 2.4, NISSAN PULSAR 1.6, SENTRA 1.5, 1.6, CON ALTERNADOR HITACHI 12V. 50AMP. ( DI=95MM, DE=124MM, E=18MM ), 132438, L150-22004, 27-8109",
+      "code": "EST-132438",
+      "img": "https://cart.quirozchile.cl/uploads/est-132438.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "L150-22004",
+        "27-8109"
+      ],
+      "precio": 33300
+    },
+    {
+      "name": "MAZDA 121 1.3, 1.3I 1990, NISSAN PRIMERA 1.6 ST.CAR 1990>94, SUNNY 1.4I 1.6, NISSAN 100 NX 1.6 1991> NISSAN SENTRA 1.6, CON ALTERNADOR HITACHI 12V. 70AMP. ( OD=117.5MM, ID=93MM, W=22MM ). 136683, 27-8102, L170-42002, 23102-50Y06, 115005BX",
+      "code": "EST-136683",
+      "img": "https://cart.quirozchile.cl/uploads/est-136683.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "27-8102",
+        "L170-42002",
+        "23102-50Y06"
+      ],
+      "precio": 32900
+    },
+    {
+      "name": "KIA 3500, 3600, ISUZU 3.3, 3.6, 3.9 DIESEL, NISSAN DIESEL, CON ALTERNADOR HITACHI 24V. 35AMP. ( DI=95MM, DE=128MM, E=22MM ), 132443, S 3003, 11463BX, 23102-V6600, L225-82001",
+      "code": "EST-132443",
+      "img": "https://cart.quirozchile.cl/uploads/est-132443.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "23102-V6600",
+        "L225-82001",
+        "V6600"
+      ],
+      "precio": 54800
+    },
+    {
+      "name": "CHEVROLET OPALA, CHEVETTE, CON ALTERNADOR DELCO REMY - ARNO BRASIL 12 VOLTS, 35AMP., DIAMETRO INTERIOR 83MM, 7332367, 2367, ESTATOR",
+      "code": "EST-2367",
+      "img": "https://cart.quirozchile.cl/uploads/est-2367.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "7332367"
+      ],
+      "precio": 19500
+    },
+    {
+      "name": "MERCEDES BENZ 1113, 1313, 1513, 2013, 2213(OM352), 1316, 1516, 2016, 2216 (OM-352A), 2215, 2216 (OM352-O), L608D (OM314), L610 (OM314-O VOLKSWAGEN GOL 1.6, SAVEIRO 1.6, PARATI, VW PASSAT 1.5, 1.6, TRACTOR MASSEY FERGUSON MF235, 265, 272, 275, 283, 290, 292, CON ALTERNADOR BOSCH 12V. 35AMP. (DI=89.5MM, DE=125MM, E=17MM), 2586, 9122080586, ESTATOR 12V",
+      "code": "EST-2586",
+      "img": "https://cart.quirozchile.cl/uploads/est-2586.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "OM-352A",
+        "9122080586"
+      ],
+      "precio": 18500
+    },
+    {
+      "name": "MERCEDES BENZ 1113, 1313, 1316, 1318, 1419, 1420, 1621 (OM-366LA), 1520, 2020 (OM355-5), MERCEDES BENZ L1625, LG1825, LK2325 (OM449-A), BUS OH1318 (OM352-A OH1420, OH1518 (OM355-5), CON ALTERNADOR BOSCH 12V. 55AMP. (DI=89.5MM, DE=125MM, E=23.5MM), 2559, 9122080559, 130101, S 83, ESTATOR 12V",
+      "code": "EST-2559",
+      "img": "https://cart.quirozchile.cl/uploads/est-2559.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "OM-366LA",
+        "L1625",
+        "LG1825",
+        "LK2325",
+        "OH1318",
+        "OH1420",
+        "OH1518",
+        "9122080559"
+      ],
+      "precio": 20400
+    },
+    {
+      "name": "HYUNDAI H100 DIESEL, GALLOPER DIESEL, MITSUBISHI, CON ALTERNADOR 12V. 75AMP CON DEPRESOR, EXTERIOR 130MM, INTERIOR 100MM, ANCHO 28MM",
+      "code": "EST-2100",
+      "img": "https://cart.quirozchile.cl/uploads/est-2100.jpg",
+      "categoria": "estator",
+      "vehiculos": [
+        "Hyundai H100"
+      ],
+      "precio": 42200
+    },
+    {
+      "name": "FORD CARGO 1218 1415 1418 1519 1521 1618 1621 2218 2319 2321 3021 3223 C MOT. FORD 6.6 7.8 LITROS. TRACTOR FORD 4610 5610 6610 7610, CON ALTERNADOR WAPSA - BOSCH 12V. 60AMP. (DI=94MM, DE=127MM, E=24.5MM), 2459, 912145459, W-407 52, ESTATOR 12V",
+      "code": "EST-2459",
+      "img": "https://cart.quirozchile.cl/uploads/est-2459.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "912145459"
+      ],
+      "precio": 30000
+    },
+    {
+      "name": "FORD CARGO, CAMION VOLVO N10 N12 NL12-400 NL10-280, COMPRESOR ATLAS COPCO AX430 C MOT.CUMMINS NT855, CAMION SCANIA T112 R112 (DN11, DS11, DSC11SCANIA T142 R142 (DS, DSC14R112-130, R112-360HW, EW (DS, DSC11 CAMION IVECO 150T, CON ALTERNADOR BOSCH 24V 45AMP.(Di=89.5mm, De=125mm, E=23.5mm) 2045 1125045045 130105 ESTATOR 24V",
+      "code": "EST-2045",
+      "img": "https://cart.quirozchile.cl/uploads/est-2045.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "NL12-400",
+        "NL10-280",
+        "DSC14R112-130",
+        "R112-360HW",
+        "1125045045"
+      ],
+      "precio": 22000
+    },
+    {
+      "name": "MERCEDES BENZ C MOT.M366G, BUS O371RS O371R O371RSD O371U O371UP OH1520 M.BENZ C MOT.BR400, BUS VOLVO B58 B10M, CON ALTERNADOR BOSCH 24V 75AMP. (Di=126mm, De=164mm, E=26mm) 2090 9121486090 3216 ESTATOR 24V",
+      "code": "EST-2090",
+      "img": "https://cart.quirozchile.cl/uploads/est-2090.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "OH1520",
+        "9121486090"
+      ],
+      "precio": 35200
+    },
+    {
+      "name": "MERCEDES BENZ OM904, 24V. 80A. DIAMETRO EXT. 142 MM, DIAMETRO INT. 104 MM, ALTURA 29 59MM, BOSCH 1125045165",
+      "code": "EST-2165",
+      "img": "https://cart.quirozchile.cl/uploads/est-2165.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "1125045165"
+      ],
+      "precio": 41200
+    },
+    {
+      "name": "FIAT LANCIA ESTATOR 12V 65AMP DIAMETRO 118MM INTERIOR 92MM ALTO 30MM CARGO 139956 MAGNETI MARELLI 83617801 LUCAS 54203890 KONIGMANN",
+      "code": "EST-B27007",
+      "img": "https://cart.quirozchile.cl/uploads/est-b27007.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "83617801",
+        "54203890"
+      ],
+      "precio": 28200
+    },
+    {
+      "name": "ESTATOR MITSUBISHI PARA VOLVO 24V 100 AMP, PARA ALTERNADOR A004TA8191 TRANSANTIAGO",
+      "code": "EST-8191",
+      "img": "https://cart.quirozchile.cl/uploads/est-8191.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "precio": 51100
+    },
+    {
+      "name": "TOYOTA HILUX KUNG 15RD4D 2.5 DIESEL, 3.0 DIESEL ESTATOR 12V 160 AMP CON ALTERNADOR DENSO, INTERIOR 100MM, EXTERIOR 128MM, ALTURA COMPLETA 53MM, ALTURA NUCLEO 32MM",
+      "code": "EST-11113",
+      "img": "https://cart.quirozchile.cl/uploads/est-11113.jpg",
+      "categoria": "estator",
+      "vehiculos": [
+        "Toyota Hilux"
+      ],
+      "precio": 71700
+    },
+    {
+      "name": "HYUNDAI H100 DIESEL, HYUNDAI H1, GALLOPER DIESEL, MITSUBISHI, CON ALTERNADOR 12V. CON DEPRESOR, BOBINA DOBLE, DIAMETRO EXTERIOR 133MM, INTERIOR 106MM, ANCHO 22MM, NUMERO ORIGINAL A383X53770, OT27011",
+      "code": "EST-230951",
+      "img": "https://cart.quirozchile.cl/uploads/est-230951.jpg",
+      "categoria": "estator",
+      "vehiculos": [
+        "Hyundai H1",
+        "Hyundai H100"
+      ],
+      "oem": [
+        "OT27011"
+      ],
+      "precio": 37200
+    },
+    {
+      "name": "CHEVROLET C10, OPALA, DIPLOMATA, GMC, BUICK, CARAVAN, OLDSMOBILE, PONTIAC, CON ALTERNADOR DELCO REMY SERIE 10SI 12V. 63AMP. (DE=135MM, DI=105MM), 27-102, 1851572, 11319BX, ESTATOR DELCO 10SI 12V",
+      "code": "EST-27102",
+      "img": "https://cart.quirozchile.cl/uploads/est-27102.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "27-102",
+        "1851572"
+      ],
+      "precio": 28200
+    },
+    {
+      "name": "VOLVO B7, B9, MERCEDES BENZ 712, 914, 915, 1215, 1218, 1418, 1618, 1938, 2423, 2428, 2638, CON ALTERNADOR BOSCH NCB1 24V. 80AMP. (D=135.75MM, DI=104MM, E=33.5MM), 2197, F00M130112, 136037, B27007, HCB00142, 235055, 61-9106",
+      "code": "EST-2197",
+      "img": "https://cart.quirozchile.cl/uploads/est-2197.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "61-9106",
+        "B27007",
+        "HCB00142"
+      ],
+      "precio": 38400
+    },
+    {
+      "name": "ESTATOR DENSO 12V 220A, ID 109MM, OD 138MM, NUCLEO 35MM, ALTO COMPLETO 63MM, CHEROKEE DODGE CHYSLER",
+      "code": "EST-82003",
+      "img": "https://cart.quirozchile.cl/uploads/est-82003.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "precio": 131600
+    },
+    {
+      "name": "RENAULT MEGANE 1.6, 2.0, SCENIC 1.6, 2.0, CLIO 1.6, KANGOO 1.6, PEUGEOT 206 1.4, 1.6 DIESEL, PARTNER 1.9 DIESEL, CITROEN BERLINGO 1.9 DIESEL, VOLKWAGEN FOX 1.0, 1.6, GOLF 1.6, POLO 1.0, 1.6, FORD COURIER, ESCORT, FIESTA, KA, CON ALTERNADOPR VALEO 593579 12V, ALTO 24 56MM, INTERIOR 98MM, EXTERIOR 127MM",
+      "code": "EST-593579",
+      "img": "https://cart.quirozchile.cl/uploads/est-593579.jpg",
+      "categoria": "estator",
+      "vehiculos": [
+        "Peugeot Partner"
+      ],
+      "precio": 34400
+    },
+    {
+      "name": "CHEVROLET NUEVO CORSA, CITROEN PICASSO 2.0, PEUGEOT 307, CON ALTERNADOR VALEO 12V, DIAMETRO EXTERIOR 135.5MM, DIAMETRO INTERIOR 105.5MM, ALTO 30MM, ALTO BOBINADO 65.5MM",
+      "code": "EST-593584",
+      "img": "https://cart.quirozchile.cl/uploads/est-593584.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "precio": 40800
+    },
+    {
+      "name": "ESTATOR 110AMP. 12V. FORD 6G SERIE 110A IR IF MEDIDAD 100MM DI X 130MM DE, 27-217 ESTATOR",
+      "code": "EST-27217",
+      "img": "https://cart.quirozchile.cl/uploads/est-27217.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "27-217"
+      ],
+      "precio": 33200
+    },
+    {
+      "name": "FORD CROWN VICTORIA 4.6 1998-2002, FORD LINCOLN TOWN CAR LIMUSINA 4.6 V8 1999-2002, FORD WINDSTAR 3.8 V6, CON ALTERNADOR 12V. 135AMP. MOTORCRAFT SERIE 6G IR IF, MEDIDAS 112MM DI X 142MM DE, 27-215, 114001BX, F8AU-10368-AA, ESTATOR",
+      "code": "EST-27215",
+      "img": "https://cart.quirozchile.cl/uploads/est-27215.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "1998-2002",
+        "1999-2002",
+        "27-215",
+        "F8AU-10368-AA"
+      ],
+      "precio": 31300
+    },
+    {
+      "name": "ESTATOR 110AMP 12V FORD 6G SERIE 110A IR IF MEDIDAS 100MM DI X 130MM DE 27-216 ESTATOR",
+      "code": "EST-27216",
+      "img": "https://cart.quirozchile.cl/uploads/est-27216.jpg",
+      "categoria": "estator",
+      "vehiculos": [],
+      "oem": [
+        "27-216"
+      ],
+      "precio": 32500
     },
     {
       "name": "OEM 56820-2W000 EXTREMO CORTO LH HYUNDAI SANTA FE 13->",
